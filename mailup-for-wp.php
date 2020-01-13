@@ -8,7 +8,7 @@
  * Author URI: https://ilghera.com
  * Requires at least: 4.0
  * Tested up to: 5
- * WC tested up to: 3
+ * WP tested up to: 3
  * Text Domain: mailup-for-wp
  */
 

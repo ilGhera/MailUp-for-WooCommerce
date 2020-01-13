@@ -259,19 +259,19 @@ class MUFWP_Button {
 			}
 
 			/*Check if the user is already subscribed*/
-			$check = sprintf( 'http://%s/frontend/Xmlchksubscriber.aspx?list=%d&listGuid=%s&email=%s', $host, $list, $list_guid, $mail );
+			$check = sprintf( '%s/frontend/Xmlchksubscriber.aspx?list=%d&listGuid=%s&email=%s', $host, $list, $list_guid, $mail );
 			$result = wp_remote_post( $check );
 
 			if ( ! is_wp_error( $result ) && isset( $result['body'] ) && 2 == $result['body'] ) {
 
 				/*If yes, just update his profile by adding him to the specified group*/
 
-				$url = sprintf( 'http://%s/frontend/XmlUpdSubscriber.aspx?listGuid=%s&list=%d&email=%s&group=%d', $host, $list_guid, $list, $mail, $group );
+				$url = sprintf( '%s/frontend/XmlUpdSubscriber.aspx?listGuid=%s&list=%d&email=%s&group=%d', $host, $list_guid, $list, $mail, $group );
 
 			} else {
 
 				/*If not, add him to the list and the group*/
-				$url = sprintf( 'http://%s/frontend/xmlSubscribe.aspx?list=%d&group=%d&email=%s&confirm=0&csvFldNames=campo1&csvFldValues=%s&retCode=1', $host, $list, $group, $mail, $username );
+				$url = sprintf( '%s/frontend/xmlSubscribe.aspx?list=%d&group=%d&email=%s&confirm=0&csvFldNames=campo1&csvFldValues=%s&retCode=1', $host, $list, $group, $mail, $username );
 
 			}
 
@@ -294,12 +294,14 @@ class MUFWP_Button {
 
 				} else {
 
+					error_log( 'TEST 100' );
 					echo esc_html( $error_message );
 
 				}
 
 			} else {
 
+				error_log( 'TEST 200' );
 				echo esc_html( $error_message );
 
 			}
@@ -372,18 +374,18 @@ class MUFWP_Button {
 			}
 
 			/*Check if the user is already subscribed*/
-			$check = sprintf( 'http://%s/frontend/Xmlchksubscriber.aspx?list=%d&listGuid=%s&email=%s', $host, $list, $list_guid, $mail );
+			$check = sprintf( '%s/frontend/Xmlchksubscriber.aspx?list=%d&listGuid=%s&email=%s', $host, $list, $list_guid, $mail );
 			$result = wp_remote_post( $check );
 
 			if ( ! is_wp_error( $result ) && isset( $result['body'] ) && 2 == $result['body'] ) {
 
 				/*If yes, just update his profile by adding him to the specified group*/				
-				$url = sprintf( 'http://%s/frontend/XmlUpdSubscriber.aspx?listGuid=%s&list=%d&email=%s&group=%d', $host, $list_guid, $list, $mail, $group );
+				$url = sprintf( '%s/frontend/XmlUpdSubscriber.aspx?listGuid=%s&list=%d&email=%s&group=%d', $host, $list_guid, $list, $mail, $group );
 
 			} else {
 
 				/*If not, add him to the list and the group*/
-				$url = sprintf( 'http://%s/frontend/xmlSubscribe.aspx?list=%d&group=%d&email=%s&confirm=0&csvFldNames=campo1&csvFldValues=%s&retCode=1', $host, $list, $group, $mail, $name );
+				$url = sprintf( '%s/frontend/xmlSubscribe.aspx?list=%d&group=%d&email=%s&confirm=0&csvFldNames=campo1&csvFldValues=%s&retCode=1', $host, $list, $group, $mail, $name );
 
 			}
 

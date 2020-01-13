@@ -61,7 +61,7 @@ class MUFWP_Auto_Subscription {
 			if ( $user_newsletter ) {
 
 				$url = sprintf(
-					'http://%s/frontend/xmlSubscribe.aspx?list=%d&group=%d&email=%s&confirm=%d&csvFldNames=campo1&csvFldValues=%s',
+					'%s/frontend/xmlSubscribe.aspx?list=%d&group=%d&email=%s&confirm=%d&csvFldNames=campo1&csvFldValues=%s',
 					$host,
 					$list,
 					$group,
@@ -77,7 +77,7 @@ class MUFWP_Auto_Subscription {
 		} else {
 
 			$url = sprintf(
-				'http://%s/frontend/xmlSubscribe.aspx?list=%d&group=%d&email=%s&confirm=%d&csvFldNames=campo1&csvFldValues=%s',
+				'%s/frontend/xmlSubscribe.aspx?list=%d&group=%d&email=%s&confirm=%d&csvFldNames=campo1&csvFldValues=%s',
 				$host,
 				$list,
 				$group,

@@ -23,7 +23,7 @@ class MUFWP_Post_Order {
 	/**
 	 * Defines all the variables
 	 *
-	 * @param  int $order_id the WC order id.
+	 * @param  int $order_id the WP order id.
 	 * @return void
 	 */
 	public function init( $order_id ) {
@@ -46,7 +46,7 @@ class MUFWP_Post_Order {
 	 */
 	private function list_subscription_test() {
 
-		$mufwp_check = sprintf( 'http://%s/frontend/Xmlchksubscriber.aspx?list=2&listGuid=189a127a-a4da-4b85-b4de-b8a082220edf&email=%s', $this->host, $this->mail );
+		$mufwp_check = sprintf( '%s/frontend/Xmlchksubscriber.aspx?list=2&listGuid=189a127a-a4da-4b85-b4de-b8a082220edf&email=%s', $this->host, $this->mail );
 
 		$result = wp_remote_post( $mufwp_check );
 
@@ -66,7 +66,7 @@ class MUFWP_Post_Order {
 	 */
 	public function order_completed() {
 
-		$order = new WC_Order( $this->order_id );
+		$order = new WP_Order( $this->order_id );
 
 		$items = $order->get_items();
 
@@ -75,11 +75,11 @@ class MUFWP_Post_Order {
 
 			if ( 2 === $this->list_subscription_test() ) {
 
-				$url = sprintf( 'http://%s/frontend/XmlUpdSubscriber.aspx?list=2&listGuid=189a127a-a4da-4b85-b4de-b8a082220edf&group=%d&email=%s', $this->host, 1307, $this->mail );
+				$url = sprintf( '%s/frontend/XmlUpdSubscriber.aspx?list=2&listGuid=189a127a-a4da-4b85-b4de-b8a082220edf&group=%d&email=%s', $this->host, 1307, $this->mail );
 
 			} else {
 
-				$url = sprintf( 'http://%s/frontend/xmlSubscribe.aspx?list=2&group=%d&email=%s&confirm=0&csvFldNames=campo1&csvFldValues=%s', $this->host, 1307, $this->mail, $this->username );
+				$url = sprintf( '%s/frontend/xmlSubscribe.aspx?list=2&group=%d&email=%s&confirm=0&csvFldNames=campo1&csvFldValues=%s', $this->host, 1307, $this->mail, $this->username );
 
 			}
 
@@ -94,11 +94,11 @@ class MUFWP_Post_Order {
 
 					if ( 2 === $this->list_subscription_test() ) {
 
-						$url = sprintf( 'http://%s/frontend/XmlUpdSubscriber.aspx?list=2&listGuid=189a127a-a4da-4b85-b4de-b8a082220edf&group=%d&email=', $this->host, 1307, $this->mail );
+						$url = sprintf( '%s/frontend/XmlUpdSubscriber.aspx?list=2&listGuid=189a127a-a4da-4b85-b4de-b8a082220edf&group=%d&email=', $this->host, 1307, $this->mail );
 
 					} else {
 
-						$url = sprintf( 'http://%s/frontend/xmlSubscribe.aspx?list=2&group=%d&email=%s&confirm=0&csvFldNames=campo1&csvFldValues=%s', $this->host, 1307, $this->mail, $this->username );
+						$url = sprintf( '%s/frontend/xmlSubscribe.aspx?list=2&group=%d&email=%s&confirm=0&csvFldNames=campo1&csvFldValues=%s', $this->host, 1307, $this->mail, $this->username );
 
 					}
 
@@ -111,11 +111,11 @@ class MUFWP_Post_Order {
 
 					if ( 2 === $this->list_subscription_test() ) {
 
-						$url = sprintf( 'http://%s/frontend/XmlUpdSubscriber.aspx?list=2&listGuid=189a127a-a4da-4b85-b4de-b8a082220edf&group=%s&email=%s', $this->host, $this->group, $this->mail );
+						$url = sprintf( '%s/frontend/XmlUpdSubscriber.aspx?list=2&listGuid=189a127a-a4da-4b85-b4de-b8a082220edf&group=%s&email=%s', $this->host, $this->group, $this->mail );
 
 					} else {
 
-						$url = sprintf( 'http://%s/frontend/xmlSubscribe.aspx?list=2&group=%d&email=%s&confirm=0&csvFldNames=campo1&csvFldValues=%s', $this->host, $this->group, $this->mail, $this->username );
+						$url = sprintf( '%s/frontend/xmlSubscribe.aspx?list=2&group=%d&email=%s&confirm=0&csvFldNames=campo1&csvFldValues=%s', $this->host, $this->group, $this->mail, $this->username );
 
 					}
 

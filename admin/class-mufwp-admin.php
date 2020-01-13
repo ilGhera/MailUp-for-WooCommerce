@@ -24,7 +24,7 @@ class MUFWP_Admin {
 	 */
 	public function register_admin_menu() {
 
-		add_menu_page( 'MailUp for WordPress', 'MailUp for WC', 'manage_options', 'mailup-for-wp', array( $this, 'mufwp_options' ), 'dashicons-email', 52 );
+		add_menu_page( __( 'MailUp for WordPress', 'mailup-for-wp' ), __( 'MailUp for WP', 'mailup-for-wp' ), 'manage_options', 'mailup-for-wp', array( $this, 'mufwp_options' ), 'dashicons-email', 52 );
 
 	}
 
