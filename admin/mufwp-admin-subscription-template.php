@@ -29,7 +29,7 @@ $privacy_page = get_option( 'mufwp-privacy-page' );
 						'objects'
 					);
 
-					if ( $post_types ) {
+					if ( is_array( $post_types ) ) {
 
 						foreach ( $post_types as $p_type ) {
 
