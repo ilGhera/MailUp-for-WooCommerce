@@ -1,0 +1,84 @@
+/**
+ * MailUp for WordPress - Admin CSS
+ *
+ * @author ilGhera
+ * @package mailup-for-wp/css
+ * @version 0.9.0
+ */
+
+#mufwp-admin-menu {
+	margin: 1rem 0 2rem;
+}
+
+.mufwp-field {
+	width: 260px;
+	margin-right: 0.5rem;
+}
+
+.mufwp-form, .mufwp-table {
+	margin-top: 2rem;
+}
+
+.one-of {
+	padding-bottom: 3rem;
+	border-bottom: 1px solid #ccc;
+}
+
+.mufwp-button {
+	margin-top: 1rem !important;
+}
+
+.mufwp-admin {
+	display: none;
+}
+
+span.mufwp-alert {
+	display: block;
+	margin: 1rem 0 0;
+	padding: 0.6rem;
+	background: #F2DEDE;
+	border-radius: 0.2rem;
+	color: #a94442;	
+}
+
+span.mufwp-alert a {
+	color: #a94442;	
+	text-decoration: underline;
+}
+
+.wrap-left {
+    float: left;
+    width: 70%;
+}
+
+.wrap-right {
+    float: left;
+    width: 30%;
+    text-align: center;
+    padding-top: 3rem;
+}
+
+form#mufwp-premium-key {
+	margin: 2rem 0;
+}
+
+form#mufwp-premium-key label {
+	font-size: 14px;
+	font-weight: bold;
+	display: block;
+	margin-bottom: 0.5rem;
+}
+
+
+form#mufwp-premium-key input[type="text"] {
+	width: 560px;
+}
+
+form#mufwp-premium-key input.button {
+	margin-top: 1rem;
+}
+
+.mufwp-post-field,
+.privacy-field {
+	display: none;
+}

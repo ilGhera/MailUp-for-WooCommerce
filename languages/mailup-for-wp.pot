@@ -1,0 +1,231 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MailUp for WC\n"
+"POT-Creation-Date: 2020-01-11 18:54+0100\n"
+"PO-Revision-Date: 2020-01-11 18:05+0100\n"
+"Last-Translator: \n"
+"Language-Team: ilGhera\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_attr_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/class-mufwp-admin.php:71
+msgid "It seems like you don't have permission to see this page"
+msgstr ""
+
+#: admin/class-mufwp-admin.php:80
+msgid "MailUp for WordPress - Premium"
+msgstr ""
+
+#: admin/class-mufwp-admin.php:95
+msgid "Premium Key"
+msgstr ""
+
+#: admin/class-mufwp-admin.php:96
+msgid "Add your Premium Key"
+msgstr ""
+
+#: admin/class-mufwp-admin.php:97
+msgid ""
+"Add your Premium Key and keep update your copy of MailUp for WordPress - "
+"Premium."
+msgstr ""
+
+#: admin/class-mufwp-admin.php:99
+msgid "Save settings"
+msgstr ""
+
+#: admin/class-mufwp-admin.php:105
+msgid "General"
+msgstr ""
+
+#: admin/class-mufwp-admin.php:106
+msgid "Site Registration"
+msgstr ""
+
+#: admin/class-mufwp-admin.php:107
+msgid "Subscription Button"
+msgstr ""
+
+#: admin/mufwp-admin-general-template.php:21
+msgid "Endpoint/ Console url"
+msgstr ""
+
+#: admin/mufwp-admin-general-template.php:25
+msgid "Do you need help? Click "
+msgstr ""
+
+#: admin/mufwp-admin-general-template.php:31
+#: includes/mufwp-meta-box-template.php:29
+msgid "MailUp List ID"
+msgstr ""
+
+#: admin/mufwp-admin-general-template.php:35
+#: includes/mufwp-meta-box-template.php:33
+msgid "Enter the ID of the list which you want to register your users."
+msgstr ""
+
+#: admin/mufwp-admin-general-template.php:41
+#: includes/mufwp-meta-box-template.php:38
+msgid "MailUp Group ID"
+msgstr ""
+
+#: admin/mufwp-admin-general-template.php:45
+msgid ""
+"If you want to add users to a specific MailUp group, enter here the correct "
+"ID."
+msgstr ""
+
+#: admin/mufwp-admin-general-template.php:56
+#: admin/mufwp-admin-registration-template.php:38
+#: admin/mufwp-admin-subscription-template.php:93
+msgid "Save changes"
+msgstr ""
+
+#: admin/mufwp-admin-registration-template.php:18
+msgid "Registration form"
+msgstr ""
+
+#: admin/mufwp-admin-registration-template.php:21
+msgid "Newsletter option in the registration form."
+msgstr ""
+
+#: admin/mufwp-admin-registration-template.php:25
+msgid "Confirm"
+msgstr ""
+
+#: admin/mufwp-admin-registration-template.php:28
+msgid "Send MailUp register confirmation"
+msgstr ""
+
+#: admin/mufwp-admin-subscription-template.php:21
+msgid "Post types"
+msgstr ""
+
+#: admin/mufwp-admin-subscription-template.php:45
+msgid "Guest form"
+msgstr ""
+
+#: admin/mufwp-admin-subscription-template.php:48
+msgid "Login/ Register"
+msgstr ""
+
+#: admin/mufwp-admin-subscription-template.php:49
+msgid "Email only"
+msgstr ""
+
+#: admin/mufwp-admin-subscription-template.php:51
+msgid ""
+"Ask to access to not logged-in users or just the email for newsletter "
+"subscription."
+msgstr ""
+
+#: admin/mufwp-admin-subscription-template.php:55
+msgid "Button position"
+msgstr ""
+
+#: admin/mufwp-admin-subscription-template.php:58
+msgid "Before the content"
+msgstr ""
+
+#: admin/mufwp-admin-subscription-template.php:59
+msgid "After the content"
+msgstr ""
+
+#: admin/mufwp-admin-subscription-template.php:60
+msgid "Custom"
+msgstr ""
+
+#: admin/mufwp-admin-subscription-template.php:62
+msgid ""
+"Custom position requires use of shortcode [mailup-subscribe] provided by the "
+"plugin."
+msgstr ""
+
+#: admin/mufwp-admin-subscription-template.php:66
+msgid "Privacy"
+msgstr ""
+
+#: admin/mufwp-admin-subscription-template.php:69
+#: includes/mufwp-meta-box-template.php:71
+msgid "Select a page"
+msgstr ""
+
+#: admin/mufwp-admin-subscription-template.php:83
+msgid "Select the page with the privacy conditions"
+msgstr ""
+
+#: includes/class-mufwp-button.php:245
+msgid "Sorry but something went wrong, please try again later."
+msgstr ""
+
+#: includes/class-mufwp-button.php:357
+msgid "Something did't work, please try again later."
+msgstr ""
+
+#: includes/class-mufwp-edit-post.php:37
+msgid "MailUp for WordPress"
+msgstr ""
+
+#: includes/mufwp-meta-box-template.php:22
+msgid "Activate"
+msgstr ""
+
+#: includes/mufwp-meta-box-template.php:25
+msgid "Add a MailUp subscription button."
+msgstr ""
+
+#: includes/mufwp-meta-box-template.php:42
+msgid "Add users to a specific MailUp group."
+msgstr ""
+
+#: includes/mufwp-meta-box-template.php:47
+msgid "Description text"
+msgstr ""
+
+#: includes/mufwp-meta-box-template.php:49
+msgid "Click on the button below to receive the first chapter for free!"
+msgstr ""
+
+#: includes/mufwp-meta-box-template.php:50
+msgid "Add a description text before the button."
+msgstr ""
+
+#: includes/mufwp-meta-box-template.php:54
+msgid "Button text *"
+msgstr ""
+
+#: includes/mufwp-meta-box-template.php:56
+msgid "Subscribe"
+msgstr ""
+
+#: includes/mufwp-meta-box-template.php:57
+msgid "Add the button text."
+msgstr ""
+
+#: includes/mufwp-meta-box-template.php:61
+msgid "Response text *"
+msgstr ""
+
+#: includes/mufwp-meta-box-template.php:63
+msgid "Thanks for subscribing"
+msgstr ""
+
+#: includes/mufwp-meta-box-template.php:64
+msgid "Add the button response text."
+msgstr ""
+
+#: includes/mufwp-meta-box-template.php:68
+msgid "Redirect"
+msgstr ""
+
+#: includes/mufwp-meta-box-template.php:85
+msgid "Redirect the user to a specific page."
+msgstr ""
