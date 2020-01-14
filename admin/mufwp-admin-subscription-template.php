@@ -33,7 +33,7 @@ $privacy_page = get_option( 'mufwp-privacy-page' );
 
 						foreach ( $post_types as $p_type ) {
 
-							echo '<option value="' . esc_attr( $p_type->name ) . '"' . ( in_array( $p_type->name, $types ) ? ' selected="selected"' : '' ) . '>' . esc_html( $p_type->label ) . '</option>';
+							echo '<option value="' . esc_attr( $p_type->name ) . '"' . ( is_array( $types ) && in_array( $p_type->name, $types ) ? ' selected="selected"' : '' ) . '>' . esc_html( $p_type->label ) . '</option>';
 
 						}
 
