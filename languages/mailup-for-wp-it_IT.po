@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MailUp for WP\n"
-"POT-Creation-Date: 2020-01-23 15:28+0100\n"
-"PO-Revision-Date: 2020-01-23 15:30+0100\n"
+"POT-Creation-Date: 2020-01-23 17:15+0100\n"
+"PO-Revision-Date: 2020-01-23 17:16+0100\n"
 "Last-Translator: \n"
 "Language-Team: ilGhera\n"
 "Language: it_IT\n"
@@ -184,7 +184,7 @@ msgstr "Il tuo nome"
 msgid "Your email"
 msgstr "La tua mail"
 
-#: includes/class-mufwp-button.php:106
+#: includes/class-mufwp-button.php:105
 #, php-format
 msgid ""
 "I consent to the processing of personal data according to the new general "
@@ -193,27 +193,31 @@ msgid ""
 "Policy</a> of the site."
 msgstr ""
 "Acconsento al trattamento dei dati personali secondo il nuovo regolamento "
-"generale della protezione dei dati dell’Unione Europea (GDPR) e le "
+"generale della protezione dei dati dell’Unione Europea (GDPR) e delle "
 "successive modifiche e secondo la <a href=\"%s\" target=\"_blank\">Privacy "
 "Policy</a> presente nel sito."
 
-#: includes/class-mufwp-button.php:118 includes/mufwp-meta-box-template.php:56
+#: includes/class-mufwp-button.php:108
+msgid " Accept"
+msgstr "Accetto"
+
+#: includes/class-mufwp-button.php:121 includes/mufwp-meta-box-template.php:56
 msgid "Subscribe"
 msgstr "Iscriviti"
 
-#: includes/class-mufwp-button.php:175
+#: includes/class-mufwp-button.php:178
 msgid "Login"
 msgstr "Accedi"
 
-#: includes/class-mufwp-button.php:176
+#: includes/class-mufwp-button.php:179
 msgid "Register"
 msgstr "Registrati"
 
-#: includes/class-mufwp-button.php:246
+#: includes/class-mufwp-button.php:249
 msgid "Sorry but something went wrong, please try again later."
 msgstr "Qualcosa non ha funzionato, si prega di riprovare più tardi."
 
-#: includes/class-mufwp-button.php:360
+#: includes/class-mufwp-button.php:363
 msgid "Something did't work, please try again later."
 msgstr "Qualcosa non ha funzionato, si prega di riprovare più tardi."
 
