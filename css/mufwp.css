@@ -88,3 +88,19 @@
     border-radius: 3px !important;
     cursor: pointer;
 }
+
+.form-group.privacy {
+    line-height: 18px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.form-group.privacy a {
+    text-decoration: underline;
+}
+
+.form-group.privacy p {
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: bold;
+}
