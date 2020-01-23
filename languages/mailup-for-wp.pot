@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MailUp for WP\n"
-"POT-Creation-Date: 2020-01-23 15:28+0100\n"
+"POT-Creation-Date: 2020-01-23 17:19+0100\n"
 "PO-Revision-Date: 2020-01-11 18:05+0100\n"
 "Last-Translator: \n"
 "Language-Team: ilGhera\n"
@@ -170,7 +170,7 @@ msgstr ""
 msgid "Select the page with the privacy conditions"
 msgstr ""
 
-#: includes/class-mufwp-button.php:106
+#: includes/class-mufwp-button.php:105
 #, php-format
 msgid ""
 "I consent to the processing of personal data according to the new general "
@@ -179,11 +179,15 @@ msgid ""
 "Policy</a> of the site."
 msgstr ""
 
-#: includes/class-mufwp-button.php:246
+#: includes/class-mufwp-button.php:108
+msgid " Accept"
+msgstr ""
+
+#: includes/class-mufwp-button.php:249
 msgid "Sorry but something went wrong, please try again later."
 msgstr ""
 
-#: includes/class-mufwp-button.php:360
+#: includes/class-mufwp-button.php:363
 msgid "Something did't work, please try again later."
 msgstr ""
 
