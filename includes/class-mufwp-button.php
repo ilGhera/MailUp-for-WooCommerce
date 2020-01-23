@@ -102,7 +102,8 @@ class MUFWP_Button {
 			if ( $url ) {
 
 				echo '<div class="form-group">';
-					echo '<input type="checkbox" name="privacy" checked value="1" required>Accetto le condizioni sulla <a href="' . esc_url( get_permalink( $url ) ) . '" target="_blank">' . esc_html__( 'Privacy', 'mailup-for-wp' ) . '</a>';
+					echo '<input type="checkbox" name="privacy" checked value="1" required>';
+					printf( __( 'I consent to the processing of personal data according to the new general data protection regulation of the European Union (GDPR) and subsequent amendments and according to the <a href="%s" target="_blank">Privacy Policy</a> of the site.', 'mailup-for-wp' ), $url );
 				echo '</div>';
 
 			}
