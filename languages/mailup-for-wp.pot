@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MailUp for WP\n"
-"POT-Creation-Date: 2020-01-13 15:22+0100\n"
+"POT-Creation-Date: 2020-01-23 15:28+0100\n"
 "PO-Revision-Date: 2020-01-11 18:05+0100\n"
 "Last-Translator: \n"
 "Language-Team: ilGhera\n"
@@ -15,6 +15,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_attr_e\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: admin/class-mufwp-admin.php:27 includes/class-mufwp-edit-post.php:37
+msgid "MailUp for WordPress"
+msgstr ""
 
 #: admin/class-mufwp-admin.php:27
 msgid "MailUp for WP"
@@ -166,16 +170,21 @@ msgstr ""
 msgid "Select the page with the privacy conditions"
 msgstr ""
 
-#: includes/class-mufwp-button.php:245
+#: includes/class-mufwp-button.php:106
+#, php-format
+msgid ""
+"I consent to the processing of personal data according to the new general "
+"data protection regulation of the European Union (GDPR) and subsequent "
+"amendments and according to the <a href=\"%s\" target=\"_blank\">Privacy "
+"Policy</a> of the site."
+msgstr ""
+
+#: includes/class-mufwp-button.php:246
 msgid "Sorry but something went wrong, please try again later."
 msgstr ""
 
-#: includes/class-mufwp-button.php:357
+#: includes/class-mufwp-button.php:360
 msgid "Something did't work, please try again later."
-msgstr ""
-
-#: includes/class-mufwp-edit-post.php:37
-msgid "MailUp for WordPress"
 msgstr ""
 
 #: includes/mufwp-meta-box-template.php:22

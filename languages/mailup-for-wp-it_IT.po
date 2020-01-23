@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MailUp for WP\n"
-"POT-Creation-Date: 2020-01-13 15:22+0100\n"
-"PO-Revision-Date: 2020-01-13 15:24+0100\n"
+"POT-Creation-Date: 2020-01-23 15:28+0100\n"
+"PO-Revision-Date: 2020-01-23 15:30+0100\n"
 "Last-Translator: \n"
 "Language-Team: ilGhera\n"
 "Language: it_IT\n"
@@ -14,6 +14,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_attr_e;esc_html__\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: admin/class-mufwp-admin.php:27 includes/class-mufwp-edit-post.php:37
+msgid "MailUp for WordPress"
+msgstr "MailUp per WordPress"
 
 #: admin/class-mufwp-admin.php:27
 msgid "MailUp for WP"
@@ -156,7 +160,6 @@ msgstr ""
 "L'opzione Custom richiede l'utilizzo dello shortcode [mailup-subscribe]."
 
 #: admin/mufwp-admin-subscription-template.php:66
-#: includes/class-mufwp-button.php:105
 msgid "Privacy"
 msgstr ""
 
@@ -171,7 +174,7 @@ msgstr "Seleziona la pagina con le condizioni sulla privacy"
 
 #: includes/class-mufwp-auto-subscription.php:32
 msgid "Newsletter subscriptions"
-msgstr ""
+msgstr "Iscrizione newsletter"
 
 #: includes/class-mufwp-button.php:92
 msgid "Your name"
@@ -181,29 +184,38 @@ msgstr "Il tuo nome"
 msgid "Your email"
 msgstr "La tua mail"
 
-#: includes/class-mufwp-button.php:117 includes/mufwp-meta-box-template.php:56
+#: includes/class-mufwp-button.php:106
+#, php-format
+msgid ""
+"I consent to the processing of personal data according to the new general "
+"data protection regulation of the European Union (GDPR) and subsequent "
+"amendments and according to the <a href=\"%s\" target=\"_blank\">Privacy "
+"Policy</a> of the site."
+msgstr ""
+"Acconsento al trattamento dei dati personali secondo il nuovo regolamento "
+"generale della protezione dei dati dell’Unione Europea (GDPR) e le "
+"successive modifiche e secondo la <a href=\"%s\" target=\"_blank\">Privacy "
+"Policy</a> presente nel sito."
+
+#: includes/class-mufwp-button.php:118 includes/mufwp-meta-box-template.php:56
 msgid "Subscribe"
 msgstr "Iscriviti"
 
-#: includes/class-mufwp-button.php:174
+#: includes/class-mufwp-button.php:175
 msgid "Login"
 msgstr "Accedi"
 
-#: includes/class-mufwp-button.php:175
+#: includes/class-mufwp-button.php:176
 msgid "Register"
 msgstr "Registrati"
 
-#: includes/class-mufwp-button.php:245
+#: includes/class-mufwp-button.php:246
 msgid "Sorry but something went wrong, please try again later."
 msgstr "Qualcosa non ha funzionato, si prega di riprovare più tardi."
 
-#: includes/class-mufwp-button.php:357
+#: includes/class-mufwp-button.php:360
 msgid "Something did't work, please try again later."
 msgstr "Qualcosa non ha funzionato, si prega di riprovare più tardi."
-
-#: includes/class-mufwp-edit-post.php:37
-msgid "MailUp for WordPress"
-msgstr "MailUp per WordPress"
 
 #: includes/mufwp-meta-box-template.php:22
 msgid "Activate"
