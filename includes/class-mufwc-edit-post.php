@@ -32,11 +32,15 @@ class MUFWC_Edit_Post {
 		$post_types = get_option( 'mufwc-post-types' );
 		$admin_page = get_current_screen();
 
-		if ( isset( $admin_page->id ) && in_array( $admin_page->id, $post_types ) ) {
+        if ( is_array( $post_types ) ) {
 
-			add_meta_box( 'mufwc-box', __( 'MailUp for WordPress', 'mailup-for-wc' ), array( $this, 'mufwc_add_meta_box_callback' ) );
+            if ( isset( $admin_page->id ) && in_array( $admin_page->id, $post_types ) ) {
 
-		}
+                add_meta_box( 'mufwc-box', __( 'MailUp for WordPress', 'mailup-for-wc' ), array( $this, 'mufwc_add_meta_box_callback' ) );
+
+            }
+
+        }
 
 	}
 
