@@ -7,10 +7,10 @@
  * @since 0.9.0
  */
 
-$host         = get_option( 'mufwc-host' );
-$list         = get_option( 'mufwc-list' );
-$group        = get_option( 'mufwc-group' );
-$confirm      = get_option( 'mufwc-confirm' );
+$host    = get_option( 'mufwc-host' );
+$list    = get_option( 'mufwc-list' );
+$group   = get_option( 'mufwc-group' );
+$confirm = get_option( 'mufwc-confirm' );
 ?>
 
 <form name="mufwc-general-options" id="mufwc-general-options" method="post" action="">

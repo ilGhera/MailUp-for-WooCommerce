@@ -90,8 +90,8 @@ var mufwcController = function() {
 
 				$(this).addClass('active');
 				$('.mufwc-login').removeClass('active');
-				$('.mufwc-access .wordpress .col-1').hide();
-				$('.mufwc-access .wordpress .col-2').show();
+				$('.mufwc-access .woocommerce .col-1').hide();
+				$('.mufwc-access .woocommerce .col-2').show();
 
 			})
 
@@ -99,8 +99,8 @@ var mufwcController = function() {
 
 				$(this).addClass('active');
 				$('.mufwc-register').removeClass('active');
-				$('.mufwc-access .wordpress .col-2').hide();
-				$('.mufwc-access .wordpress .col-1').show();      
+				$('.mufwc-access .woocommerce .col-2').hide();
+				$('.mufwc-access .woocommerce .col-1').show();      
 
 			})
 

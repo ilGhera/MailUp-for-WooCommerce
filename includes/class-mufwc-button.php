@@ -180,7 +180,7 @@ class MUFWC_Button {
 							echo '<div class="clear"></div>';
 						echo '</div>';
 
-						echo do_shortcode( '[wordpress_my_account]' );
+						echo do_shortcode( '[woocommerce_my_account]' );
 
 						echo '<div class="clear"></div>';
 

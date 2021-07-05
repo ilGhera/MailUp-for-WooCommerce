@@ -43,12 +43,12 @@ class MUFWC_Admin {
 
 			/*css*/
 			wp_enqueue_style( 'mufwc-admin-style', MUFWC_URI . 'css/mufwc-admin.css' );
-			wp_enqueue_style( 'chosen-style', MUFWC_URI . '/vendor/harvesthq/chosen/chosen.min.css' );
+			wp_enqueue_style( 'chosen-style', MUFWC_URI . 'vendor/harvesthq/chosen/chosen.min.css' );
 			wp_enqueue_style( 'tzcheckbox-style', MUFWC_URI . 'js/tzCheckbox/jquery.tzCheckbox/jquery.tzCheckbox.css' );
 
 			/*js*/
 			wp_enqueue_script( 'mufwc-admin-js', MUFWC_URI . 'js/mufwc-admin.js', array( 'jquery' ), '1.0', true );
-			wp_enqueue_script( 'chosen', MUFWC_URI . '/vendor/harvesthq/chosen/chosen.jquery.min.js' );
+			wp_enqueue_script( 'chosen', MUFWC_URI . 'vendor/harvesthq/chosen/chosen.jquery.min.js' );
 			wp_enqueue_script( 'tzcheckbox', MUFWC_URI . 'js/tzCheckbox/jquery.tzCheckbox/jquery.tzCheckbox.js', array( 'jquery' ) );
 
 			/*Nonce*/
@@ -142,9 +142,9 @@ class MUFWC_Admin {
 
 		if ( isset( $_POST['mufwc-settings-general-nonce'] ) && wp_verify_nonce( wp_unslash( $_POST['mufwc-settings-general-nonce'] ), 'mufwc-settings-general' ) ) {
 
-			$host    = isset( $_POST['mufwc-host'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-host'] ) ) : '';
-			$list    = isset( $_POST['mufwc-list'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-list'] ) ) : '';
-			$group   = isset( $_POST['mufwc-group'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-group'] ) ) : '';
+			$host  = isset( $_POST['mufwc-host'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-host'] ) ) : '';
+			$list  = isset( $_POST['mufwc-list'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-list'] ) ) : '';
+			$group = isset( $_POST['mufwc-group'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-group'] ) ) : '';
 
 			update_option( 'mufwc-host', $host );
 			update_option( 'mufwc-list', $list );
@@ -155,7 +155,7 @@ class MUFWC_Admin {
 		if ( isset( $_POST['mufwc-settings-registration-nonce'] ) && wp_verify_nonce( wp_unslash( $_POST['mufwc-settings-registration-nonce'] ), 'mufwc-settings-registration' ) ) {
 
 			$newsletter = isset( $_POST['mufwc-newsletter'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-newsletter'] ) ) : '';
-			$confirm = isset( $_POST['mufwc-confirm'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-confirm'] ) ) : '';
+			$confirm    = isset( $_POST['mufwc-confirm'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-confirm'] ) ) : '';
 
 			update_option( 'mufwc-newsletter', $newsletter );
 			update_option( 'mufwc-confirm', $confirm );
@@ -180,3 +180,4 @@ class MUFWC_Admin {
 
 }
 new MUFWC_Admin();
+
