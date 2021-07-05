@@ -3,72 +3,72 @@
  * Meta box
  *
  * @author ilGhera
- * @package mailup-for-wp/includes
+ * @package mailup-for-wc/includes
  * @since 0.9.0
  */
 
-$activate      = get_post_meta( get_the_ID(), 'mufwp-post-activate', true );
-$list          = get_post_meta( get_the_ID(), 'mufwp-post-list', true );
-$group         = get_post_meta( get_the_ID(), 'mufwp-post-group', true );
-$before_text   = get_post_meta( get_the_ID(), 'mufwp-before-text', true );
-$button_text   = get_post_meta( get_the_ID(), 'mufwp-button-text', true );
-$response_text = get_post_meta( get_the_ID(), 'mufwp-response-text', true );
-$redirect      = get_post_meta( get_the_ID(), 'mufwp-redirect', true );
+$activate      = get_post_meta( get_the_ID(), 'mufwc-post-activate', true );
+$list          = get_post_meta( get_the_ID(), 'mufwc-post-list', true );
+$group         = get_post_meta( get_the_ID(), 'mufwc-post-group', true );
+$before_text   = get_post_meta( get_the_ID(), 'mufwc-before-text', true );
+$button_text   = get_post_meta( get_the_ID(), 'mufwc-button-text', true );
+$response_text = get_post_meta( get_the_ID(), 'mufwc-response-text', true );
+$redirect      = get_post_meta( get_the_ID(), 'mufwc-redirect', true );
 ?>
 
 <div class="wrap">
 	<table class="form-table">
-		<tr class="mufwp-post-activate">
-			<th scope="row"><?php esc_html_e( 'Activate', 'mailup-for-wp' ); ?></th>
+		<tr class="mufwc-post-activate">
+			<th scope="row"><?php esc_html_e( 'Activate', 'mailup-for-wc' ); ?></th>
 			<td>
-				<input type="checkbox" name="mufwp-post-activate" id="mufwp-post-activate" class="mufwp" value="1"<?php echo 1 == $activate ? ' checked="checked"' : ''; ?>>
-				<p class="description"><?php esc_html_e( 'Add a MailUp subscription button.', 'mailup-for-wp' ); ?></p>
+				<input type="checkbox" name="mufwc-post-activate" id="mufwc-post-activate" class="mufwc" value="1"<?php echo 1 == $activate ? ' checked="checked"' : ''; ?>>
+				<p class="description"><?php esc_html_e( 'Add a MailUp subscription button.', 'mailup-for-wc' ); ?></p>
 			</td>
 		</tr>
-		<tr class="mufwp-post-field">	
-			<th scope="row"><?php esc_html_e( 'MailUp List ID', 'mailup-for-wp' ); ?></th>
+		<tr class="mufwc-post-field">	
+			<th scope="row"><?php esc_html_e( 'MailUp List ID', 'mailup-for-wc' ); ?></th>
 			<td>
-				<input type="number" name="mufwp-post-list" id="mufwp-post-list" class="regular-text" value="<?php echo esc_attr( $list ); ?>">
+				<input type="number" name="mufwc-post-list" id="mufwc-post-list" class="regular-text" value="<?php echo esc_attr( $list ); ?>">
 				<p class="description">
-					<?php esc_html_e( 'Enter the ID of the list which you want to register your users.', 'mailup-for-wp' ); ?>
+					<?php esc_html_e( 'Enter the ID of the list which you want to register your users.', 'mailup-for-wc' ); ?>
 				</p>
 			</td>
 		</tr>
-		<tr class="mufwp-post-field">	
-			<th scope="row"><?php esc_html_e( 'MailUp Group ID', 'mailup-for-wp' ); ?></th>
+		<tr class="mufwc-post-field">	
+			<th scope="row"><?php esc_html_e( 'MailUp Group ID', 'mailup-for-wc' ); ?></th>
 			<td>
-				<input type="number" name="mufwp-post-group" id="mufwp-post-group" class="regular-text" value="<?php echo esc_attr( $group ); ?>">
+				<input type="number" name="mufwc-post-group" id="mufwc-post-group" class="regular-text" value="<?php echo esc_attr( $group ); ?>">
 				<p class="description">
-					<?php esc_html_e( 'Add users to a specific MailUp group.', 'mailup-for-wp' ); ?>
+					<?php esc_html_e( 'Add users to a specific MailUp group.', 'mailup-for-wc' ); ?>
 				</p>
 			</td>
 		</tr>
-		<tr class="mufwp-post-field">
-			<th scope="row"><?php esc_html_e( 'Description text', 'mailup-for-wp' ); ?></th>
+		<tr class="mufwc-post-field">
+			<th scope="row"><?php esc_html_e( 'Description text', 'mailup-for-wc' ); ?></th>
 			<td>
-				<textarea name="mufwp-before-text" class="regular-text" placeholder="<?php esc_html_e( 'Click on the button below to receive the first chapter for free!', 'mailup-for-wp' ); ?>"><?php echo esc_attr( $before_text ); ?></textarea>
-				<p class="desctiption"><?php esc_html_e( 'Add a description text before the button.', 'mailup-for-wp' ); ?></p>
+				<textarea name="mufwc-before-text" class="regular-text" placeholder="<?php esc_html_e( 'Click on the button below to receive the first chapter for free!', 'mailup-for-wc' ); ?>"><?php echo esc_attr( $before_text ); ?></textarea>
+				<p class="desctiption"><?php esc_html_e( 'Add a description text before the button.', 'mailup-for-wc' ); ?></p>
 			</td>
 		</tr>
-		<tr class="mufwp-post-field required">
-			<th scope="row"><?php esc_html_e( 'Button text *', 'mailup-for-wp' ); ?></th>
+		<tr class="mufwc-post-field required">
+			<th scope="row"><?php esc_html_e( 'Button text *', 'mailup-for-wc' ); ?></th>
 			<td>
-				<textarea name="mufwp-button-text" class="regular-text" placeholder="<?php esc_html_e( 'Subscribe', 'mailup-for-wp' ); ?>" required><?php echo esc_attr( $button_text ); ?></textarea>
-				<p class="desctiption"><?php esc_html_e( 'Add the button text.', 'mailup-for-wp' ); ?></p>
+				<textarea name="mufwc-button-text" class="regular-text" placeholder="<?php esc_html_e( 'Subscribe', 'mailup-for-wc' ); ?>" required><?php echo esc_attr( $button_text ); ?></textarea>
+				<p class="desctiption"><?php esc_html_e( 'Add the button text.', 'mailup-for-wc' ); ?></p>
 			</td>
 		</tr>
-		<tr class="mufwp-post-field required">
-			<th scope="row"><?php esc_html_e( 'Response text *', 'mailup-for-wp' ); ?></th>
+		<tr class="mufwc-post-field required">
+			<th scope="row"><?php esc_html_e( 'Response text *', 'mailup-for-wc' ); ?></th>
 			<td>
-				<textarea name="mufwp-response-text" class="regular-text" placeholder="<?php esc_html_e( 'Thanks for subscribing', 'mailup-for-wp' ); ?>" required><?php echo esc_attr( $response_text ); ?></textarea>
-				<p class="desctiption"><?php esc_html_e( 'Add the button response text.', 'mailup-for-wp' ); ?></p>
+				<textarea name="mufwc-response-text" class="regular-text" placeholder="<?php esc_html_e( 'Thanks for subscribing', 'mailup-for-wc' ); ?>" required><?php echo esc_attr( $response_text ); ?></textarea>
+				<p class="desctiption"><?php esc_html_e( 'Add the button response text.', 'mailup-for-wc' ); ?></p>
 			</td>
 		</tr>
-		<tr class="mufwp-post-field">
-			<th scope="row"><?php esc_html_e( 'Redirect', 'mailup-for-wp' ); ?></th>
+		<tr class="mufwc-post-field">
+			<th scope="row"><?php esc_html_e( 'Redirect', 'mailup-for-wc' ); ?></th>
 			<td>
-				<select name="mufwp-redirect" class="mufwp-select">
-					<option><?php esc_html_e( 'Select a page', 'mailup-for-wp' ); ?></option>
+				<select name="mufwc-redirect" class="mufwc-select">
+					<option><?php esc_html_e( 'Select a page', 'mailup-for-wc' ); ?></option>
 					<?php
 					$red_pages = get_pages();
 
@@ -82,9 +82,9 @@ $redirect      = get_post_meta( get_the_ID(), 'mufwp-redirect', true );
 					}
 					?>
 				</select>
-				<p class="desctiption"><?php esc_html_e( 'Redirect the user to a specific page.', 'mailup-for-wp' ); ?></p>
+				<p class="desctiption"><?php esc_html_e( 'Redirect the user to a specific page.', 'mailup-for-wc' ); ?></p>
 			</td>
 		</tr>
-		<?php wp_nonce_field( 'mufwp-post-metas', 'mufwp-post-metas-nonce' ); ?>
+		<?php wp_nonce_field( 'mufwc-post-metas', 'mufwc-post-metas-nonce' ); ?>
 	</table>
 </div>
