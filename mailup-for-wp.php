@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name: MailUp for WordPress - Premium
- * Plugin URI: https://www.ilghera.com/product/mailup-for-wordpress-premium
+ * Plugin Name: MailUp for WooCommerce - Premium
+ * Plugin URI: https://www.ilghera.com/product/mailup-for-woocommerce-premium
  * Description: xxxxxxx
  * Author: ilGhera
  * Version: 0.9.0
@@ -9,7 +9,7 @@
  * Requires at least: 4.0
  * Tested up to: 5
  * WP tested up to: 3
- * Text Domain: mailup-for-wp
+ * Text Domain: mailup-for-wc
  */
 
 
@@ -18,7 +18,7 @@
  *
  * @return void
  */
-function load_mailup_for_wp() {
+function load_mailup_for_wc() {
 
 	/*Function check */
 	if ( ! function_exists( 'is_plugin_active' ) ) {
@@ -27,22 +27,22 @@ function load_mailup_for_wp() {
 
 
 	/*Constants declaration*/
-	define( 'MUFWP_DIR', plugin_dir_path( __FILE__ ) );
-	define( 'MUFWP_URI', plugin_dir_url( __FILE__ ) );
-	define( 'MUFWP_INCLUDES', MUFWP_DIR . 'includes/' );
-	define( 'MUFWP_ADMIN', MUFWP_DIR . 'admin/' );
-	// define( 'MUFWP_SETTINGS', admin_url( 'admin.php?page=mailup-for-wp' ) );
+	define( 'MUFWC_DIR', plugin_dir_path( __FILE__ ) );
+	define( 'MUFWC_URI', plugin_dir_url( __FILE__ ) );
+	define( 'MUFWC_INCLUDES', MUFWC_DIR . 'includes/' );
+	define( 'MUFWC_ADMIN', MUFWC_DIR . 'admin/' );
+	// define( 'MUFWC_SETTINGS', admin_url( 'admin.php?page=mailup-for-wc' ) );
 
 	/*Internationalization*/
 	$locale = apply_filters( 'plugin_locale', get_locale(), 'wp-restaurant-booking' );
-	load_plugin_textdomain( 'mailup-for-wp', false, basename( dirname( __FILE__ ) ) . '/languages' );
-	load_textdomain( 'mailup-for-wp', trailingslashit( WP_LANG_DIR ) . basename( MUFWP_DIR ) . '/mailup-for-wp-' . $locale . '.mo' );
+	load_plugin_textdomain( 'mailup-for-wc', false, basename( dirname( __FILE__ ) ) . '/languages' );
+	load_textdomain( 'mailup-for-wc', trailingslashit( WP_LANG_DIR ) . basename( MUFWC_DIR ) . '/mailup-for-wc-' . $locale . '.mo' );
 
 	/*Files required*/
-	require( MUFWP_ADMIN . 'class-mufwp-admin.php' );
-	require( MUFWP_INCLUDES . 'class-mufwp-auto-subscription.php' );
-	require( MUFWP_INCLUDES . 'class-mufwp-button.php' );
-	require( MUFWP_INCLUDES . 'class-mufwp-edit-post.php' );
+	require( MUFWC_ADMIN . 'class-mufwc-admin.php' );
+	require( MUFWC_INCLUDES . 'class-mufwc-auto-subscription.php' );
+	require( MUFWC_INCLUDES . 'class-mufwc-button.php' );
+	require( MUFWC_INCLUDES . 'class-mufwc-edit-post.php' );
 
 }
-add_action( 'plugins_loaded', 'load_mailup_for_wp', 10 );
+add_action( 'plugins_loaded', 'load_mailup_for_wc', 10 );
