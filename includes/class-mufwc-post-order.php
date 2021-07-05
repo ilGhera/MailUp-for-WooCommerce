@@ -3,10 +3,10 @@
  * Add customer to the MailUp base on purchased products
  *
  * @author ilGhera
- * @package mailup-for-wp/includes
+ * @package mailup-for-wc/includes
  * @since 0.9.0
  */
-class MUFWP_Post_Order {
+class MUFWC_Post_Order {
 
 	// global $wordpress;.
 	// $this->group;.
@@ -23,7 +23,7 @@ class MUFWP_Post_Order {
 	/**
 	 * Defines all the variables
 	 *
-	 * @param  int $order_id the WP order id.
+	 * @param  int $order_id the WC order id.
 	 * @return void
 	 */
 	public function init( $order_id ) {
@@ -33,8 +33,8 @@ class MUFWP_Post_Order {
 		$this->user_info   = get_userdata( $customer_id );
 		$this->username    = $user_info->user_login;
 		$this->mail        = $user_info->user_email;
-		$this->host        = get_option( 'mufwp-host' );
-		$this->confirm     = get_option( 'mufwp-confirm' );
+		$this->host        = get_option( 'mufwc-host' );
+		$this->confirm     = get_option( 'mufwc-confirm' );
 		$this->order_completed();
 	}
 
@@ -46,9 +46,9 @@ class MUFWP_Post_Order {
 	 */
 	private function list_subscription_test() {
 
-		$mufwp_check = sprintf( '%s/frontend/Xmlchksubscriber.aspx?list=2&listGuid=189a127a-a4da-4b85-b4de-b8a082220edf&email=%s', $this->host, $this->mail );
+		$mufwc_check = sprintf( '%s/frontend/Xmlchksubscriber.aspx?list=2&listGuid=189a127a-a4da-4b85-b4de-b8a082220edf&email=%s', $this->host, $this->mail );
 
-		$result = wp_remote_post( $mufwp_check );
+		$result = wp_remote_post( $mufwc_check );
 
 		if ( isset( $result['body'] ) ) {
 
@@ -66,7 +66,7 @@ class MUFWP_Post_Order {
 	 */
 	public function order_completed() {
 
-		$order = new WP_Order( $this->order_id );
+		$order = new WC_Order( $this->order_id );
 
 		$items = $order->get_items();
 

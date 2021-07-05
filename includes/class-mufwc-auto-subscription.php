@@ -1,9 +1,9 @@
 <?php
 /**
- * Auto subscription to MailUp on WP registration
+ * Auto subscription to MailUp on WC registration
  */
 
-class MUFWP_Auto_Subscription {
+class MUFWC_Auto_Subscription {
 
 
 	/**
@@ -11,7 +11,7 @@ class MUFWP_Auto_Subscription {
 	 */
 	public function __construct() {
 
-		$this->user_newsletter = get_option( 'mufwp-newsletter' );
+		$this->user_newsletter = get_option( 'mufwc-newsletter' );
 
 		add_action( 'register_form', array( $this, 'add_check_field' ) );
 		add_action( 'user_register', array( $this, 'mailup_registration' ) );
@@ -20,7 +20,7 @@ class MUFWP_Auto_Subscription {
 
 
 	/**
-	 * Add the newsletter check field to the WP registration form
+	 * Add the newsletter check field to the WC registration form
 	 */
 	public function add_check_field() {
 
@@ -29,7 +29,7 @@ class MUFWP_Auto_Subscription {
 			echo '<p style="margin-bottom:10px;">';
 				echo '<label style="text-align: left;">';
 					echo '<input style="margin-top: 0;" type="checkbox" name="user-newsletter" id="user-newsletter" value="1" checked="checked"/>';
-					echo esc_html__( 'Newsletter subscriptions', 'mailup-for-wp' );
+					echo esc_html__( 'Newsletter subscriptions', 'mailup-for-wc' );
 				echo '</label>';
 			echo '</p>';
 
@@ -49,10 +49,10 @@ class MUFWP_Auto_Subscription {
 		$user_info = get_userdata( $user_id );
 		$username  = $user_info->user_login;
 		$mail      = $user_info->user_email;
-		$host      = get_option( 'mufwp-host' );
-		$list      = get_option( 'mufwp-list' );
-		$group     = get_option( 'mufwp-group' );
-		$confirm   = get_option( 'mufwp-confirm' );
+		$host      = get_option( 'mufwc-host' );
+		$list      = get_option( 'mufwc-list' );
+		$group     = get_option( 'mufwc-group' );
+		$confirm   = get_option( 'mufwc-confirm' );
 
 		if ( $this->user_newsletter ) {
 
@@ -94,4 +94,4 @@ class MUFWP_Auto_Subscription {
 
 }
 
-new MUFWP_Auto_Subscription();
+new MUFWC_Auto_Subscription();

@@ -3,24 +3,24 @@
  * Plugin main options form
  *
  * @author ilGhera
- * @package mailup-for-wp/admin
+ * @package mailup-for-wc/admin
  * @since 0.9.0
  */
 
-$types        = get_option( 'mufwp-post-types' );
-$guest_form   = get_option( 'mufwp-guest-form' );
-$position     = get_option( 'mufwp-button-position' );
-$privacy_page = get_option( 'mufwp-privacy-page' );
+$types        = get_option( 'mufwc-post-types' );
+$guest_form   = get_option( 'mufwc-guest-form' );
+$position     = get_option( 'mufwc-button-position' );
+$privacy_page = get_option( 'mufwc-privacy-page' );
 ?>
 
-<form name="mufwp-subscription-options" id="mufwp-subscription-options" method="post" action="">
+<form name="mufwc-subscription-options" id="mufwc-subscription-options" method="post" action="">
 	
 	<table class="form-table">
 
 		<tr>
-			<th scope="row"><?php esc_html_e( 'Post types', 'mailup-for-wp' ); ?></th>
+			<th scope="row"><?php esc_html_e( 'Post types', 'mailup-for-wc' ); ?></th>
 			<td>
-				<select name="mufwp-post-types[]" class="mufwp-select" multiple>
+				<select name="mufwc-post-types[]" class="mufwc-select" multiple>
 					<?php
 					$post_types = get_post_types(
 						array(
@@ -42,31 +42,31 @@ $privacy_page = get_option( 'mufwp-privacy-page' );
 				</select>
 			</td>
 		<tr>
-			<th scope="row"><?php esc_html_e( 'Guest form', 'mailup-for-wp' ); ?></th>
+			<th scope="row"><?php esc_html_e( 'Guest form', 'mailup-for-wc' ); ?></th>
 			<td>
-				<select name="mufwp-guest-form" id="mufwp-guest-form" class="mufwp-select">
-					<option value="login-form"<?php echo 'login-form' === $guest_form ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Login/ Register', 'mailup-for-wp' ); ?></option>
-					<option value="email"<?php echo 'email' === $guest_form ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Email only', 'mailup-for-wp' ); ?></option>
+				<select name="mufwc-guest-form" id="mufwc-guest-form" class="mufwc-select">
+					<option value="login-form"<?php echo 'login-form' === $guest_form ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Login/ Register', 'mailup-for-wc' ); ?></option>
+					<option value="email"<?php echo 'email' === $guest_form ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Email only', 'mailup-for-wc' ); ?></option>
 				</select>
-				<p class="description"><?php esc_html_e( 'Ask to access to not logged-in users or just the email for newsletter subscription.', 'mailup-for-wp' ); ?></p>
+				<p class="description"><?php esc_html_e( 'Ask to access to not logged-in users or just the email for newsletter subscription.', 'mailup-for-wc' ); ?></p>
 			</td>
 		</tr>
 		<tr>
-			<th scope="row"><?php esc_html_e( 'Button position', 'mailup-for-wp' ); ?></th>
+			<th scope="row"><?php esc_html_e( 'Button position', 'mailup-for-wc' ); ?></th>
 			<td>
-				<select name="mufwp-button-position" class="mufwp-select">
-					<option value="before"<?php echo 'before' === $position ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Before the content', 'mailup-for-wp' ); ?></option>
-					<option value="after"<?php echo 'after' === $position ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'After the content', 'mailup-for-wp' ); ?></option>
-					<option value="custom"<?php echo 'custom' === $position ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Custom', 'mailup-for-wp' ); ?></option>
+				<select name="mufwc-button-position" class="mufwc-select">
+					<option value="before"<?php echo 'before' === $position ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Before the content', 'mailup-for-wc' ); ?></option>
+					<option value="after"<?php echo 'after' === $position ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'After the content', 'mailup-for-wc' ); ?></option>
+					<option value="custom"<?php echo 'custom' === $position ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Custom', 'mailup-for-wc' ); ?></option>
 				</select>
-				<p class="description"><?php esc_html_e( 'Custom position requires use of shortcode [mailup-subscribe] provided by the plugin.', 'mailup-for-wp' ); ?></p>
+				<p class="description"><?php esc_html_e( 'Custom position requires use of shortcode [mailup-subscribe] provided by the plugin.', 'mailup-for-wc' ); ?></p>
 			</td>
 		</tr>
 		<tr class="privacy-field">
-			<th scope="row"><?php esc_html_e( 'Privacy', 'mailup-for-wp' ); ?></th>
+			<th scope="row"><?php esc_html_e( 'Privacy', 'mailup-for-wc' ); ?></th>
 			<td>
-				<select name="mufwp-privacy-page" class="mufwp-select">
-					<option value=""><?php esc_html_e( 'Select a page', 'mailup-for-wp' ); ?></option>
+				<select name="mufwc-privacy-page" class="mufwc-select">
+					<option value=""><?php esc_html_e( 'Select a page', 'mailup-for-wc' ); ?></option>
 					<?php
 					$p_pages = get_pages();
 
@@ -80,17 +80,17 @@ $privacy_page = get_option( 'mufwp-privacy-page' );
 					}
 					?>
 				</select>
-				<p class="description"><?php esc_html_e( 'Select the page with the privacy conditions', 'mailup-for-wp' ); ?></p>
+				<p class="description"><?php esc_html_e( 'Select the page with the privacy conditions', 'mailup-for-wc' ); ?></p>
 			</td>
 		</tr>
 
-		<?php wp_nonce_field( 'mufwp-settings-subscription', 'mufwp-settings-subscription-nonce' ); ?>
+		<?php wp_nonce_field( 'mufwc-settings-subscription', 'mufwc-settings-subscription-nonce' ); ?>
 	
 	</table>
 
 	<p class="submit">
-		<input type="hidden" name="mufwp-sent" id="mufwp-sent" value="true">
-		<input class="button button-primary" type="submit" value="<?php esc_html_e( 'Save changes', 'mailup-for-wp' ); ?>">
+		<input type="hidden" name="mufwc-sent" id="mufwc-sent" value="true">
+		<input class="button button-primary" type="submit" value="<?php esc_html_e( 'Save changes', 'mailup-for-wc' ); ?>">
 	</p>
 
 </form>

@@ -2,13 +2,13 @@
  * MailUp for WordPress - CSS
  *
  * @author ilGhera
- * @package mailup-for-wp/css
+ * @package mailup-for-wc/css
  * @version 0.9.0
  */
 
 
-.mufwp-access .mufwp-login,
-.mufwp-access .mufwp-register {
+.mufwc-access .mufwc-login,
+.mufwc-access .mufwc-register {
     float: left;
     padding: 5px 20px;
     border: 1px solid #e9e9e9;
@@ -22,19 +22,19 @@
     cursor: pointer;
 }
 
-.mufwp-buttons .active {
+.mufwc-buttons .active {
     background: #3b6c8d;
     color: #fff;
 }
 
-.mufwp-before-text {
+.mufwc-before-text {
     text-align: center;
     font-weight: bold;
     padding: 3rem 0 1rem;
     clear: both;
 }
 
-#mufwp-form-container span {
+#mufwc-form-container span {
     font-size: 120%;
     text-transform: uppercase;
     color: #FF6200;
@@ -44,14 +44,14 @@
 }
 
 
-#mufwp-subscription-form,
-#mufwp-wordpress-form,
-#mufwp-button-container {
+#mufwc-subscription-form,
+#mufwc-wordpress-form,
+#mufwc-button-container {
     width: 500px;
     margin: 2rem auto;
 }
 
-.mufwp-add-button {
+.mufwc-add-button {
 	display: block;
 	margin: 30px 0;
 	padding: 10px 20px;
@@ -64,17 +64,17 @@
 	border-radius: 3px;
 }
 
-#mufwp-wordpress-form #customer_login .col-1,
-#mufwp-wordpress-form #customer_login .col-2 {
+#mufwc-wordpress-form #customer_login .col-1,
+#mufwc-wordpress-form #customer_login .col-2 {
     width: 100%;
     float: none;
 }
 
-#mufwp-wordpress-form #customer_login .col-2 {
+#mufwc-wordpress-form #customer_login .col-2 {
 	display: none;
 }
 
-#mufwp-wordpress-form .wordpress-form__label.wordpress-form-login__rememberme {
+#mufwc-wordpress-form .wordpress-form__label.wordpress-form-login__rememberme {
     display: block;
     margin-bottom: 10px;
 }

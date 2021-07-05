@@ -2,20 +2,20 @@
  * MailUp for WordPress - Admin CSS
  *
  * @author ilGhera
- * @package mailup-for-wp/css
+ * @package mailup-for-wc/css
  * @version 0.9.0
  */
 
-#mufwp-admin-menu {
+#mufwc-admin-menu {
 	margin: 1rem 0 2rem;
 }
 
-.mufwp-field {
+.mufwc-field {
 	width: 260px;
 	margin-right: 0.5rem;
 }
 
-.mufwp-form, .mufwp-table {
+.mufwc-form, .mufwc-table {
 	margin-top: 2rem;
 }
 
@@ -24,15 +24,15 @@
 	border-bottom: 1px solid #ccc;
 }
 
-.mufwp-button {
+.mufwc-button {
 	margin-top: 1rem !important;
 }
 
-.mufwp-admin {
+.mufwc-admin {
 	display: none;
 }
 
-span.mufwp-alert {
+span.mufwc-alert {
 	display: block;
 	margin: 1rem 0 0;
 	padding: 0.6rem;
@@ -41,7 +41,7 @@ span.mufwp-alert {
 	color: #a94442;	
 }
 
-span.mufwp-alert a {
+span.mufwc-alert a {
 	color: #a94442;	
 	text-decoration: underline;
 }
@@ -58,11 +58,11 @@ span.mufwp-alert a {
     padding-top: 3rem;
 }
 
-form#mufwp-premium-key {
+form#mufwc-premium-key {
 	margin: 2rem 0;
 }
 
-form#mufwp-premium-key label {
+form#mufwc-premium-key label {
 	font-size: 14px;
 	font-weight: bold;
 	display: block;
@@ -70,15 +70,15 @@ form#mufwp-premium-key label {
 }
 
 
-form#mufwp-premium-key input[type="text"] {
+form#mufwc-premium-key input[type="text"] {
 	width: 560px;
 }
 
-form#mufwp-premium-key input.button {
+form#mufwc-premium-key input.button {
 	margin-top: 1rem;
 }
 
-.mufwp-post-field,
+.mufwc-post-field,
 .privacy-field {
 	display: none;
 }

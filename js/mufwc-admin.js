@@ -2,11 +2,11 @@
  * Admin JS
  *
  * @author ilGhera
- * @package mailup-for-wp/js
+ * @package mailup-for-wc/js
  * @since 0.9.0
  */
 
-var mufwpAdminController = function() {
+var mufwcAdminController = function() {
 
 	var self = this;
 
@@ -14,7 +14,7 @@ var mufwpAdminController = function() {
 
 		self.tzCheckbox();
 		self.chosen();
-		self.mufwpPagination();
+		self.mufwcPagination();
 		self.postFieldsActivation();
 		self.provacyFieldActivation();
 
@@ -27,7 +27,7 @@ var mufwpAdminController = function() {
 	self.tzCheckbox = function() {
 
 		jQuery(function($){
-			$('input.mufwp[type=checkbox]').tzCheckbox({labels:['On','Off']});
+			$('input.mufwc[type=checkbox]').tzCheckbox({labels:['On','Off']});
 		});
 
 	}
@@ -41,7 +41,7 @@ var mufwpAdminController = function() {
 
 		jQuery(function($){
 
-			var select = $('.mufwp-select');
+			var select = $('.mufwc-select');
 
 			if (destroy) {
 
@@ -66,19 +66,19 @@ var mufwpAdminController = function() {
 	/**
 	 * Tab navigation
 	 */
-	self.mufwpPagination = function() {
+	self.mufwcPagination = function() {
 
 		jQuery(function($){
 
-			var contents = $('.mufwp-admin')
+			var contents = $('.mufwc-admin')
 			var url = window.location.href.split("#")[0];
 			var hash = window.location.href.split("#")[1];
 
 			if(hash) {
 		        contents.hide();		    
 			    $('#' + hash).fadeIn(200);		
-		        $('h2#mufwp-admin-menu a.nav-tab-active').removeClass("nav-tab-active");
-		        $('h2#mufwp-admin-menu a').each(function(){
+		        $('h2#mufwc-admin-menu a.nav-tab-active').removeClass("nav-tab-active");
+		        $('h2#mufwc-admin-menu a').each(function(){
 		        	if($(this).data('link') == hash) {
 		        		$(this).addClass('nav-tab-active');
 		        	}
@@ -89,7 +89,7 @@ var mufwpAdminController = function() {
 		        }, 'slow');
 			}
 
-			$("h2#mufwp-admin-menu a").click(function () {
+			$("h2#mufwc-admin-menu a").click(function () {
 		        var $this = $(this);
 		        
 		        contents.hide();
@@ -98,7 +98,7 @@ var mufwpAdminController = function() {
 		        self.chosen(true);
 		        self.chosen();
 
-		        $('h2#mufwp-admin-menu a.nav-tab-active').removeClass("nav-tab-active");
+		        $('h2#mufwc-admin-menu a.nav-tab-active').removeClass("nav-tab-active");
 		        $this.addClass('nav-tab-active');
 
 		        window.location = url + '#' + $this.data('link');
@@ -119,10 +119,10 @@ var mufwpAdminController = function() {
 
 		jQuery(function($){
 
-			var button   = $('.mufwp-post-activate span.tzCheckBox');
-			var input    = $('#mufwp-post-activate');
-			var fields   = $('.mufwp-post-field');
-			var required = $('.mufwp-post-field.required textarea');
+			var button   = $('.mufwc-post-activate span.tzCheckBox');
+			var input    = $('#mufwc-post-activate');
+			var fields   = $('.mufwc-post-field');
+			var required = $('.mufwc-post-field.required textarea');
 
 			if ( 'checked' == $(input).attr('checked') ) {
 
@@ -165,7 +165,7 @@ var mufwpAdminController = function() {
 
 		jQuery(function($){
 
-			var formTypeField = $('#mufwp-guest-form');
+			var formTypeField = $('#mufwc-guest-form');
 			var privacyField  = $('.privacy-field');
 
 			if ( 'email' == $(formTypeField).val() ) {
@@ -204,7 +204,7 @@ var mufwpAdminController = function() {
  */
 jQuery(document).ready(function($) {
 	
-	var Controller = new mufwpAdminController;
+	var Controller = new mufwcAdminController;
 	Controller.onLoad();
 
 });

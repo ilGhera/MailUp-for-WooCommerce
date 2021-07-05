@@ -2,11 +2,11 @@
  * JS
  *
  * @author ilGhera
- * @package mailup-for-wp/js
+ * @package mailup-for-wc/js
  * @since 0.9.0
  */
 
-var mufwpController = function() {
+var mufwcController = function() {
 
 	var self = this;
 
@@ -24,19 +24,19 @@ var mufwpController = function() {
 
 		jQuery(function($) {
 			
-			$('.mufwp-add-button').on('click', function() {
+			$('.mufwc-add-button').on('click', function() {
 				
-				var list          = $('.mufwp-add-button').data('list');
-				var group         = $('.mufwp-add-button').data('group');
-				var response_text = $('.mufwp-add-button').data('response-text');
-				var redirect      = $('.mufwp-add-button').data('redirect');
-				var product_id    = $('.mufwp-add-button').data('product-id');
+				var list          = $('.mufwc-add-button').data('list');
+				var group         = $('.mufwc-add-button').data('group');
+				var response_text = $('.mufwc-add-button').data('response-text');
+				var redirect      = $('.mufwc-add-button').data('redirect');
+				var product_id    = $('.mufwc-add-button').data('product-id');
 
 				var data = {
-					'action': 'mufwp-add-to',
-					'mufwp-subscribe-noce': mufwpSettings.nonce,
-					'username': mufwpSettings.userName,
-					'mail': mufwpSettings.email,
+					'action': 'mufwc-add-to',
+					'mufwc-subscribe-noce': mufwcSettings.nonce,
+					'username': mufwcSettings.userName,
+					'mail': mufwcSettings.email,
 					'list': list,
 					'group': group,
 					'response-text': response_text,
@@ -44,9 +44,9 @@ var mufwpController = function() {
 					'product_id': product_id
 				};
 
-				$.post( mufwpSettings.ajaxURL, data, function(response) {
+				$.post( mufwcSettings.ajaxURL, data, function(response) {
 					
-					$('.mufwp-add-button').html(response);
+					$('.mufwc-add-button').html(response);
 				
 				})
 
@@ -61,17 +61,17 @@ var mufwpController = function() {
 
 		jQuery(function($){
 			
-			$('.mufwp-add-button-ancor').on('click', function(){
+			$('.mufwc-add-button-ancor').on('click', function(){
 		
 				$('html, body').animate({
 		
-					scrollTop: $('.mufwp-before-text').offset().top - 150
+					scrollTop: $('.mufwc-before-text').offset().top - 150
 		
 				}, 'slow');
 
 				if($(this).hasClass('logged')) {
 		
-					$('.mufwp-add-button').trigger('click');
+					$('.mufwc-add-button').trigger('click');
 		
 				}					
 		
@@ -86,21 +86,21 @@ var mufwpController = function() {
 
 		jQuery(function($){
 
-			$('.mufwp-register').on('click', function(){
+			$('.mufwc-register').on('click', function(){
 
 				$(this).addClass('active');
-				$('.mufwp-login').removeClass('active');
-				$('.mufwp-access .wordpress .col-1').hide();
-				$('.mufwp-access .wordpress .col-2').show();
+				$('.mufwc-login').removeClass('active');
+				$('.mufwc-access .wordpress .col-1').hide();
+				$('.mufwc-access .wordpress .col-2').show();
 
 			})
 
-			$('.mufwp-login').on('click', function() {
+			$('.mufwc-login').on('click', function() {
 
 				$(this).addClass('active');
-				$('.mufwp-register').removeClass('active');
-				$('.mufwp-access .wordpress .col-2').hide();
-				$('.mufwp-access .wordpress .col-1').show();      
+				$('.mufwc-register').removeClass('active');
+				$('.mufwc-access .wordpress .col-2').hide();
+				$('.mufwc-access .wordpress .col-1').show();      
 
 			})
 
@@ -118,18 +118,18 @@ var mufwpController = function() {
 
 				e.preventDefault();
 				
-				var nonce         = $('#mufwp-guest-form-nonce').val();
-				var name          = $('#mufwp-name').val();
-				var mail          = $('#mufwp-mail').val();
-				var list          = $('#mufwp-list').val();
-				var group         = $('#mufwp-group').val();
+				var nonce         = $('#mufwc-guest-form-nonce').val();
+				var name          = $('#mufwc-name').val();
+				var mail          = $('#mufwc-mail').val();
+				var list          = $('#mufwc-list').val();
+				var group         = $('#mufwc-group').val();
 				var response_text = $('#response-text').val();
-				var redirect      = $('#mufwp-redirect').val();
-				// var product_id    = $('.mufwp-product-id').val();
+				var redirect      = $('#mufwc-redirect').val();
+				// var product_id    = $('.mufwc-product-id').val();
 
 				var data = {
-					'action': 'mufwp-form',
-					'mufwp-guest-form-nonce': nonce,
+					'action': 'mufwc-form',
+					'mufwc-guest-form-nonce': nonce,
 					'name': name,
 					'mail': mail,
 					'list': list,
@@ -139,9 +139,9 @@ var mufwpController = function() {
 					// 'product_id': product_id
 				};
 
-				$.post( mufwpSettings.ajaxURL, data, function(response) {
+				$.post( mufwcSettings.ajaxURL, data, function(response) {
 					
-					$('#mufwp-subscription-form').html(response);
+					$('#mufwc-subscription-form').html(response);
 				
 				})
 
@@ -157,7 +157,7 @@ var mufwpController = function() {
  */
 jQuery(document).ready(function($) {
 	
-	var Controller = new mufwpController;
+	var Controller = new mufwcController;
 	Controller.onLoad();
 
 });

@@ -3,26 +3,26 @@
  * Add logged in user to MailUp
  *
  * @author ilGhera
- * @package mailup-for-wp/includes
+ * @package mailup-for-wc/includes
  * @since 0.9.0
  */
-class MUFWP_Button {
+class MUFWC_Button {
 
 	/**
 	 * The constructor
 	 */
 	public function __construct() {
 
-		add_action( 'wp_enqueue_scripts', array( $this, 'mufwp_scripts' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'mufwc_scripts' ) );
 
-		add_shortcode( 'mailup-subscribe', array( $this, 'mufwp_button' ) );
+		add_shortcode( 'mailup-subscribe', array( $this, 'mufwc_button' ) );
 		add_shortcode( 'mailup-subscribe-ancor', array( $this, 'ancor' ) );
 
-		add_action( 'wp_ajax_mufwp-add-to', array( $this, 'add_to_callback' ) );
-		add_action( 'wp_ajax_nopriv_mufwp-add-to', array( $this, 'add_to_callback' ) );
+		add_action( 'wp_ajax_mufwc-add-to', array( $this, 'add_to_callback' ) );
+		add_action( 'wp_ajax_nopriv_mufwc-add-to', array( $this, 'add_to_callback' ) );
 
-		add_action( 'wp_ajax_mufwp-form', array( $this, 'subscription_form_response' ) );
-		add_action( 'wp_ajax_nopriv_mufwp-form', array( $this, 'subscription_form_response' ) );
+		add_action( 'wp_ajax_mufwc-form', array( $this, 'subscription_form_response' ) );
+		add_action( 'wp_ajax_nopriv_mufwc-form', array( $this, 'subscription_form_response' ) );
 
 		add_filter( 'the_content', array( $this, 'place_button' ) );
 
@@ -34,13 +34,13 @@ class MUFWP_Button {
 	 *
 	 * @return void
 	 */
-	public function mufwp_scripts() {
+	public function mufwc_scripts() {
 
 		/*css*/
-		wp_enqueue_style( 'mufwp-style', MUFWP_URI . 'css/mufwp.css' );
+		wp_enqueue_style( 'mufwc-style', MUFWC_URI . 'css/mufwc.css' );
 
 		/*js*/
-		wp_enqueue_script( 'mufwp-js', MUFWP_URI . 'js/mufwp.js', array( 'jquery' ), '0.9.0', true );
+		wp_enqueue_script( 'mufwc-js', MUFWC_URI . 'js/mufwc.js', array( 'jquery' ), '0.9.0', true );
 
 			$product_id = get_the_ID(); // temp.
 			$user_id    = get_current_user_id();
@@ -57,12 +57,12 @@ class MUFWP_Button {
 
 			$text       = get_post_meta( get_the_ID(), 'button-text', true );
 
-			$nonce = wp_create_nonce( 'mufwp-subscribe' );
+			$nonce = wp_create_nonce( 'mufwc-subscribe' );
 
 			/*Pass data to the script file*/
 			wp_localize_script(
-				'mufwp-js',
-				'mufwpSettings',
+				'mufwc-js',
+				'mufwcSettings',
 				array(
 					'ajaxURL'  => admin_url( 'admin-ajax.php' ),
 					'nonce'    => $nonce,
@@ -87,38 +87,38 @@ class MUFWP_Button {
 	 */
 	public function guest_form( $list, $group, $response_text, $redirect ) {
 
-		echo '<form id="mufwp-subscription-form" method="post" action="">';
+		echo '<form id="mufwc-subscription-form" method="post" action="">';
 			echo '<div class="form-group">';
-				echo '<label for="mufwp-name">' . esc_html__( 'Your name', 'mailup-for-wp' ) . '</label>';
-				echo '<input type="text" class="form-control" name="mufwp-name" id="mufwp-name" required="required">';
+				echo '<label for="mufwc-name">' . esc_html__( 'Your name', 'mailup-for-wc' ) . '</label>';
+				echo '<input type="text" class="form-control" name="mufwc-name" id="mufwc-name" required="required">';
 			echo '</div>';
 			echo '<div class="form-group">';
-				echo '<label for="mufwp-mail">' . esc_html__( 'Your email', 'mailup-for-wp' ) . '</label>';
-				echo '<input type="email" class="form-control" name="mufwp-mail" id="mufwp-mail" required="required">';
+				echo '<label for="mufwc-mail">' . esc_html__( 'Your email', 'mailup-for-wc' ) . '</label>';
+				echo '<input type="email" class="form-control" name="mufwc-mail" id="mufwc-mail" required="required">';
 			echo '</div>';
 
-			$url = get_option( 'mufwp-privacy-page' );
+			$url = get_option( 'mufwc-privacy-page' );
 
 			if ( $url ) {
 
 				echo '<div class="form-group privacy">';
-					printf( __( 'I consent to the processing of personal data according to the new general data protection regulation of the European Union (GDPR) and subsequent amendments and according to the <a href="%s" target="_blank">Privacy Policy</a> of the site.', 'mailup-for-wp' ), get_permalink( $url ) );
+					printf( __( 'I consent to the processing of personal data according to the new general data protection regulation of the European Union (GDPR) and subsequent amendments and according to the <a href="%s" target="_blank">Privacy Policy</a> of the site.', 'mailup-for-wc' ), get_permalink( $url ) );
 					echo '<p>';
 						echo '<input type="checkbox" name="privacy" checked value="1" required>';
-						esc_html_e( ' Accept', 'mailup-for-wp' );
+						esc_html_e( ' Accept', 'mailup-for-wc' );
 					echo '</p>';
 				echo '</div>';
 
 			}
 
-			wp_nonce_field( 'mufwp-guest-form', 'mufwp-guest-form-nonce' );
+			wp_nonce_field( 'mufwc-guest-form', 'mufwc-guest-form-nonce' );
 
-			echo '<input type="hidden" name="mufwp-subscription-request" id="mufwp-subscription-request" value="1">';
-			echo '<input type="hidden" name="mufwp-list" id="mufwp-list" value="' . esc_attr( $list ) . '">';
-			echo '<input type="hidden" name="mufwp-group" id="mufwp-group" value="' . esc_attr( $group ) . '">';
+			echo '<input type="hidden" name="mufwc-subscription-request" id="mufwc-subscription-request" value="1">';
+			echo '<input type="hidden" name="mufwc-list" id="mufwc-list" value="' . esc_attr( $list ) . '">';
+			echo '<input type="hidden" name="mufwc-group" id="mufwc-group" value="' . esc_attr( $group ) . '">';
 			echo '<input type="hidden" name="response-text" id="response-text" value="' . esc_attr( $response_text ) . '">';
-			echo '<input type="hidden" name="mufwp-redirect" id="mufwp-redirect" value="' . esc_attr( $redirect ) . '">';
-			echo '<input type="submit" class="newsletter-form-button" value="' . esc_html__( 'Subscribe', 'mailup-for-wp' ) . '">';
+			echo '<input type="hidden" name="mufwc-redirect" id="mufwc-redirect" value="' . esc_attr( $redirect ) . '">';
+			echo '<input type="submit" class="newsletter-form-button" value="' . esc_html__( 'Subscribe', 'mailup-for-wc' ) . '">';
 		echo '</form>';
 
 	}
@@ -127,15 +127,15 @@ class MUFWP_Button {
 	/**
 	 * The subscription button displayed to logged-in users
 	 */
-	public function mufwp_button() {
+	public function mufwc_button() {
 
-		$activate      = get_post_meta( get_the_ID(), 'mufwp-post-activate', true );
-		$list          = get_post_meta( get_the_ID(), 'mufwp-post-list', true );
-		$group         = get_post_meta( get_the_ID(), 'mufwp-post-group', true );
-		$before_text   = get_post_meta( get_the_ID(), 'mufwp-before-text', true );
-		$button_text   = get_post_meta( get_the_ID(), 'mufwp-button-text', true );
-		$response_text = get_post_meta( get_the_ID(), 'mufwp-response-text', true );
-		$redirect      = get_post_meta( get_the_ID(), 'mufwp-redirect', true );
+		$activate      = get_post_meta( get_the_ID(), 'mufwc-post-activate', true );
+		$list          = get_post_meta( get_the_ID(), 'mufwc-post-list', true );
+		$group         = get_post_meta( get_the_ID(), 'mufwc-post-group', true );
+		$before_text   = get_post_meta( get_the_ID(), 'mufwc-before-text', true );
+		$button_text   = get_post_meta( get_the_ID(), 'mufwc-button-text', true );
+		$response_text = get_post_meta( get_the_ID(), 'mufwc-response-text', true );
+		$redirect      = get_post_meta( get_the_ID(), 'mufwc-redirect', true );
 
 		ob_start();
 
@@ -143,16 +143,16 @@ class MUFWP_Button {
 
 			if ( $before_text ) {
 
-				echo '<div class="mufwp-before-text">' . esc_html( $before_text ) . '</div>';
+				echo '<div class="mufwc-before-text">' . esc_html( $before_text ) . '</div>';
 
 			}
 
 			if ( is_user_logged_in() ) {
 
-				echo '<div id="mufwp-button-container">';
+				echo '<div id="mufwc-button-container">';
 
 
-					echo '<div class="mufwp-add-button" ';
+					echo '<div class="mufwc-add-button" ';
 						echo 'data-product-id="' . esc_attr( $list ) . '" ';
 						echo 'data-list="' . esc_attr( $list ) . '" ';
 						echo 'data-group="' . esc_attr( $group ) . '" ';
@@ -166,17 +166,17 @@ class MUFWP_Button {
 
 				echo '</div>';
 
-			} elseif ( 'login-form' === get_option( 'mufwp-guest-form' ) ) {
+			} elseif ( 'login-form' === get_option( 'mufwc-guest-form' ) ) {
 
 				$text = get_post_meta( get_the_ID(), 'form-text', true );
 
-				echo '<div id="mufwp-wordpress-form">';
-					echo '<div class="mufwp-before-text">' . esc_attr( $text ) . '</div>';
-					echo '<div class="mufwp-access">';
+				echo '<div id="mufwc-wordpress-form">';
+					echo '<div class="mufwc-before-text">' . esc_attr( $text ) . '</div>';
+					echo '<div class="mufwc-access">';
 
-						echo '<div class="mufwp-buttons">';
-							echo '<div class="mufwp-login active">' . esc_html__( 'Login', 'mailup-for-wp' ) . '</div>';
-							echo '<div class="mufwp-register">' . esc_html__( 'Register', 'mailup-for-wp' ) . '</div>';
+						echo '<div class="mufwc-buttons">';
+							echo '<div class="mufwc-login active">' . esc_html__( 'Login', 'mailup-for-wc' ) . '</div>';
+							echo '<div class="mufwc-register">' . esc_html__( 'Register', 'mailup-for-wc' ) . '</div>';
 							echo '<div class="clear"></div>';
 						echo '</div>';
 
@@ -210,15 +210,15 @@ class MUFWP_Button {
 	 */
 	public function place_button( $content ) {
 
-		$position = get_option( 'mufwp-button-position' );
+		$position = get_option( 'mufwc-button-position' );
 
 		if ( 'before' === $position ) {
 
-			$output = $this->mufwp_button() . $content;
+			$output = $this->mufwc_button() . $content;
 
 		} elseif ( 'after' === $position ) {
 
-			$output = $content . $this->mufwp_button();
+			$output = $content . $this->mufwc_button();
 
 		} else {
 
@@ -236,17 +236,17 @@ class MUFWP_Button {
 	 */
 	public function add_to_callback() {
 
-		if ( isset( $_POST['mail'], $_POST['mufwp-subscribe-noce'] ) && wp_verify_nonce( wp_unslash( $_POST['mufwp-subscribe-noce'] ), 'mufwp-subscribe' ) ) {
+		if ( isset( $_POST['mail'], $_POST['mufwc-subscribe-noce'] ) && wp_verify_nonce( wp_unslash( $_POST['mufwc-subscribe-noce'] ), 'mufwc-subscribe' ) ) {
 
-			$host          = get_option( 'mufwp-host' );
+			$host          = get_option( 'mufwc-host' );
 			$username      = isset( $_POST['username'] ) ? sanitize_text_field( wp_unslash( $_POST['username'] ) ) : '';
 			$mail          = isset( $_POST['mail'] ) ? sanitize_text_field( wp_unslash( $_POST['mail'] ) ) : '';
 			$list          = isset( $_POST['list'] ) ? sanitize_text_field( wp_unslash( $_POST['list'] ) ) : '';
-			$group         = isset( $_POST['group'] ) ? sanitize_text_field( wp_unslash( $_POST['group'] ) ) : get_option( 'mufwp-group' ); // temp.
+			$group         = isset( $_POST['group'] ) ? sanitize_text_field( wp_unslash( $_POST['group'] ) ) : get_option( 'mufwc-group' ); // temp.
 			$product_id    = isset( $_POST['product_id'] ) ? sanitize_text_field( wp_unslash( $_POST['product_id'] ) ) : '';
 			$response_text = isset( $_POST['response-text'] ) ? sanitize_text_field( wp_unslash( $_POST['response-text'] ) ) : '';
 			$get_redirect  = isset( $_POST['redirect'] ) ? sanitize_text_field( wp_unslash( $_POST['redirect'] ) ) : '';
-			$error_message = __( 'Sorry but something went wrong, please try again later.', 'mailup-for-wp' );
+			$error_message = __( 'Sorry but something went wrong, please try again later.', 'mailup-for-wc' );
 			$redirect      = null;
 
 			if ( $get_redirect ) {
@@ -331,12 +331,12 @@ class MUFWP_Button {
 				'text' => '',
 			),
 			$vars,
-			'mufwp-subscribe-ancor'
+			'mufwc-subscribe-ancor'
 		);
 
 		$logged = is_user_logged_in() ? ' logged' : '';
 
-		echo '<div class="mufwp-add-button-ancor' . esc_attr( $logged ) . '">' . esc_attr( $details['text'] ) . '</div>';
+		echo '<div class="mufwc-add-button-ancor' . esc_attr( $logged ) . '">' . esc_attr( $details['text'] ) . '</div>';
 
 		$output = ob_get_clean();
 
@@ -352,15 +352,15 @@ class MUFWP_Button {
 	 */
 	public function subscription_form_response() {
 
-		if ( isset( $_POST['mufwp-guest-form-nonce'] ) && wp_verify_nonce( wp_unslash( $_POST['mufwp-guest-form-nonce'] ), 'mufwp-guest-form' ) ) {
-			$host          = get_option( 'mufwp-host' );
+		if ( isset( $_POST['mufwc-guest-form-nonce'] ) && wp_verify_nonce( wp_unslash( $_POST['mufwc-guest-form-nonce'] ), 'mufwc-guest-form' ) ) {
+			$host          = get_option( 'mufwc-host' );
 			$name          = isset( $_POST['name'] ) ? sanitize_text_field( wp_unslash( $_POST['name'] ) ) : '';
 			$mail          = isset( $_POST['mail'] ) ? sanitize_text_field( wp_unslash( $_POST['mail'] ) ) : '';
-			$list          = isset( $_POST['list'] ) ? sanitize_text_field( wp_unslash( $_POST['list'] ) ) : get_option( 'mufwp-list' );
-			$group         = isset( $_POST['group'] ) ? sanitize_text_field( wp_unslash( $_POST['group'] ) ) : get_option( 'mufwp-group' );
+			$list          = isset( $_POST['list'] ) ? sanitize_text_field( wp_unslash( $_POST['list'] ) ) : get_option( 'mufwc-list' );
+			$group         = isset( $_POST['group'] ) ? sanitize_text_field( wp_unslash( $_POST['group'] ) ) : get_option( 'mufwc-group' );
 			$response_text = isset( $_POST['response-text'] ) ? sanitize_text_field( wp_unslash( $_POST['response-text'] ) ) : '';
 			$get_redirect  = isset( $_POST['redirect'] ) ? sanitize_text_field( wp_unslash( $_POST['redirect'] ) ) : '';
-			$error_message = __( 'Something did\'t work, please try again later.', 'mailup-for-wp' );
+			$error_message = __( 'Something did\'t work, please try again later.', 'mailup-for-wc' );
 			$product_id    = null;
 			$redirect      = null;
 
@@ -399,7 +399,7 @@ class MUFWP_Button {
 
 				if ( 1 != $subscribe['body'] ) {
 
-					echo '<div class="mufwp-add-button">' . esc_html( $response_text ) . '</div>';
+					echo '<div class="mufwc-add-button">' . esc_html( $response_text ) . '</div>';
 
 					if ( $redirect ) {
 						?>
@@ -431,4 +431,4 @@ class MUFWP_Button {
 
 }
 
-new MUFWP_Button();
+new MUFWC_Button();
