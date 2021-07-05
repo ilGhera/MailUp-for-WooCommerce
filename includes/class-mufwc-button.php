@@ -55,8 +55,7 @@ class MUFWC_Button {
 
 			}
 
-			$text       = get_post_meta( get_the_ID(), 'button-text', true );
-
+			$text  = get_post_meta( get_the_ID(), 'button-text', true );
 			$nonce = wp_create_nonce( 'mufwc-subscribe' );
 
 			/*Pass data to the script file*/
@@ -171,7 +170,7 @@ class MUFWC_Button {
 				$text = get_post_meta( get_the_ID(), 'form-text', true );
 
 				echo '<div id="mufwc-wordpress-form">';
-					echo '<div class="mufwc-before-text">' . esc_attr( $text ) . '</div>';
+					/* echo '<div class="mufwc-before-text">' . esc_attr( $text ) . '</div>'; */
 					echo '<div class="mufwc-access">';
 
 						echo '<div class="mufwc-buttons">';
