@@ -20,7 +20,7 @@ $privacy_page = get_option( 'mufwc-privacy-page' );
 		<tr>
 			<th scope="row"><?php esc_html_e( 'Post types', 'mailup-for-wc' ); ?></th>
 			<td>
-				<select name="mufwc-post-types[]" class="mufwc-select" multiple>
+				<select name="mufwc-post-types[]" class="mufwc-select regular-text" multiple>
 					<?php
 					$post_types = get_post_types(
 						array(
