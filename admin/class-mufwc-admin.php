@@ -169,6 +169,13 @@ class MUFWC_Admin {
 			$position     = isset( $_POST['mufwc-button-position'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-button-position'] ) ) : '';
 			$privacy_page = isset( $_POST['mufwc-privacy-page'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-privacy-page'] ) ) : '';
 
+            if ( 'login-form' === $guest_form ) {
+
+                /* This option must be enabled */
+                update_option( 'woocommerce_enable_myaccount_registration', 'yes' );
+
+            }
+
 			update_option( 'mufwc-post-types', $post_types );
 			update_option( 'mufwc-guest-form', $guest_form );
 			update_option( 'mufwc-button-position', $position );
