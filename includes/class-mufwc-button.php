@@ -175,8 +175,15 @@ class MUFWC_Button {
 
 						echo '<div class="mufwc-buttons">';
 							echo '<div class="mufwc-login active">' . esc_html__( 'Login', 'mailup-for-wc' ) . '</div>';
-							echo '<div class="mufwc-register">' . esc_html__( 'Register', 'mailup-for-wc' ) . '</div>';
+
+                            if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) {
+
+                                echo '<div class="mufwc-register">' . esc_html__( 'Register', 'mailup-for-wc' ) . '</div>';
+
+                            }
+
 							echo '<div class="clear"></div>';
+
 						echo '</div>';
 
 						echo do_shortcode( '[woocommerce_my_account]' );
