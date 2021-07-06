@@ -20,7 +20,7 @@ $confirm = get_option( 'mufwc-confirm' );
 		<tr>
 			<th scope="row"><?php esc_html_e( 'Endpoint/ Console url', 'mailup-for-wc' ); ?></th>
 			<td>
-				<input type="text" name="mufwc-host" id="mufwc-host" value="<?php echo esc_attr( $host ); ?>">
+				<input type="text" name="mufwc-host" id="mufwc-host" class="regular-text" value="<?php echo esc_attr( $host ); ?>">
 				<p class="description">
 					<?php esc_html_e( 'Do you need help? Click ', 'mailup-for-wc' ); ?>			
 					<?php echo sprintf( '<a href="%s" target="_blank">here</a>', esc_url( 'http://help.mailup.com/display/mailupapi/MailUp+API+Credentials ' ) ); ?>			
