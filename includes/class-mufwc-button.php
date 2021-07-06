@@ -261,22 +261,15 @@ class MUFWC_Button {
 
 			}
 
-			/*temp*/
-			switch ( $list ) {
-				case 1:
-					$list_guid = 'aafa5375-bcf1-4e06-965a-e3a98b626156';
-					break;
-			}
-
 			/*Check if the user is already subscribed*/
-			$check = sprintf( '%s/frontend/Xmlchksubscriber.aspx?list=%d&listGuid=%s&email=%s', $host, $list, $list_guid, $mail );
+			$check = sprintf( '%s/frontend/Xmlchksubscriber.aspx?list=%d&email=%s', $host, $list, $mail );
 			$result = wp_remote_post( $check );
 
 			if ( ! is_wp_error( $result ) && isset( $result['body'] ) && 2 == $result['body'] ) {
 
 				/*If yes, just update his profile by adding him to the specified group*/
 
-				$url = sprintf( '%s/frontend/XmlUpdSubscriber.aspx?listGuid=%s&list=%d&email=%s&group=%d', $host, $list_guid, $list, $mail, $group );
+				$url = sprintf( '%s/frontend/XmlUpdSubscriber.aspx?list=%d&email=%s&group=%d', $host, $list, $mail, $group );
 
 			} else {
 
@@ -376,21 +369,14 @@ class MUFWC_Button {
 
 			}
 
-			/*MailUp list guid*/
-			switch ( $list ) {
-				case 1:
-					$list_guid = 'aafa5375-bcf1-4e06-965a-e3a98b626156';
-					break;
-			}
-
 			/*Check if the user is already subscribed*/
-			$check = sprintf( '%s/frontend/Xmlchksubscriber.aspx?list=%d&listGuid=%s&email=%s', $host, $list, $list_guid, $mail );
+			$check = sprintf( '%s/frontend/Xmlchksubscriber.aspx?list=%d&email=%s', $host, $list, $mail );
 			$result = wp_remote_post( $check );
 
 			if ( ! is_wp_error( $result ) && isset( $result['body'] ) && 2 == $result['body'] ) {
 
 				/*If yes, just update his profile by adding him to the specified group*/				
-				$url = sprintf( '%s/frontend/XmlUpdSubscriber.aspx?listGuid=%s&list=%d&email=%s&group=%d', $host, $list_guid, $list, $mail, $group );
+				$url = sprintf( '%s/frontend/XmlUpdSubscriber.aspx?list=%d&email=%s&group=%d', $host, $list, $mail, $group );
 
 			} else {
 
