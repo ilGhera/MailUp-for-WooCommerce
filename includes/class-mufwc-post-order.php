@@ -8,124 +8,131 @@
  */
 class MUFWC_Post_Order {
 
-	// global $wordpress;.
-	// $this->group;.
-
 	/**
 	 * The connstructor
+     *
+     * @return void
 	 */
 	public function __construct() {
 
-		add_action( 'wordpress_order_status_completed', array( $this, 'init' ) );
+        $this->host = get_option( 'mufwc-host' );
 
-	}
+		add_action( 'woocommerce_order_status_completed', array( $this, 'order_completed' ), 10, 1 );
 
-	/**
-	 * Defines all the variables
-	 *
-	 * @param  int $order_id the WC order id.
-	 * @return void
-	 */
-	public function init( $order_id ) {
-
-		$this->order_id    = $order_id;
-		$this->customer_id = get_post_meta( $order_id, '_customer_user', true );
-		$this->user_info   = get_userdata( $customer_id );
-		$this->username    = $user_info->user_login;
-		$this->mail        = $user_info->user_email;
-		$this->host        = get_option( 'mufwc-host' );
-		$this->confirm     = get_option( 'mufwc-confirm' );
-		$this->order_completed();
 	}
 
 
 	/**
 	 * Check if the customer is already subscribed to MailUp
 	 *
+     * @param int    $list the MailUp list number.
+     * @param string $mail the user email.
+     *
 	 * @return object the remote post response.
 	 */
-	private function list_subscription_test() {
+	private function is_user_subscried( $list, $mail ) {
 
-		$mufwc_check = sprintf( '%s/frontend/Xmlchksubscriber.aspx?list=2&email=%s', $this->host, $this->mail );
+        $output      = false;
+		$mufwc_check = sprintf( '%s/frontend/Xmlchksubscriber.aspx?list=2&email=%s', $this->host, $mail );
 
 		$result = wp_remote_post( $mufwc_check );
 
-		if ( ! is_wp_error( $results ) && isset( $result['body'] ) ) {
+		if ( ! is_wp_error( $result ) && isset( $result['body'] ) ) {
 
-			return $result['body'];
+			$output = 2 === intval( $result['body'] ) ? true : false;
 
-		}
+        }
+
+        return $output;
 
 	}
 
 
 	/**
-	 * Main class method
+     * Get customer info
+     *
+     * @param object $order the WC order.
+     *
+	 * @return array
+	 */
+	public function get_customer_info( $order ) {
+
+		$order_id    = $order->get_id();
+		$customer_id = get_post_meta( $order_id, '_customer_user', true );
+
+        if ( $customer_id ) {
+
+            $mail      = $user_info->user_email;
+            $user_info = get_userdata( $customer_id );
+            $firstname = $user_info->first_name;
+            $lastname  = $user_info->last_name;
+            $username  = $user_info->user_login;
+
+            if ( $firstname && $lastname ) {
+
+                $username  = $firstname . ' ' . $lastname;
+
+            } elseif ( $firstname ) {
+
+                $username  = $firstname;
+
+            } elseif ( $lastname ) {
+
+                $username  = $lastname;
+
+            }
+
+        } else {
+
+            $mail      = $order->get_billing_email();
+            $username  = $order->get_billing_first_name() . ' ' . $order->get_billing_last_name();
+
+        }
+
+        return array(
+            'username' => $username,
+            'mail'     => $mail,
+        );
+
+	}
+
+
+	/**
+	 * Add order items to the MailUp groups set
 	 *
+	 * @param  int $order_id the WC order id.
+     *
 	 * @return void
 	 */
-	public function order_completed() {
+	public function order_completed( $order_id ) {
 
-		$order = new WC_Order( $this->order_id );
+		$order         = new WC_Order( $order_id );
+        $customer_info = $this->get_customer_info( $order );
+		$items         = $order->get_items();
 
-		$items = $order->get_items();
+        foreach ( $items as $item ) {
 
-		/*Generic group with more than one product*/ // temp.
-		if ( count( $items ) > 1 ) {
+            $item_id = $item['product_id'];
+            $list    = get_post_meta( $item_id, 'mufwc-product-list', true );
+            $group   = get_post_meta( $item_id, 'mufwc-product-group', true );
 
-			if ( 2 === $this->list_subscription_test() ) {
+            if ( $this->is_user_subscried( $list, $customer_info['mail'] ) ) {
 
-				$url = sprintf( '%s/frontend/XmlUpdSubscriber.aspx?list=2&group=%d&email=%s', $this->host, 1307, $this->mail );
+                $url = sprintf( '%s/frontend/XmlUpdSubscriber.aspx?list=%d&group=%d&email=%s', $this->host, $list, $group, $customer_info['mail'] );
 
-			} else {
+            } else {
 
-				$url = sprintf( '%s/frontend/xmlSubscribe.aspx?list=2&group=%d&email=%s&confirm=0&csvFldNames=campo1&csvFldValues=%s', $this->host, 1307, $this->mail, $this->username );
+                $url = sprintf( '%s/frontend/xmlSubscribe.aspx?list=%d&group=%d&email=%s&confirm=0&csvFldNames=campo1&csvFldValues=%s', $this->host, $list, $group, $customer_info['mail'], $customer_info['username'] );
 
-			}
+            }
 
-			wp_remote_post( $url );
-
-		} else {
-
-			foreach ( $items as $item ) {
-
-				/*It is a bundle*/
-				if ( $item['bundled_by'] ) {
-
-					if ( 2 === $this->list_subscription_test() ) {
-
-						$url = sprintf( '%s/frontend/XmlUpdSubscriber.aspx?list=2&group=%d&email=', $this->host, 1307, $this->mail );
-
-					} else {
-
-						$url = sprintf( '%s/frontend/xmlSubscribe.aspx?list=2&group=%d&email=%s&confirm=0&csvFldNames=campo1&csvFldValues=%s', $this->host, 1307, $this->mail, $this->username );
-
-					}
-
-					wp_remote_post( $url );
-
-				} else {
-
-					$item_id     = $item['product_id'];
-					$this->group = get_post_meta( $item_id, 'post-acquisto', true );
-
-					if ( 2 === $this->list_subscription_test() ) {
-
-						$url = sprintf( '%s/frontend/XmlUpdSubscriber.aspx?list=2&group=%s&email=%s', $this->host, $this->group, $this->mail );
-
-					} else {
-
-						$url = sprintf( '%s/frontend/xmlSubscribe.aspx?list=2&group=%d&email=%s&confirm=0&csvFldNames=campo1&csvFldValues=%s', $this->host, $this->group, $this->mail, $this->username );
-
-					}
-
-					wp_remote_post( $url );
-				}
-
-			}
+            wp_remote_post( $url );
 
 		}
 
 	}
 
 }
+
+new MUFWC_Post_Order();
+
