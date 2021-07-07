@@ -62,8 +62,8 @@ class MUFWC_Post_Order {
 
         if ( $customer_id ) {
 
-            $mail      = $user_info->user_email;
             $user_info = get_userdata( $customer_id );
+            $mail      = $user_info->user_email;
             $firstname = $user_info->first_name;
             $lastname  = $user_info->last_name;
             $username  = $user_info->user_login;
@@ -116,17 +116,21 @@ class MUFWC_Post_Order {
             $list    = get_post_meta( $item_id, 'mufwc-product-list', true );
             $group   = get_post_meta( $item_id, 'mufwc-product-group', true );
 
-            if ( $this->is_user_subscried( $list, $customer_info['mail'] ) ) {
+            if ( $list ) {
 
-                $url = sprintf( '%s/frontend/XmlUpdSubscriber.aspx?list=%d&group=%d&email=%s', $this->host, $list, $group, $customer_info['mail'] );
+                if ( $this->is_user_subscried( $list, $customer_info['mail'] ) ) {
 
-            } else {
+                    $url = sprintf( '%s/frontend/XmlUpdSubscriber.aspx?list=%d&group=%d&email=%s', $this->host, $list, $group, $customer_info['mail'] );
 
-                $url = sprintf( '%s/frontend/xmlSubscribe.aspx?list=%d&group=%d&email=%s&confirm=0&csvFldNames=campo1&csvFldValues=%s', $this->host, $list, $group, $customer_info['mail'], $customer_info['username'] );
+                } else {
+
+                    $url = sprintf( '%s/frontend/xmlSubscribe.aspx?list=%d&group=%d&email=%s&confirm=0&csvFldNames=campo1&csvFldValues=%s', $this->host, $list, $group, $customer_info['mail'], $customer_info['username'] );
+
+                }
+
+                wp_remote_post( $url );
 
             }
-
-            wp_remote_post( $url );
 
 		}
 
