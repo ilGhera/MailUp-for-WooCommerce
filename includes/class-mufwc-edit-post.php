@@ -36,7 +36,7 @@ class MUFWC_Edit_Post {
 
             if ( isset( $admin_page->id ) && in_array( $admin_page->id, $post_types ) ) {
 
-                add_meta_box( 'mufwc-box', __( 'MailUp for WordPress', 'mailup-for-wc' ), array( $this, 'mufwc_add_meta_box_callback' ) );
+                add_meta_box( 'mufwc-box', __( 'MailUp for WooCommerce', 'mailup-for-wc' ), array( $this, 'mufwc_add_meta_box_callback' ) );
 
             }
 
