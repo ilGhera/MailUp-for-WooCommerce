@@ -46,7 +46,7 @@ class MUFWC_Post_Order {
 	 */
 	private function list_subscription_test() {
 
-		$mufwc_check = sprintf( '%s/frontend/Xmlchksubscriber.aspx?list=2&listGuid=189a127a-a4da-4b85-b4de-b8a082220edf&email=%s', $this->host, $this->mail );
+		$mufwc_check = sprintf( '%s/frontend/Xmlchksubscriber.aspx?list=2&email=%s', $this->host, $this->mail );
 
 		$result = wp_remote_post( $mufwc_check );
 
@@ -75,7 +75,7 @@ class MUFWC_Post_Order {
 
 			if ( 2 === $this->list_subscription_test() ) {
 
-				$url = sprintf( '%s/frontend/XmlUpdSubscriber.aspx?list=2&listGuid=189a127a-a4da-4b85-b4de-b8a082220edf&group=%d&email=%s', $this->host, 1307, $this->mail );
+				$url = sprintf( '%s/frontend/XmlUpdSubscriber.aspx?list=2&group=%d&email=%s', $this->host, 1307, $this->mail );
 
 			} else {
 
@@ -94,7 +94,7 @@ class MUFWC_Post_Order {
 
 					if ( 2 === $this->list_subscription_test() ) {
 
-						$url = sprintf( '%s/frontend/XmlUpdSubscriber.aspx?list=2&listGuid=189a127a-a4da-4b85-b4de-b8a082220edf&group=%d&email=', $this->host, 1307, $this->mail );
+						$url = sprintf( '%s/frontend/XmlUpdSubscriber.aspx?list=2&group=%d&email=', $this->host, 1307, $this->mail );
 
 					} else {
 
@@ -111,7 +111,7 @@ class MUFWC_Post_Order {
 
 					if ( 2 === $this->list_subscription_test() ) {
 
-						$url = sprintf( '%s/frontend/XmlUpdSubscriber.aspx?list=2&listGuid=189a127a-a4da-4b85-b4de-b8a082220edf&group=%s&email=%s', $this->host, $this->group, $this->mail );
+						$url = sprintf( '%s/frontend/XmlUpdSubscriber.aspx?list=2&group=%s&email=%s', $this->host, $this->group, $this->mail );
 
 					} else {
 
