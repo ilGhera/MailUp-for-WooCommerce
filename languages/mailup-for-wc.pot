@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MailUp for WP\n"
-"POT-Creation-Date: 2021-07-06 08:59+0200\n"
+"POT-Creation-Date: 2021-07-07 14:41+0200\n"
 "PO-Revision-Date: 2020-01-11 18:05+0100\n"
 "Last-Translator: \n"
 "Language-Team: ilGhera\n"
@@ -16,7 +16,8 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_attr_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: admin/class-mufwc-admin.php:27
+#: admin/class-mufwc-admin.php:27 includes/class-mufwc-edit-post.php:39
+#: includes/class-mufwc-edit-post.php:45
 msgid "MailUp for WooCommerce"
 msgstr ""
 
@@ -93,16 +94,19 @@ msgid "Send MailUp register confirmation"
 msgstr ""
 
 #: admin/mufwc-admin-registration-template.php:32
+#: includes/mufwc-meta-box-product-template.php:18
 #: includes/mufwc-meta-box-template.php:29
 msgid "MailUp List ID"
 msgstr ""
 
 #: admin/mufwc-admin-registration-template.php:36
+#: includes/mufwc-meta-box-product-template.php:22
 #: includes/mufwc-meta-box-template.php:33
 msgid "Enter the ID of the list which you want to register your users."
 msgstr ""
 
 #: admin/mufwc-admin-registration-template.php:42
+#: includes/mufwc-meta-box-product-template.php:27
 #: includes/mufwc-meta-box-template.php:38
 msgid "MailUp Group ID"
 msgstr ""
@@ -183,7 +187,7 @@ msgstr ""
 msgid " Accept"
 msgstr ""
 
-#: includes/class-mufwc-button.php:248
+#: includes/class-mufwc-button.php:255
 msgid "Sorry but something went wrong, please try again later."
 msgstr ""
 
@@ -191,8 +195,14 @@ msgstr ""
 msgid "Something did't work, please try again later."
 msgstr ""
 
-#: includes/class-mufwc-edit-post.php:39
-msgid "MailUp for WordPress"
+#: includes/mufwc-meta-box-product-template.php:15
+msgid ""
+"Users who purchase this product will be added to this MailUp list and group."
+msgstr ""
+
+#: includes/mufwc-meta-box-product-template.php:31
+#: includes/mufwc-meta-box-template.php:42
+msgid "Add users to a specific MailUp group."
 msgstr ""
 
 #: includes/mufwc-meta-box-template.php:22
@@ -201,10 +211,6 @@ msgstr ""
 
 #: includes/mufwc-meta-box-template.php:25
 msgid "Add a MailUp subscription button."
-msgstr ""
-
-#: includes/mufwc-meta-box-template.php:42
-msgid "Add users to a specific MailUp group."
 msgstr ""
 
 #: includes/mufwc-meta-box-template.php:47

@@ -32,11 +32,19 @@ class MUFWC_Edit_Post {
 		$post_types = get_option( 'mufwc-post-types' );
 		$admin_page = get_current_screen();
 
-        if ( is_array( $post_types ) ) {
+        if ( isset( $admin_page->id ) ) {
 
-            if ( isset( $admin_page->id ) && in_array( $admin_page->id, $post_types ) ) {
+            if ( 'product' === $admin_page->id ) {
 
-                add_meta_box( 'mufwc-box', __( 'MailUp for WooCommerce', 'mailup-for-wc' ), array( $this, 'mufwc_add_meta_box_callback' ) );
+                add_meta_box( 'mufwc-box', __( 'MailUp for WooCommerce', 'mailup-for-wc' ), array( $this, 'mufwc_add_meta_box_product_callback' ) );
+
+            } elseif ( is_array( $post_types ) ) {
+
+                if ( in_array( $admin_page->id, $post_types ) ) {
+
+                    add_meta_box( 'mufwc-box', __( 'MailUp for WooCommerce', 'mailup-for-wc' ), array( $this, 'mufwc_add_meta_box_callback' ) );
+
+                }
 
             }
 
@@ -46,7 +54,19 @@ class MUFWC_Edit_Post {
 
 
 	/**
-	 * The meta box content for reservation
+	 * The product meta box
+	 *
+	 * @return void
+	 */
+	public function mufwc_add_meta_box_product_callback() {
+
+		include( MUFWC_INCLUDES . 'mufwc-meta-box-product-template.php' );
+
+	}
+
+
+	/**
+	 * The post meta box conten
 	 *
 	 * @return void
 	 */
@@ -86,7 +106,15 @@ class MUFWC_Edit_Post {
 			update_post_meta( $post_id, 'mufwc-redirect', $redirect );
 
 
-		}
+        } elseif ( isset( $_POST['mufwc-product-list'], $_POST['mufwc-product-metas-nonce'] ) && wp_verify_nonce( wp_unslash( $_POST['mufwc-product-metas-nonce'] ), 'mufwc-product-metas' ) ) {
+
+			$list          = isset( $_POST['mufwc-product-list'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-product-list'] ) ) : '';
+			$group         = isset( $_POST['mufwc-product-group'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-product-group'] ) ) : '';
+
+			update_post_meta( $post_id, 'mufwc-product-list', $list );
+			update_post_meta( $post_id, 'mufwc-product-group', $group );
+
+        }
 
 	}
 }

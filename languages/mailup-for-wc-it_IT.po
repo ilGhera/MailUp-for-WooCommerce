@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MailUp for WP\n"
-"POT-Creation-Date: 2021-07-06 08:59+0200\n"
-"PO-Revision-Date: 2021-07-06 08:59+0200\n"
+"POT-Creation-Date: 2021-07-07 14:41+0200\n"
+"PO-Revision-Date: 2021-07-07 14:42+0200\n"
 "Last-Translator: \n"
 "Language-Team: ilGhera\n"
 "Language: it_IT\n"
@@ -15,7 +15,8 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_attr_e;esc_html__\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: admin/class-mufwc-admin.php:27
+#: admin/class-mufwc-admin.php:27 includes/class-mufwc-edit-post.php:39
+#: includes/class-mufwc-edit-post.php:45
 msgid "MailUp for WooCommerce"
 msgstr "MailUp per WooCommerce"
 
@@ -98,16 +99,19 @@ msgid "Send MailUp register confirmation"
 msgstr "Invia la conferma di registrazione di MailUp"
 
 #: admin/mufwc-admin-registration-template.php:32
+#: includes/mufwc-meta-box-product-template.php:18
 #: includes/mufwc-meta-box-template.php:29
 msgid "MailUp List ID"
 msgstr "ID Lista MailUp"
 
 #: admin/mufwc-admin-registration-template.php:36
+#: includes/mufwc-meta-box-product-template.php:22
 #: includes/mufwc-meta-box-template.php:33
 msgid "Enter the ID of the list which you want to register your users."
 msgstr "Inserisci l'ID della lista MailUp a cui registrare gli utenti."
 
 #: admin/mufwc-admin-registration-template.php:42
+#: includes/mufwc-meta-box-product-template.php:27
 #: includes/mufwc-meta-box-template.php:38
 msgid "MailUp Group ID"
 msgstr "ID Gruppo MailUp"
@@ -176,7 +180,7 @@ msgstr "Seleziona una pagina"
 msgid "Select the page with the privacy conditions"
 msgstr "Seleziona la pagina con le condizioni sulla privacy"
 
-#: includes/class-mufwc-auto-subscription.php:32
+#: includes/class-mufwc-auto-subscription.php:33
 msgid "Newsletter subscriptions"
 msgstr "Iscrizione newsletter"
 
@@ -213,11 +217,11 @@ msgstr "Iscriviti"
 msgid "Login"
 msgstr "Accedi"
 
-#: includes/class-mufwc-button.php:178
+#: includes/class-mufwc-button.php:181
 msgid "Register"
 msgstr "Registrati"
 
-#: includes/class-mufwc-button.php:248
+#: includes/class-mufwc-button.php:255
 msgid "Sorry but something went wrong, please try again later."
 msgstr "Qualcosa non ha funzionato, si prega di riprovare più tardi."
 
@@ -225,9 +229,17 @@ msgstr "Qualcosa non ha funzionato, si prega di riprovare più tardi."
 msgid "Something did't work, please try again later."
 msgstr "Qualcosa non ha funzionato, si prega di riprovare più tardi."
 
-#: includes/class-mufwc-edit-post.php:39
-msgid "MailUp for WordPress"
-msgstr "MailUp per WordPress"
+#: includes/mufwc-meta-box-product-template.php:15
+msgid ""
+"Users who purchase this product will be added to this MailUp list and group."
+msgstr ""
+"Gli utenti che acquisteranno questo prodotto verranno aggiunti a questa "
+"lista e gruppo MailUp."
+
+#: includes/mufwc-meta-box-product-template.php:31
+#: includes/mufwc-meta-box-template.php:42
+msgid "Add users to a specific MailUp group."
+msgstr "Aggiungi gli utenti ad uno specifico gruppo MailUp."
 
 #: includes/mufwc-meta-box-template.php:22
 msgid "Activate"
@@ -236,10 +248,6 @@ msgstr "Attiva"
 #: includes/mufwc-meta-box-template.php:25
 msgid "Add a MailUp subscription button."
 msgstr "Aggiungi un pulsante di iscrizione a MailUp."
-
-#: includes/mufwc-meta-box-template.php:42
-msgid "Add users to a specific MailUp group."
-msgstr "Aggiungi gli utenti ad uno specifico gruppo MailUp."
 
 #: includes/mufwc-meta-box-template.php:47
 msgid "Description text"
@@ -280,3 +288,6 @@ msgstr ""
 #: includes/mufwc-meta-box-template.php:85
 msgid "Redirect the user to a specific page."
 msgstr "Reindirizza l'utente ad una pagina specifica."
+
+#~ msgid "MailUp for WordPress"
+#~ msgstr "MailUp per WordPress"

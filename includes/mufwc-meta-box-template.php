@@ -85,6 +85,8 @@ $redirect      = get_post_meta( get_the_ID(), 'mufwc-redirect', true );
 				<p class="desctiption"><?php esc_html_e( 'Redirect the user to a specific page.', 'mailup-for-wc' ); ?></p>
 			</td>
 		</tr>
+
 		<?php wp_nonce_field( 'mufwc-post-metas', 'mufwc-post-metas-nonce' ); ?>
+
 	</table>
 </div>
