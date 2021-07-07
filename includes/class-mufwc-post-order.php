@@ -50,7 +50,7 @@ class MUFWC_Post_Order {
 
 		$result = wp_remote_post( $mufwc_check );
 
-		if ( isset( $result['body'] ) ) {
+		if ( ! is_wp_error( $results ) && isset( $result['body'] ) ) {
 
 			return $result['body'];
 
@@ -60,7 +60,7 @@ class MUFWC_Post_Order {
 
 
 	/**
-	 * Main class methos
+	 * Main class method
 	 *
 	 * @return void
 	 */
