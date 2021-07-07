@@ -142,13 +142,9 @@ class MUFWC_Admin {
 
 		if ( isset( $_POST['mufwc-settings-general-nonce'] ) && wp_verify_nonce( wp_unslash( $_POST['mufwc-settings-general-nonce'] ), 'mufwc-settings-general' ) ) {
 
-			$host  = isset( $_POST['mufwc-host'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-host'] ) ) : '';
-			$list  = isset( $_POST['mufwc-list'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-list'] ) ) : '';
-			$group = isset( $_POST['mufwc-group'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-group'] ) ) : '';
+			$host = isset( $_POST['mufwc-host'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-host'] ) ) : '';
 
 			update_option( 'mufwc-host', $host );
-			update_option( 'mufwc-list', $list );
-			update_option( 'mufwc-group', $group );
 
 		}
 
@@ -156,9 +152,13 @@ class MUFWC_Admin {
 
 			$newsletter = isset( $_POST['mufwc-newsletter'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-newsletter'] ) ) : '';
 			$confirm    = isset( $_POST['mufwc-confirm'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-confirm'] ) ) : '';
+			$list       = isset( $_POST['mufwc-list'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-list'] ) ) : '';
+			$group      = isset( $_POST['mufwc-group'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-group'] ) ) : '';
 
 			update_option( 'mufwc-newsletter', $newsletter );
 			update_option( 'mufwc-confirm', $confirm );
+			update_option( 'mufwc-list', $list );
+			update_option( 'mufwc-group', $group );
 
 		}
 

@@ -14,6 +14,7 @@ class MUFWC_Auto_Subscription {
 		$this->user_newsletter = get_option( 'mufwc-newsletter' );
 
 		add_action( 'register_form', array( $this, 'add_check_field' ) );
+		add_action( 'woocommerce_register_form', array( $this, 'add_check_field' ) );
 		add_action( 'user_register', array( $this, 'mailup_registration' ) );
 
 	}
@@ -56,7 +57,7 @@ class MUFWC_Auto_Subscription {
 
 		if ( $this->user_newsletter ) {
 
-			$user_newsletter = ( isset( $_POST['user-newsletter'] ) && 1 === $_POST['user-newsletter'] ) ? 1 : 0;
+			$user_newsletter = ( isset( $_POST['user-newsletter'] ) && 1 === intval( $_POST['user-newsletter'] ) ) ? 1 : 0;
 
 			if ( $user_newsletter ) {
 
@@ -74,24 +75,11 @@ class MUFWC_Auto_Subscription {
 
 			}
 
-		} else {
-
-			$url = sprintf(
-				'%s/frontend/xmlSubscribe.aspx?list=%d&group=%d&email=%s&confirm=%d&csvFldNames=campo1&csvFldValues=%s',
-				$host,
-				$list,
-				$group,
-				$mail,
-				$confirm,
-				$username
-			);
-
-			$response = wp_remote_post( $url );
-
-		}
+        }
 
 	}
 
 }
 
 new MUFWC_Auto_Subscription();
+

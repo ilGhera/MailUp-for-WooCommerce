@@ -7,7 +7,7 @@
  * @since 0.9.0
  */
 
-$newsletter   = get_option( 'mufwc-newsletter' );
+$newsletter = get_option( 'mufwc-newsletter' );
 ?>
 
 <form name="mufwc-registration-options" id="mufwc-registration-options" method="post" action="">
