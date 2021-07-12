@@ -37,23 +37,19 @@ class MUFWC_Admin {
 		$pages      = get_option( 'mufwc-post-types' );
 		$admin_page = get_current_screen();
 
-		$pages[]    = 'toplevel_page_mailup-for-wc';
+		$pages[] = 'toplevel_page_mailup-for-wc';
 
-		if ( isset( $admin_page->id ) && in_array( $admin_page->id , $pages ) ) {
+		if ( isset( $admin_page->id ) && in_array( $admin_page->id, $pages, true ) ) {
 
 			/*css*/
-			wp_enqueue_style( 'mufwc-admin-style', MUFWC_URI . 'css/mufwc-admin.css' );
-			wp_enqueue_style( 'chosen-style', MUFWC_URI . 'vendor/harvesthq/chosen/chosen.min.css' );
-			wp_enqueue_style( 'tzcheckbox-style', MUFWC_URI . 'js/tzCheckbox/jquery.tzCheckbox/jquery.tzCheckbox.css' );
+			wp_enqueue_style( 'mufwc-admin-style', MUFWC_URI . 'css/mufwc-admin.css', array(), filemtime( MUFWC_DIR . 'css/mufwc-admin.css' ) );
+			wp_enqueue_style( 'chosen-style', MUFWC_URI . 'vendor/harvesthq/chosen/chosen.min.css', array(), filemtime( MUFWC_DIR . 'vendor/harvesthq/chosen/chosen.min.css' ) );
+			wp_enqueue_style( 'tzcheckbox-style', MUFWC_URI . 'js/tzCheckbox/jquery.tzCheckbox/jquery.tzCheckbox.css', array(), filemtime( MUFWC_DIR . 'js/tzCheckbox/jquery.tzCheckbox/jquery.tzCheckbox.css' ) );
 
 			/*js*/
-			wp_enqueue_script( 'mufwc-admin-js', MUFWC_URI . 'js/mufwc-admin.js', array( 'jquery' ), '1.0', true );
-			wp_enqueue_script( 'chosen', MUFWC_URI . 'vendor/harvesthq/chosen/chosen.jquery.min.js' );
-			wp_enqueue_script( 'tzcheckbox', MUFWC_URI . 'js/tzCheckbox/jquery.tzCheckbox/jquery.tzCheckbox.js', array( 'jquery' ) );
-
-			/*Nonce*/
-			// $add_hours_nonce       = wp_create_nonce( 'mufwc-add-hours' );
-			// $add_last_minute_nonce = wp_create_nonce( 'mufwc-add-last-minute' );
+			wp_enqueue_script( 'mufwc-admin-js', MUFWC_URI . 'js/mufwc-admin.js', array( 'jquery' ), filemtime( MUFWC_DIR . 'js/mufwc-admin.js' ), true );
+			wp_enqueue_script( 'chosen', MUFWC_URI . 'vendor/harvesthq/chosen/chosen.jquery.min.js', array(), filemtime( MUFWC_DIR . 'vendor/harvesthq/chosen/chosen.jquery.min.js' ), false );
+			wp_enqueue_script( 'tzcheckbox', MUFWC_URI . 'js/tzCheckbox/jquery.tzCheckbox/jquery.tzCheckbox.js', array( 'jquery' ), filemtime( MUFWC_DIR . 'js/tzCheckbox/jquery.tzCheckbox/jquery.tzCheckbox.js' ), false );
 
 		}
 
@@ -82,13 +78,13 @@ class MUFWC_Admin {
 				/*Plugin premium key*/
 				$key = sanitize_text_field( get_option( 'mufwc-premium-key' ) );
 
-				if ( isset( $_POST['mufwc-premium-key'], $_POST['mufwc-premium-key-nonce'] ) && wp_verify_nonce( wp_unslash( $_POST['mufwc-premium-key-nonce'] ), 'mufwc-premium-key' ) ) { // temp.
+		if ( isset( $_POST['mufwc-premium-key'], $_POST['mufwc-premium-key-nonce'] ) && wp_verify_nonce( wp_unslash( $_POST['mufwc-premium-key-nonce'] ), 'mufwc-premium-key' ) ) { // temp.
 
-					$key = sanitize_text_field( wp_unslash( $_POST['mufwc-premium-key'] ) );
+			$key = sanitize_text_field( wp_unslash( $_POST['mufwc-premium-key'] ) );
 
-					update_option( 'mufwc-premium-key', $key );
+			update_option( 'mufwc-premium-key', $key );
 
-				}
+		}
 
 				/*Premium Key Form*/
 				echo '<form id="mufwc-premium-key" method="post" action="">';
@@ -110,21 +106,21 @@ class MUFWC_Admin {
 				/*General options*/
 				echo '<div id="mufwc-general" class="mufwc-admin" style="display: block;">';
 
-					include( MUFWC_ADMIN . 'mufwc-admin-general-template.php' );
+					include MUFWC_ADMIN . 'mufwc-admin-general-template.php';
 
 				echo '</div>';
 
 				/*Site registration options*/
 				echo '<div id="mufwc-registration" class="mufwc-admin">';
 
-					include( MUFWC_ADMIN . 'mufwc-admin-registration-template.php' );
+					include MUFWC_ADMIN . 'mufwc-admin-registration-template.php';
 
 				echo '</div>';
 
 				/*Subscription button options*/
 				echo '<div id="mufwc-subscription" class="mufwc-admin">';
 
-					include( MUFWC_ADMIN . 'mufwc-admin-subscription-template.php' );
+					include MUFWC_ADMIN . 'mufwc-admin-subscription-template.php';
 
 				echo '</div>';
 
@@ -169,12 +165,12 @@ class MUFWC_Admin {
 			$position     = isset( $_POST['mufwc-button-position'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-button-position'] ) ) : '';
 			$privacy_page = isset( $_POST['mufwc-privacy-page'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-privacy-page'] ) ) : '';
 
-            if ( 'login-form' === $guest_form ) {
+			if ( 'login-form' === $guest_form ) {
 
-                /* This option must be enabled */
-                update_option( 'woocommerce_enable_myaccount_registration', 'yes' );
+				/* This option must be enabled */
+				update_option( 'woocommerce_enable_myaccount_registration', 'yes' );
 
-            }
+			}
 
 			update_option( 'mufwc-post-types', $post_types );
 			update_option( 'mufwc-guest-form', $guest_form );
