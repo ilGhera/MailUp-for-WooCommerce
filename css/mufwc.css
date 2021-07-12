@@ -61,6 +61,19 @@
     margin: 2rem auto;
 }
 
+#mufwc-subscription-form label {
+    display: block;
+}
+
+#mufwc-subscription-form input[type="text"],
+#mufwc-subscription-form input[type="email"] {
+    width: 100%;
+}
+
+#mufwc-subscription-form input[type="checkbox"] {
+    margin-right: 5px;
+}
+
 .mufwc-add-button {
 	display: block;
 	margin: 30px 0;
