@@ -12,7 +12,6 @@
  * Text Domain: mailup-for-wc
  */
 
-
 /**
  * Handles the plugin activation
  *
@@ -22,16 +21,14 @@ function load_mailup_for_wc() {
 
 	/*Function check */
 	if ( ! function_exists( 'is_plugin_active' ) ) {
-		require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
+		require_once ABSPATH . '/wp-admin/includes/plugin.php';
 	}
-
 
 	/*Constants declaration*/
 	define( 'MUFWC_DIR', plugin_dir_path( __FILE__ ) );
 	define( 'MUFWC_URI', plugin_dir_url( __FILE__ ) );
 	define( 'MUFWC_INCLUDES', MUFWC_DIR . 'includes/' );
 	define( 'MUFWC_ADMIN', MUFWC_DIR . 'admin/' );
-	// define( 'MUFWC_SETTINGS', admin_url( 'admin.php?page=mailup-for-wc' ) );
 
 	/*Internationalization*/
 	$locale = apply_filters( 'plugin_locale', get_locale(), 'wp-restaurant-booking' );
@@ -39,11 +36,12 @@ function load_mailup_for_wc() {
 	load_textdomain( 'mailup-for-wc', trailingslashit( WP_LANG_DIR ) . basename( MUFWC_DIR ) . '/mailup-for-wc-' . $locale . '.mo' );
 
 	/*Files required*/
-	require( MUFWC_ADMIN . 'class-mufwc-admin.php' );
-	require( MUFWC_INCLUDES . 'class-mufwc-auto-subscription.php' );
-	require( MUFWC_INCLUDES . 'class-mufwc-button.php' );
-	require( MUFWC_INCLUDES . 'class-mufwc-edit-post.php' );
-	require( MUFWC_INCLUDES . 'class-mufwc-post-order.php' );
+	require MUFWC_ADMIN . 'class-mufwc-admin.php';
+	require MUFWC_INCLUDES . 'class-mufwc-auto-subscription.php';
+	require MUFWC_INCLUDES . 'class-mufwc-button.php';
+	require MUFWC_INCLUDES . 'class-mufwc-edit-post.php';
+	require MUFWC_INCLUDES . 'class-mufwc-post-order.php';
 
 }
 add_action( 'plugins_loaded', 'load_mailup_for_wc', 10 );
+

@@ -15,8 +15,9 @@ var mufwcAdminController = function() {
 		self.tzCheckbox();
 		self.chosen();
 		self.mufwcPagination();
+		self.autoRegistrationActivation();
 		self.postFieldsActivation();
-		self.provacyFieldActivation();
+		self.privacyFieldActivation();
 
 	}
 
@@ -111,6 +112,40 @@ var mufwcAdminController = function() {
 	        	
 	}
 
+    /**
+     * Display auto-activation options
+     */
+    self.autoRegistrationActivation = function() {
+
+		jQuery(function($){
+
+            var button = $('.mufwc-newsletter-field .tzCheckBox');
+
+            if ( $(button).hasClass('checked') ) {
+
+                $('.mufwc-newsletter-option').show('slow');
+
+            }
+
+            $(button).on('click', function() {
+
+                if ( $(this).hasClass('checked') ) {
+
+                    $('.mufwc-newsletter-option').show('slow');
+
+                } else {
+
+                    $('.mufwc-newsletter-option').hide();
+
+                }
+
+            })
+
+
+        })
+
+    }
+
 
 	/**
 	 * Display fields only if activates
@@ -161,7 +196,7 @@ var mufwcAdminController = function() {
 	}
 
 
-	self.provacyFieldActivation = function() {
+	self.privacyFieldActivation = function() {
 
 		jQuery(function($){
 
