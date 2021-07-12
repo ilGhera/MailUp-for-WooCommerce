@@ -14,21 +14,21 @@ $newsletter = get_option( 'mufwc-newsletter' );
 	
 	<table class="form-table">
 
-		<tr>
+		<tr class="mufwc-newsletter-field">
 			<th scope="row"><?php esc_html_e( 'Registration form', 'mailup-for-wc' ); ?></th>
 			<td>
 				<input type="checkbox" name="mufwc-newsletter" id="mufwc-newsletter" class="mufwc" value="true"<?php echo true == $newsletter ? ' checked="checked"' : ''; ?>>
 				<p class="description"><?php esc_html_e( 'Newsletter option in the registration form.', 'mailup-for-wc' ); ?></p>
 			</td>
 		</tr>
-		<tr>
+		<tr class="mufwc-newsletter-option">
 			<th scope="row"><?php esc_html_e( 'Confirm', 'mailup-for-wc' ); ?></th>
 				<td>
 					<input type="checkbox" name="mufwc-confirm" id="mufwc-confirm" class="mufwc" value="true"<?php echo true == $confirm ? ' checked="checked"' : ''; ?>>
 					<p class="description"><?php esc_html_e( 'Send MailUp register confirmation', 'mailup-for-wc' ); ?></p>
 				</td>
 		</tr>
-		<tr>
+		<tr class="mufwc-newsletter-option">
 			<th scope="row"><?php esc_html_e( 'MailUp List ID', 'mailup-for-wc' ); ?></th>
 			<td>
 				<input type="text" name="mufwc-list" id="mufwc-list" value="<?php echo esc_attr( $list ); ?>">
@@ -37,8 +37,7 @@ $newsletter = get_option( 'mufwc-newsletter' );
 				</p>
 			</td>
 		</tr>
-
-		<tr>	
+		<tr class="mufwc-newsletter-option">	
 			<th scope="row"><?php esc_html_e( 'MailUp Group ID', 'mailup-for-wc' ); ?></th>
 			<td>
 				<input type="text" name="mufwc-group" id="mufwc-group" value="<?php echo esc_attr( $group ); ?>">
