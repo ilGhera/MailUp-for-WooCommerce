@@ -2,7 +2,7 @@
 /**
  * Plugin Name: MailUp for WooCommerce - Premium
  * Plugin URI: https://www.ilghera.com/product/mailup-for-woocommerce-premium
- * Description: xxxxxxx
+ * Description: Lead marketing and clients follow-up for WooCommerce with MailUp lists, groups and workflows
  * Author: ilGhera
  * Version: 0.9.0
  * Author URI: https://ilghera.com
