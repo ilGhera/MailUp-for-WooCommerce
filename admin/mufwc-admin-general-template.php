@@ -14,7 +14,7 @@ $confirm = get_option( 'mufwc-confirm' );
 ?>
 
 <form name="mufwc-general-options" id="mufwc-general-options" method="post" action="">
-	
+
 	<table class="form-table">
 
 		<tr>
@@ -29,7 +29,7 @@ $confirm = get_option( 'mufwc-confirm' );
 		</tr>
 
 		<?php wp_nonce_field( 'mufwc-settings-general', 'mufwc-settings-general-nonce' ); ?>
-	
+
 	</table>
 
 	<p class="submit">

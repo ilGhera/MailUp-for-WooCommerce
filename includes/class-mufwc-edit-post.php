@@ -15,9 +15,8 @@ class MUFWC_Edit_Post {
 
 		add_action( 'add_meta_boxes', array( $this, 'mufwc_add_meta_box' ) );
 		add_action( 'save_post', array( $this, 'mufwc_save_post_metas' ) );
-		// add_action( 'admin_enqueue_scripts', array( $this, 'mufwc_edit_scripts' ) );
 
-		$this->main_list  = get_option( 'mufwc-list' );
+		$this->main_list = get_option( 'mufwc-list' );
 
 	}
 
@@ -32,23 +31,21 @@ class MUFWC_Edit_Post {
 		$post_types = get_option( 'mufwc-post-types' );
 		$admin_page = get_current_screen();
 
-        if ( isset( $admin_page->id ) ) {
+		if ( isset( $admin_page->id ) ) {
 
-            if ( 'product' === $admin_page->id ) {
+			if ( 'product' === $admin_page->id ) {
 
-                add_meta_box( 'mufwc-box', __( 'MailUp for WooCommerce', 'mailup-for-wc' ), array( $this, 'mufwc_add_meta_box_product_callback' ) );
+				add_meta_box( 'mufwc-box', __( 'MailUp for WooCommerce', 'mailup-for-wc' ), array( $this, 'mufwc_add_meta_box_product_callback' ) );
 
-            } elseif ( is_array( $post_types ) ) {
+			} elseif ( is_array( $post_types ) ) {
 
-                if ( in_array( $admin_page->id, $post_types ) ) {
+				if ( in_array( $admin_page->id, $post_types, true ) ) {
 
-                    add_meta_box( 'mufwc-box', __( 'MailUp for WooCommerce', 'mailup-for-wc' ), array( $this, 'mufwc_add_meta_box_callback' ) );
+					add_meta_box( 'mufwc-box', __( 'MailUp for WooCommerce', 'mailup-for-wc' ), array( $this, 'mufwc_add_meta_box_callback' ) );
 
-                }
-
-            }
-
-        }
+				}
+			}
+		}
 
 	}
 
@@ -60,7 +57,7 @@ class MUFWC_Edit_Post {
 	 */
 	public function mufwc_add_meta_box_product_callback() {
 
-		include( MUFWC_INCLUDES . 'mufwc-meta-box-product-template.php' );
+		include MUFWC_INCLUDES . 'mufwc-meta-box-product-template.php';
 
 	}
 
@@ -72,7 +69,7 @@ class MUFWC_Edit_Post {
 	 */
 	public function mufwc_add_meta_box_callback() {
 
-		include( MUFWC_INCLUDES . 'mufwc-meta-box-template.php' );
+		include MUFWC_INCLUDES . 'mufwc-meta-box-template.php';
 
 	}
 
@@ -96,7 +93,6 @@ class MUFWC_Edit_Post {
 			$response_text = isset( $_POST['mufwc-response-text'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-response-text'] ) ) : '';
 			$redirect      = isset( $_POST['mufwc-redirect'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-redirect'] ) ) : '';
 
-
 			update_post_meta( $post_id, 'mufwc-post-activate', $activate );
 			update_post_meta( $post_id, 'mufwc-post-list', $post_list );
 			update_post_meta( $post_id, 'mufwc-post-group', $group );
@@ -105,16 +101,15 @@ class MUFWC_Edit_Post {
 			update_post_meta( $post_id, 'mufwc-response-text', $response_text );
 			update_post_meta( $post_id, 'mufwc-redirect', $redirect );
 
+		} elseif ( isset( $_POST['mufwc-product-list'], $_POST['mufwc-product-metas-nonce'] ) && wp_verify_nonce( wp_unslash( $_POST['mufwc-product-metas-nonce'] ), 'mufwc-product-metas' ) ) {
 
-        } elseif ( isset( $_POST['mufwc-product-list'], $_POST['mufwc-product-metas-nonce'] ) && wp_verify_nonce( wp_unslash( $_POST['mufwc-product-metas-nonce'] ), 'mufwc-product-metas' ) ) {
-
-			$list          = isset( $_POST['mufwc-product-list'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-product-list'] ) ) : '';
-			$group         = isset( $_POST['mufwc-product-group'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-product-group'] ) ) : '';
+			$list  = isset( $_POST['mufwc-product-list'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-product-list'] ) ) : '';
+			$group = isset( $_POST['mufwc-product-group'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-product-group'] ) ) : '';
 
 			update_post_meta( $post_id, 'mufwc-product-list', $list );
 			update_post_meta( $post_id, 'mufwc-product-group', $group );
 
-        }
+		}
 
 	}
 }

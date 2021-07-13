@@ -12,7 +12,7 @@ $group = get_post_meta( get_the_ID(), 'mufwc-product-group', true );
 ?>
 
 <div class="wrap">
-    <p><?php esc_html_e( 'Users who purchase this product will be added to this MailUp list and group.', 'mailup-for-wc' ); ?></p>
+	<p><?php esc_html_e( 'Users who purchase this product will be added to this MailUp list and group.', 'mailup-for-wc' ); ?></p>
 	<table class="form-table">
 		<tr class="mufwc-post-field">	
 			<th scope="row"><?php esc_html_e( 'MailUp List ID', 'mailup-for-wc' ); ?></th>

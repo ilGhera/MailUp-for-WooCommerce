@@ -2,7 +2,6 @@
 /**
  * Auto subscription to MailUp on WC registration
  */
-
 class MUFWC_Auto_Subscription {
 
 
@@ -74,8 +73,7 @@ class MUFWC_Auto_Subscription {
 				$response = wp_remote_post( $url );
 
 			}
-
-        }
+		}
 
 	}
 

@@ -11,7 +11,7 @@ $newsletter = get_option( 'mufwc-newsletter' );
 ?>
 
 <form name="mufwc-registration-options" id="mufwc-registration-options" method="post" action="">
-	
+
 	<table class="form-table">
 
 		<tr class="mufwc-newsletter-field">
@@ -48,7 +48,7 @@ $newsletter = get_option( 'mufwc-newsletter' );
 		</tr>
 
 		<?php wp_nonce_field( 'mufwc-settings-registration', 'mufwc-settings-registration-nonce' ); ?>
-	
+
 	</table>
 
 	<p class="submit">

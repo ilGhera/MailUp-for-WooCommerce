@@ -14,7 +14,7 @@ $privacy_page = get_option( 'mufwc-privacy-page' );
 ?>
 
 <form name="mufwc-subscription-options" id="mufwc-subscription-options" method="post" action="">
-	
+
 	<table class="form-table">
 
 		<tr>
@@ -33,10 +33,9 @@ $privacy_page = get_option( 'mufwc-privacy-page' );
 
 						foreach ( $post_types as $p_type ) {
 
-							echo '<option value="' . esc_attr( $p_type->name ) . '"' . ( is_array( $types ) && in_array( $p_type->name, $types ) ? ' selected="selected"' : '' ) . '>' . esc_html( $p_type->label ) . '</option>';
+							echo '<option value="' . esc_attr( $p_type->name ) . '"' . ( is_array( $types ) && in_array( $p_type->name, $types, true ) ? ' selected="selected"' : '' ) . '>' . esc_html( $p_type->label ) . '</option>';
 
 						}
-
 					}
 					?>
 				</select>
@@ -74,7 +73,7 @@ $privacy_page = get_option( 'mufwc-privacy-page' );
 
 						foreach ( $p_pages as $p_page ) {
 
-							echo '<option value="' . esc_attr( $p_page->ID ) . '"' . ( $p_page->ID == $privacy_page ? ' selected="selected"' : '' ) . '>' . esc_html( $p_page->post_title ) . '</option>';
+							echo '<option value="' . esc_attr( $p_page->ID ) . '"' . ( intval( $privacy_page ) === $p_page->ID ? ' selected="selected"' : '' ) . '>' . esc_html( $p_page->post_title ) . '</option>';
 
 						}
 					}
@@ -85,7 +84,7 @@ $privacy_page = get_option( 'mufwc-privacy-page' );
 		</tr>
 
 		<?php wp_nonce_field( 'mufwc-settings-subscription', 'mufwc-settings-subscription-nonce' ); ?>
-	
+
 	</table>
 
 	<p class="submit">

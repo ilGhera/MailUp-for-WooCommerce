@@ -21,7 +21,7 @@ $redirect      = get_post_meta( get_the_ID(), 'mufwc-redirect', true );
 		<tr class="mufwc-post-activate">
 			<th scope="row"><?php esc_html_e( 'Activate', 'mailup-for-wc' ); ?></th>
 			<td>
-				<input type="checkbox" name="mufwc-post-activate" id="mufwc-post-activate" class="mufwc" value="1"<?php echo 1 == $activate ? ' checked="checked"' : ''; ?>>
+				<input type="checkbox" name="mufwc-post-activate" id="mufwc-post-activate" class="mufwc" value="1"<?php echo 1 === intval( $activate ) ? ' checked="checked"' : ''; ?>>
 				<p class="description"><?php esc_html_e( 'Add a MailUp subscription button.', 'mailup-for-wc' ); ?></p>
 			</td>
 		</tr>
@@ -76,7 +76,7 @@ $redirect      = get_post_meta( get_the_ID(), 'mufwc-redirect', true );
 
 						foreach ( $red_pages as $red_page ) {
 
-							echo '<option value="' . esc_attr( $red_page->ID ) . '"' . ( $red_page->ID == $redirect ? ' selected="selected"' : '' ) . '>' . esc_html( $red_page->post_title ) . '</option>';
+							echo '<option value="' . esc_attr( $red_page->ID ) . '"' . ( intval( $redirect ) === $red_page->ID ? ' selected="selected"' : '' ) . '>' . esc_html( $red_page->post_title ) . '</option>';
 
 						}
 					}

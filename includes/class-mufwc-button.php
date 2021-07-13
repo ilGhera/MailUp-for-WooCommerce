@@ -37,7 +37,7 @@ class MUFWC_Button {
 	public function mufwc_scripts() {
 
 		/*css*/
-		wp_enqueue_style( 'mufwc-style', MUFWC_URI . 'css/mufwc.css' );
+		wp_enqueue_style( 'mufwc-style', MUFWC_URI . 'css/mufwc.css', array(), filemtime( MUFWC_DIR . 'css/mufwc.css' ) );
 
 		/*js*/
 		wp_enqueue_script( 'mufwc-js', MUFWC_URI . 'js/mufwc.js', array( 'jquery' ), '0.9.0', true );
@@ -47,13 +47,13 @@ class MUFWC_Button {
 			$user_name  = null;
 			$email      = null;
 
-			if ( $user_id ) {
+		if ( $user_id ) {
 
-				$user_info  = get_userdata( $user_id );
-				$user_name  = $user_info->user_login;
-				$email      = $user_info->user_email;
+			$user_info = get_userdata( $user_id );
+			$user_name = $user_info->user_login;
+			$email     = $user_info->user_email;
 
-			}
+		}
 
 			$text  = get_post_meta( get_the_ID(), 'button-text', true );
 			$nonce = wp_create_nonce( 'mufwc-subscribe' );
@@ -98,17 +98,23 @@ class MUFWC_Button {
 
 			$url = get_option( 'mufwc-privacy-page' );
 
-			if ( $url ) {
+		if ( $url ) {
 
-				echo '<div class="form-group privacy">';
-					printf( __( 'I consent to the processing of personal data according to the new general data protection regulation of the European Union (GDPR) and subsequent amendments and according to the <a href="%s" target="_blank">Privacy Policy</a> of the site.', 'mailup-for-wc' ), get_permalink( $url ) );
-					echo '<p>';
-						echo '<input type="checkbox" name="privacy" checked value="1" required>';
-						esc_html_e( ' Accept', 'mailup-for-wc' );
-					echo '</p>';
-				echo '</div>';
+			echo '<div class="form-group privacy">';
+				printf(
+					wp_kses_post(
+						/* Translators: the Privacy Policy URL */
+						__( 'I consent to the processing of personal data according to the new general data protection regulation of the European Union (GDPR) and subsequent amendments and according to the <a href="%s" target="_blank">Privacy Policy</a> of the site.', 'mailup-for-wc' )
+					),
+					esc_url( get_permalink( $url ) )
+				);
+				echo '<p>';
+					echo '<input type="checkbox" name="privacy" checked value="1" required>';
+					esc_html_e( ' Accept', 'mailup-for-wc' );
+				echo '</p>';
+			echo '</div>';
 
-			}
+		}
 
 			wp_nonce_field( 'mufwc-guest-form', 'mufwc-guest-form-nonce' );
 
@@ -150,7 +156,6 @@ class MUFWC_Button {
 
 				echo '<div id="mufwc-button-container">';
 
-
 					echo '<div class="mufwc-add-button" ';
 						echo 'data-product-id="' . esc_attr( $list ) . '" ';
 						echo 'data-list="' . esc_attr( $list ) . '" ';
@@ -170,17 +175,16 @@ class MUFWC_Button {
 				$text = get_post_meta( get_the_ID(), 'form-text', true );
 
 				echo '<div id="mufwc-wordpress-form">';
-					/* echo '<div class="mufwc-before-text">' . esc_attr( $text ) . '</div>'; */
 					echo '<div class="mufwc-access">';
 
 						echo '<div class="mufwc-buttons">';
 							echo '<div class="mufwc-login active">' . esc_html__( 'Login', 'mailup-for-wc' ) . '</div>';
 
-                            if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) {
+				if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) {
 
-                                echo '<div class="mufwc-register">' . esc_html__( 'Register', 'mailup-for-wc' ) . '</div>';
+					echo '<div class="mufwc-register">' . esc_html__( 'Register', 'mailup-for-wc' ) . '</div>';
 
-                            }
+				}
 
 							echo '<div class="clear"></div>';
 
@@ -262,10 +266,10 @@ class MUFWC_Button {
 			}
 
 			/*Check if the user is already subscribed*/
-			$check = sprintf( '%s/frontend/Xmlchksubscriber.aspx?list=%d&email=%s', $host, $list, $mail );
+			$check  = sprintf( '%s/frontend/Xmlchksubscriber.aspx?list=%d&email=%s', $host, $list, $mail );
 			$result = wp_remote_post( $check );
 
-			if ( ! is_wp_error( $result ) && isset( $result['body'] ) && 2 == $result['body'] ) {
+			if ( ! is_wp_error( $result ) && isset( $result['body'] ) && 2 === intval( $result['body'] ) ) {
 
 				/*If yes, just update his profile by adding him to the specified group*/
 
@@ -282,7 +286,7 @@ class MUFWC_Button {
 
 			if ( ! is_wp_error( $subscribe ) && isset( $subscribe['body'] ) ) {
 
-				if ( 1 != $subscribe['body'] ) {
+				if ( 1 !== intval( $subscribe['body'] ) ) {
 
 					echo esc_html( $response_text );
 
@@ -294,21 +298,16 @@ class MUFWC_Button {
 						</script>
 						<?php
 					}
-
 				} else {
 
-					error_log( 'TEST 100' );
 					echo esc_html( $error_message );
 
 				}
-
 			} else {
 
-				error_log( 'TEST 200' );
 				echo esc_html( $error_message );
 
 			}
-
 		}
 
 		exit;
@@ -370,12 +369,12 @@ class MUFWC_Button {
 			}
 
 			/*Check if the user is already subscribed*/
-			$check = sprintf( '%s/frontend/Xmlchksubscriber.aspx?list=%d&email=%s', $host, $list, $mail );
+			$check  = sprintf( '%s/frontend/Xmlchksubscriber.aspx?list=%d&email=%s', $host, $list, $mail );
 			$result = wp_remote_post( $check );
 
-			if ( ! is_wp_error( $result ) && isset( $result['body'] ) && 2 == $result['body'] ) {
+			if ( ! is_wp_error( $result ) && isset( $result['body'] ) && 2 === intval( $result['body'] ) ) {
 
-				/*If yes, just update his profile by adding him to the specified group*/				
+				/*If yes, just update his profile by adding him to the specified group*/
 				$url = sprintf( '%s/frontend/XmlUpdSubscriber.aspx?list=%d&email=%s&group=%d', $host, $list, $mail, $group );
 
 			} else {
@@ -389,7 +388,7 @@ class MUFWC_Button {
 
 			if ( ! is_wp_error( $subscribe ) && isset( $subscribe['body'] ) ) {
 
-				if ( 1 != $subscribe['body'] ) {
+				if ( 1 !== intval( $subscribe['body'] ) ) {
 
 					echo '<div class="mufwc-add-button">' . esc_html( $response_text ) . '</div>';
 
@@ -402,19 +401,16 @@ class MUFWC_Button {
 						</script>
 						<?php
 					}
-
 				} else {
 
 					echo esc_html( $error_message );
 
 				}
-
 			} else {
 
 				echo esc_html( $error_message );
 
 			}
-
 		}
 
 		exit;
