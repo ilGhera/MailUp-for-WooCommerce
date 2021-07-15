@@ -10,8 +10,8 @@ Lead marketing and clients follow-up for WooCommerce with MailUp lists, groups a
 
 == Description ==
 
-Collect leads of interest on specific products or topics by inserting buttons and registration forms on the pages of your WordPress site, choosing the correct list and MailUp group.
-Automatically add your customers to different MailUp recipient groups, based on the WooCommerce products purchased.
+Collect leads of interest on specific products or topics by inserting buttons and registration forms on the pages of your WordPress site, choosing the correct list and group of MailUp.
+Add your customers to different MailUp recipient groups automatically, based on the WooCommerce products purchased.
 Prepare the workflows needed to follow your customer before and after the purchase in MailUp.
 
 **Functionlities**
