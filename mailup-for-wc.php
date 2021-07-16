@@ -25,12 +25,6 @@ function load_mailup_for_wc_premium() {
 	}
 
  	/*Deactivate free plugins*/
-	if( is_plugin_active('mailup-for-wc/mailup-for-wc.php') || function_exists('load_mailup_for_wc') ) {
-		deactivate_plugins('mailup-for-wc/mailup-for-wc.php');
-	    remove_action( 'plugins_loaded', 'load_mailup_for_wc' );
-	    wp_redirect(admin_url('plugins.php?plugin_status=all&paged=1&s'));
-	}
-
 	if( is_plugin_active('mailup-auto-subscription/mailup-auto-subscription.php') || function_exists('mas_load_textdomain') ) {
 		deactivate_plugins('mailup-auto-subscription/mailup-auto-subscription.php');
 	    remove_action( 'plugins_loaded', 'mas_load_textdomain' );
@@ -40,6 +34,7 @@ function load_mailup_for_wc_premium() {
 	/*Constants declaration*/
 	define( 'MUFWC_DIR', plugin_dir_path( __FILE__ ) );
 	define( 'MUFWC_DIR_NAME', basename( dirname( __FILE__ ) ) );
+	define( 'MUFWC_FILE', __FILE__ );
 	define( 'MUFWC_URI', plugin_dir_url( __FILE__ ) );
 	define( 'MUFWC_INCLUDES', MUFWC_DIR . 'includes/' );
 	define( 'MUFWC_ADMIN', MUFWC_DIR . 'admin/' );
