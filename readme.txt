@@ -29,7 +29,18 @@ Prepare the workflows needed to follow your customer before and after the purcha
 * Choose a page on your site to be redirected after registering with MailUp
 * Select a MailUp list and group for each WooCommerce product
 
-https://youtu.be/XUtmBvoPwkI
+https://youtu.be/mnJqEjajRKE
+
+**IMPORTANT NOTES**
+
+This plugin sends data to an external service, useful links below.
+
+= Service informations: =
+[https://www.mailup.it/](https://www.mailup.it/)
+
+= Service privacy policy: =
+[https://www.mailup.it/informativa-privacy/](https://www.mailup.it/informativa-privacy/)
+
 
 == Installation ==
 
@@ -48,7 +59,7 @@ https://youtu.be/XUtmBvoPwkI
 == Changelog ==
 
 = 0.9.0 =
-Release Date: xx July, 2021
+Release Date: 16 July, 2021
 
 * First release.
 
