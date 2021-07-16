@@ -10,7 +10,7 @@
 /**
  * Update checker
  */
-require( MUFWC_DIR . 'plugin-update-checker/plugin-update-checker.php' );
+require MUFWC_DIR . 'plugin-update-checker/plugin-update-checker.php';
 
 $mufwc_update_checker = Puc_v4_Factory::buildUpdateChecker(
 	'https://www.ilghera.com/wp-update-server-2/?action=get_metadata&slug=mailup-for-wc-premium',
@@ -61,8 +61,8 @@ function mufwc_update_message( $plugin_data, $response ) {
 
 		$decoded_key = explode( '|', base64_decode( $key ) );
 		$bought_date = date( 'd-m-Y', strtotime( $decoded_key[1] ) );
-		$limit = strtotime( $bought_date . ' + 365 day' );
-		$now = strtotime( 'today' );
+		$limit       = strtotime( $bought_date . ' + 365 day' );
+		$now         = strtotime( 'today' );
 
 		if ( $limit < $now ) {
 
@@ -73,7 +73,6 @@ function mufwc_update_message( $plugin_data, $response ) {
 			$message = 'It seems like your <strong>Premium Key</strong> is not valid. Please, click <a href="https://www.ilghera.com/product/mailup-for-woocommerce-premium/" target="_blank">here</a> for prices and details.';
 
 		}
-
 	}
 
 	$allowed_tags = array(

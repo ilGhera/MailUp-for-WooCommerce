@@ -24,11 +24,11 @@ function load_mailup_for_wc_premium() {
 		require_once ABSPATH . '/wp-admin/includes/plugin.php';
 	}
 
- 	/*Deactivate free plugins*/
-	if( is_plugin_active('mailup-auto-subscription/mailup-auto-subscription.php') || function_exists('mas_load_textdomain') ) {
-		deactivate_plugins('mailup-auto-subscription/mailup-auto-subscription.php');
-	    remove_action( 'plugins_loaded', 'mas_load_textdomain' );
-	    wp_redirect(admin_url('plugins.php?plugin_status=all&paged=1&s'));
+	/*Deactivate free plugins*/
+	if ( is_plugin_active( 'mailup-auto-subscription/mailup-auto-subscription.php' ) || function_exists( 'mas_load_textdomain' ) ) {
+		deactivate_plugins( 'mailup-auto-subscription/mailup-auto-subscription.php' );
+		remove_action( 'plugins_loaded', 'mas_load_textdomain' );
+		wp_redirect( admin_url( 'plugins.php?plugin_status=all&paged=1&s' ) );
 	}
 
 	/*Constants declaration*/
