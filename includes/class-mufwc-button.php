@@ -79,12 +79,11 @@ class MUFWC_Button {
 	 * Guest form for not logged-in users
 	 *
 	 * @param int $list          the list.
-	 * @param int $group         the group.
 	 * @param int $response_text the response text.
-	 * @param int $redirect the redirect page id.
+     *
 	 * @return mixed the form html
 	 */
-	public function guest_form( $list, $group, $response_text, $redirect ) {
+	public function guest_form( $list, $response_text ) {
 
 		echo '<form id="mufwc-subscription-form" method="post" action="">';
 			echo '<div class="form-group">';
@@ -120,9 +119,7 @@ class MUFWC_Button {
 
 			echo '<input type="hidden" name="mufwc-subscription-request" id="mufwc-subscription-request" value="1">';
 			echo '<input type="hidden" name="mufwc-list" id="mufwc-list" value="' . esc_attr( $list ) . '">';
-			echo '<input type="hidden" name="mufwc-group" id="mufwc-group" value="' . esc_attr( $group ) . '">';
 			echo '<input type="hidden" name="response-text" id="response-text" value="' . esc_attr( $response_text ) . '">';
-			echo '<input type="hidden" name="mufwc-redirect" id="mufwc-redirect" value="' . esc_attr( $redirect ) . '">';
 			echo '<input type="submit" class="newsletter-form-button" value="' . esc_html__( 'Subscribe', 'mailup-for-wc' ) . '">';
 		echo '</form>';
 
@@ -136,21 +133,12 @@ class MUFWC_Button {
 
 		$activate      = get_post_meta( get_the_ID(), 'mufwc-post-activate', true );
 		$list          = get_post_meta( get_the_ID(), 'mufwc-post-list', true );
-		$group         = get_post_meta( get_the_ID(), 'mufwc-post-group', true );
-		$before_text   = get_post_meta( get_the_ID(), 'mufwc-before-text', true );
 		$button_text   = get_post_meta( get_the_ID(), 'mufwc-button-text', true );
 		$response_text = get_post_meta( get_the_ID(), 'mufwc-response-text', true );
-		$redirect      = get_post_meta( get_the_ID(), 'mufwc-redirect', true );
 
 		ob_start();
 
 		if ( $activate ) {
-
-			if ( $before_text ) {
-
-				echo '<div class="mufwc-before-text">' . esc_html( $before_text ) . '</div>';
-
-			}
 
 			if ( is_user_logged_in() ) {
 
@@ -159,9 +147,7 @@ class MUFWC_Button {
 					echo '<div class="mufwc-add-button" ';
 						echo 'data-product-id="' . esc_attr( $list ) . '" ';
 						echo 'data-list="' . esc_attr( $list ) . '" ';
-						echo 'data-group="' . esc_attr( $group ) . '" ';
 						echo 'data-response-text="' . esc_attr( $response_text ) . '" ';
-						echo 'data-redirect="' . esc_attr( $redirect ) . '"';
 						echo '>';
 
 						echo esc_attr( $button_text );
@@ -199,7 +185,7 @@ class MUFWC_Button {
 
 			} else {
 
-				$this->guest_form( $list, $group, $response_text, $redirect );
+				$this->guest_form( $list, $response_text );
 
 			}
 
@@ -252,33 +238,19 @@ class MUFWC_Button {
 			$username      = isset( $_POST['username'] ) ? sanitize_text_field( wp_unslash( $_POST['username'] ) ) : '';
 			$mail          = isset( $_POST['mail'] ) ? sanitize_text_field( wp_unslash( $_POST['mail'] ) ) : '';
 			$list          = isset( $_POST['list'] ) ? sanitize_text_field( wp_unslash( $_POST['list'] ) ) : '';
-			$group         = isset( $_POST['group'] ) ? sanitize_text_field( wp_unslash( $_POST['group'] ) ) : get_option( 'mufwc-group' ); // temp.
 			$product_id    = isset( $_POST['product_id'] ) ? sanitize_text_field( wp_unslash( $_POST['product_id'] ) ) : '';
 			$response_text = isset( $_POST['response-text'] ) ? sanitize_text_field( wp_unslash( $_POST['response-text'] ) ) : '';
-			$get_redirect  = isset( $_POST['redirect'] ) ? sanitize_text_field( wp_unslash( $_POST['redirect'] ) ) : '';
 			$error_message = __( 'Sorry but something went wrong, please try again later.', 'mailup-for-wc' );
-			$redirect      = null;
 
-			if ( $get_redirect ) {
-
-				$redirect = get_permalink( $get_redirect ); // . '?product_id=' . $product_id;
-
-			}
 
 			/*Check if the user is already subscribed*/
 			$check  = sprintf( '%s/frontend/Xmlchksubscriber.aspx?list=%d&email=%s', $host, $list, $mail );
 			$result = wp_remote_post( $check );
 
-			if ( ! is_wp_error( $result ) && isset( $result['body'] ) && 2 === intval( $result['body'] ) ) {
+			if ( ! is_wp_error( $result ) && isset( $result['body'] ) && 2 !== intval( $result['body'] ) ) {
 
-				/*If yes, just update his profile by adding him to the specified group*/
-
-				$url = sprintf( '%s/frontend/XmlUpdSubscriber.aspx?list=%d&email=%s&group=%d', $host, $list, $mail, $group );
-
-			} else {
-
-				/*If not, add him to the list and the group*/
-				$url = sprintf( '%s/frontend/xmlSubscribe.aspx?list=%d&group=%d&email=%s&confirm=0&csvFldNames=campo1&csvFldValues=%s&retCode=1', $host, $list, $group, $mail, $username );
+				/*If not, add him to the list*/
+				$url = sprintf( '%s/frontend/xmlSubscribe.aspx?list=%d&email=%s&confirm=0&csvFldNames=campo1&csvFldValues=%s&retCode=1', $host, $list, $mail, $username );
 
 			}
 
@@ -290,14 +262,6 @@ class MUFWC_Button {
 
 					echo esc_html( $response_text );
 
-					if ( $redirect ) { ?>
-						<script>
-						setTimeout(function(){ 
-							window.location = '<?php echo esc_url( $redirect ); ?>';
-						}, 3000);
-						</script>
-						<?php
-					}
 				} else {
 
 					echo esc_html( $error_message );
@@ -355,32 +319,18 @@ class MUFWC_Button {
 			$name          = isset( $_POST['name'] ) ? sanitize_text_field( wp_unslash( $_POST['name'] ) ) : '';
 			$mail          = isset( $_POST['mail'] ) ? sanitize_text_field( wp_unslash( $_POST['mail'] ) ) : '';
 			$list          = isset( $_POST['list'] ) ? sanitize_text_field( wp_unslash( $_POST['list'] ) ) : get_option( 'mufwc-list' );
-			$group         = isset( $_POST['group'] ) ? sanitize_text_field( wp_unslash( $_POST['group'] ) ) : get_option( 'mufwc-group' );
 			$response_text = isset( $_POST['response-text'] ) ? sanitize_text_field( wp_unslash( $_POST['response-text'] ) ) : '';
-			$get_redirect  = isset( $_POST['redirect'] ) ? sanitize_text_field( wp_unslash( $_POST['redirect'] ) ) : '';
 			$error_message = __( 'Something did\'t work, please try again later.', 'mailup-for-wc' );
 			$product_id    = null;
-			$redirect      = null;
-
-			if ( $get_redirect && 'Select a page' !== $get_redirect ) {
-
-				$redirect = get_permalink( $get_redirect ); // . '?product_id=' . $product_id;
-
-			}
 
 			/*Check if the user is already subscribed*/
 			$check  = sprintf( '%s/frontend/Xmlchksubscriber.aspx?list=%d&email=%s', $host, $list, $mail );
 			$result = wp_remote_post( $check );
 
-			if ( ! is_wp_error( $result ) && isset( $result['body'] ) && 2 === intval( $result['body'] ) ) {
+			if ( ! is_wp_error( $result ) && isset( $result['body'] ) && 2 !== intval( $result['body'] ) ) {
 
-				/*If yes, just update his profile by adding him to the specified group*/
-				$url = sprintf( '%s/frontend/XmlUpdSubscriber.aspx?list=%d&email=%s&group=%d', $host, $list, $mail, $group );
-
-			} else {
-
-				/*If not, add him to the list and the group*/
-				$url = sprintf( '%s/frontend/xmlSubscribe.aspx?list=%d&group=%d&email=%s&confirm=0&csvFldNames=campo1&csvFldValues=%s&retCode=1', $host, $list, $group, $mail, $name );
+				/*If not, add him to the list*/
+				$url = sprintf( '%s/frontend/xmlSubscribe.aspx?list=%d&email=%s&confirm=0&csvFldNames=campo1&csvFldValues=%s&retCode=1', $host, $list, $mail, $name );
 
 			}
 
@@ -392,15 +342,6 @@ class MUFWC_Button {
 
 					echo '<div class="mufwc-add-button">' . esc_html( $response_text ) . '</div>';
 
-					if ( $redirect ) {
-						?>
-						<script>
-						setTimeout(function(){ 
-							window.location = '<?php echo esc_url( $redirect ); ?>';
-						}, 3000);
-						</script>
-						<?php
-					}
 				} else {
 
 					echo esc_html( $error_message );
@@ -420,3 +361,4 @@ class MUFWC_Button {
 }
 
 new MUFWC_Button();
+
