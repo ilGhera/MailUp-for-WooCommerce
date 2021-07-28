@@ -1,4 +1,4 @@
-=== MailUp for WooCommerce - Premium === 
+=== MailUp for WooCommerce === 
 Contributors: ghera74
 Tags: Woocommerce, ecommerce, support, ticket, thread, shop, orders, products
 Version: 0.9.0
@@ -27,7 +27,7 @@ Prepare the workflows needed to follow your customer before and after the purcha
 * Choose the text of the MailUp subscription button
 * Choose the text thanking the user for subscribing to MailUp
 * Choose a page on your site to be redirected after registering with MailUp
-* Select a MailUp list and group for each WooCommerce product
+* (Premium) Select a MailUp list and group for each WooCommerce product
 
 https://youtu.be/mnJqEjajRKE
 
@@ -44,7 +44,17 @@ This plugin sends data to an external service, useful links below.
 
 == Installation ==
 
-* Upload the 'mailup-for-woocommerce-premium’ directory to your '/wp-content/plugins/' directory, using your favorite method (ftp, sftp, scp, etc...)
+**From your WordPress dashboard**
+
+* Visit Plugins > Add New.
+* Search for MailUp for WooCommerce and download it.
+* Activate MailUp for WooCommerce from your Plugins page.
+* Once Activated, go to <strong>MailUp for WC</strong> menu and set you preferences.
+
+**From WordPress.org**
+
+* Download MailUp for WooCommerce
+* Upload the 'mailup-for-woocommerce’ directory to your '/wp-content/plugins/' directory, using your favorite method (ftp, sftp, scp, etc...)
 * Activate MailUp for WooCommerce from your Plugins page.
 * Once Activated, go to MailUp for WC menu and set you preferences.
 

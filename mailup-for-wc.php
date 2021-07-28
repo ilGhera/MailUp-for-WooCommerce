@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: MailUp for WooCommerce - Premium
+ * Plugin Name: MailUp for WooCommerce
  * Plugin URI: https://www.ilghera.com/product/mailup-for-woocommerce-premium
  * Description: Lead marketing and clients follow-up for WooCommerce with MailUp lists, groups and workflows
  * Author: ilGhera
@@ -17,7 +17,7 @@
  *
  * @return void
  */
-function load_mailup_for_wc_premium() {
+function load_mailup_for_wc() {
 
 	/*Function check */
 	if ( ! function_exists( 'is_plugin_active' ) ) {
@@ -54,5 +54,5 @@ function load_mailup_for_wc_premium() {
 	require MUFWC_INCLUDES . 'mufwc-functions.php';
 
 }
-add_action( 'plugins_loaded', 'load_mailup_for_wc_premium', 1 );
+add_action( 'plugins_loaded', 'load_mailup_for_wc', 100 );
 

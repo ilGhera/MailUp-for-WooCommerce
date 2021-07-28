@@ -87,3 +87,18 @@ form#mufwc-premium-key input.button {
     display: none;
 }
 
+.label.premium {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.4rem;
+}
+
+.label.premium a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.label.premium a:hover {
+  color: #0073aa;
+}
+

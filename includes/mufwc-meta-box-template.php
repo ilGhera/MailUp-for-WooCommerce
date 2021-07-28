@@ -9,11 +9,8 @@
 
 $activate      = get_post_meta( get_the_ID(), 'mufwc-post-activate', true );
 $list          = get_post_meta( get_the_ID(), 'mufwc-post-list', true );
-$group         = get_post_meta( get_the_ID(), 'mufwc-post-group', true );
-$before_text   = get_post_meta( get_the_ID(), 'mufwc-before-text', true );
 $button_text   = get_post_meta( get_the_ID(), 'mufwc-button-text', true );
 $response_text = get_post_meta( get_the_ID(), 'mufwc-response-text', true );
-$redirect      = get_post_meta( get_the_ID(), 'mufwc-redirect', true );
 ?>
 
 <div class="wrap">
@@ -37,17 +34,19 @@ $redirect      = get_post_meta( get_the_ID(), 'mufwc-redirect', true );
 		<tr class="mufwc-post-field">	
 			<th scope="row"><?php esc_html_e( 'MailUp Group ID', 'mailup-for-wc' ); ?></th>
 			<td>
-				<input type="number" name="mufwc-post-group" id="mufwc-post-group" class="regular-text" value="<?php echo esc_attr( $group ); ?>">
+				<input type="number" name="mufwc-post-group" id="mufwc-post-group" class="regular-text" disabled>
 				<p class="description">
 					<?php esc_html_e( 'Add users to a specific MailUp group.', 'mailup-for-wc' ); ?>
+                    <?php MUFWC_admin::go_premium(); ?>
 				</p>
 			</td>
 		</tr>
 		<tr class="mufwc-post-field">
 			<th scope="row"><?php esc_html_e( 'Description text', 'mailup-for-wc' ); ?></th>
 			<td>
-				<textarea name="mufwc-before-text" class="regular-text" placeholder="<?php esc_html_e( 'Click on the button below to receive the first chapter for free!', 'mailup-for-wc' ); ?>"><?php echo esc_attr( $before_text ); ?></textarea>
+				<textarea name="mufwc-before-text" class="regular-text" placeholder="<?php esc_html_e( 'Click on the button below to receive the first chapter for free!', 'mailup-for-wc' ); ?>" disabled></textarea>
 				<p class="desctiption"><?php esc_html_e( 'Add a description text before the button.', 'mailup-for-wc' ); ?></p>
+                <?php MUFWC_admin::go_premium(); ?>
 			</td>
 		</tr>
 		<tr class="mufwc-post-field required">
@@ -67,7 +66,7 @@ $redirect      = get_post_meta( get_the_ID(), 'mufwc-redirect', true );
 		<tr class="mufwc-post-field">
 			<th scope="row"><?php esc_html_e( 'Redirect', 'mailup-for-wc' ); ?></th>
 			<td>
-				<select name="mufwc-redirect" class="mufwc-select">
+				<select name="mufwc-redirect" class="mufwc-select" disabled>
 					<option><?php esc_html_e( 'Select a page', 'mailup-for-wc' ); ?></option>
 					<?php
 					$red_pages = get_pages();
@@ -76,13 +75,14 @@ $redirect      = get_post_meta( get_the_ID(), 'mufwc-redirect', true );
 
 						foreach ( $red_pages as $red_page ) {
 
-							echo '<option value="' . esc_attr( $red_page->ID ) . '"' . ( intval( $redirect ) === $red_page->ID ? ' selected="selected"' : '' ) . '>' . esc_html( $red_page->post_title ) . '</option>';
+							echo '<option value="' . esc_attr( $red_page->ID ) . '">' . esc_html( $red_page->post_title ) . '</option>';
 
 						}
 					}
 					?>
 				</select>
 				<p class="desctiption"><?php esc_html_e( 'Redirect the user to a specific page.', 'mailup-for-wc' ); ?></p>
+                <?php MUFWC_admin::go_premium(); ?>
 			</td>
 		</tr>
 

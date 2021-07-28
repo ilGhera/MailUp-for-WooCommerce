@@ -8,9 +8,7 @@
  */
 
 $types        = get_option( 'mufwc-post-types' );
-$guest_form   = get_option( 'mufwc-guest-form' );
 $position     = get_option( 'mufwc-button-position' );
-$privacy_page = get_option( 'mufwc-privacy-page' );
 ?>
 
 <form name="mufwc-subscription-options" id="mufwc-subscription-options" method="post" action="">
@@ -44,10 +42,11 @@ $privacy_page = get_option( 'mufwc-privacy-page' );
 			<th scope="row"><?php esc_html_e( 'Guest form', 'mailup-for-wc' ); ?></th>
 			<td>
 				<select name="mufwc-guest-form" id="mufwc-guest-form" class="mufwc-select">
-					<option value="login-form"<?php echo 'login-form' === $guest_form ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Login/ Register', 'mailup-for-wc' ); ?></option>
-					<option value="email"<?php echo 'email' === $guest_form ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Email only', 'mailup-for-wc' ); ?></option>
+					<option value="login-form" selected="selected"><?php esc_html_e( 'Login/ Register', 'mailup-for-wc' ); ?></option>
+					<option value="email"><?php esc_html_e( 'Email only', 'mailup-for-wc' ); ?></option>
 				</select>
 				<p class="description"><?php esc_html_e( 'Ask to access to not logged-in users or just the email for newsletter subscription.', 'mailup-for-wc' ); ?></p>
+                <?php MUFWC_admin::go_premium(); ?>
 			</td>
 		</tr>
 		<tr>
@@ -64,7 +63,7 @@ $privacy_page = get_option( 'mufwc-privacy-page' );
 		<tr class="privacy-field">
 			<th scope="row"><?php esc_html_e( 'Privacy', 'mailup-for-wc' ); ?></th>
 			<td>
-				<select name="mufwc-privacy-page" class="mufwc-select">
+				<select name="mufwc-privacy-page" class="mufwc-select" disabled>
 					<option value=""><?php esc_html_e( 'Select a page', 'mailup-for-wc' ); ?></option>
 					<?php
 					$p_pages = get_pages();
@@ -73,13 +72,14 @@ $privacy_page = get_option( 'mufwc-privacy-page' );
 
 						foreach ( $p_pages as $p_page ) {
 
-							echo '<option value="' . esc_attr( $p_page->ID ) . '"' . ( intval( $privacy_page ) === $p_page->ID ? ' selected="selected"' : '' ) . '>' . esc_html( $p_page->post_title ) . '</option>';
+							echo '<option value="' . esc_attr( $p_page->ID ) . '">' . esc_html( $p_page->post_title ) . '</option>';
 
 						}
 					}
 					?>
 				</select>
 				<p class="description"><?php esc_html_e( 'Select the page with the privacy conditions', 'mailup-for-wc' ); ?></p>
+                <?php MUFWC_admin::go_premium(); ?>
 			</td>
 		</tr>
 
