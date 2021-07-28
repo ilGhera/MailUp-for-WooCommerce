@@ -51,7 +51,6 @@ function load_mailup_for_wc() {
 	require MUFWC_INCLUDES . 'class-mufwc-auto-subscription.php';
 	require MUFWC_INCLUDES . 'class-mufwc-button.php';
 	require MUFWC_INCLUDES . 'class-mufwc-edit-post.php';
-	require MUFWC_INCLUDES . 'mufwc-functions.php';
 
 }
 add_action( 'plugins_loaded', 'load_mailup_for_wc', 100 );
