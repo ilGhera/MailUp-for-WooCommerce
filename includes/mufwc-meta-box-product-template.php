@@ -19,7 +19,7 @@
 				<p class="description">
 					<?php esc_html_e( 'Enter the ID of the list which you want to register your users.', 'mailup-for-wc' ); ?>
 				</p>
-                <?php MUFWC_admin::go_premium(); ?>
+				<?php MUFWC_admin::go_premium(); ?>
 			</td>
 		</tr>
 		<tr class="mufwc-product-field">	
@@ -29,7 +29,7 @@
 				<p class="description">
 					<?php esc_html_e( 'Add users to a specific MailUp group.', 'mailup-for-wc' ); ?>
 				</p>
-                <?php MUFWC_admin::go_premium(); ?>
+				<?php MUFWC_admin::go_premium(); ?>
 			</td>
 		</tr>
 

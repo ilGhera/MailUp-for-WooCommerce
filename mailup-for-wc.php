@@ -28,7 +28,8 @@ function load_mailup_for_wc() {
 	if ( is_plugin_active( 'mailup-auto-subscription/mailup-auto-subscription.php' ) || function_exists( 'mas_load_textdomain' ) ) {
 		deactivate_plugins( 'mailup-auto-subscription/mailup-auto-subscription.php' );
 		remove_action( 'plugins_loaded', 'mas_load_textdomain' );
-		wp_redirect( admin_url( 'plugins.php?plugin_status=all&paged=1&s' ) );
+		wp_safe_redirect( admin_url( 'plugins.php?plugin_status=all&paged=1&s' ) );
+		exit;
 	}
 
 	/*Constants declaration*/
@@ -50,7 +51,6 @@ function load_mailup_for_wc() {
 	require MUFWC_INCLUDES . 'class-mufwc-auto-subscription.php';
 	require MUFWC_INCLUDES . 'class-mufwc-button.php';
 	require MUFWC_INCLUDES . 'class-mufwc-edit-post.php';
-	require MUFWC_INCLUDES . 'class-mufwc-post-order.php';
 	require MUFWC_INCLUDES . 'mufwc-functions.php';
 
 }

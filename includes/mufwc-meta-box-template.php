@@ -37,7 +37,7 @@ $response_text = get_post_meta( get_the_ID(), 'mufwc-response-text', true );
 				<input type="number" name="mufwc-post-group" id="mufwc-post-group" class="regular-text" disabled>
 				<p class="description">
 					<?php esc_html_e( 'Add users to a specific MailUp group.', 'mailup-for-wc' ); ?>
-                    <?php MUFWC_admin::go_premium(); ?>
+					<?php MUFWC_admin::go_premium(); ?>
 				</p>
 			</td>
 		</tr>
@@ -46,7 +46,7 @@ $response_text = get_post_meta( get_the_ID(), 'mufwc-response-text', true );
 			<td>
 				<textarea name="mufwc-before-text" class="regular-text" placeholder="<?php esc_html_e( 'Click on the button below to receive the first chapter for free!', 'mailup-for-wc' ); ?>" disabled></textarea>
 				<p class="desctiption"><?php esc_html_e( 'Add a description text before the button.', 'mailup-for-wc' ); ?></p>
-                <?php MUFWC_admin::go_premium(); ?>
+				<?php MUFWC_admin::go_premium(); ?>
 			</td>
 		</tr>
 		<tr class="mufwc-post-field required">
@@ -82,7 +82,7 @@ $response_text = get_post_meta( get_the_ID(), 'mufwc-response-text', true );
 					?>
 				</select>
 				<p class="desctiption"><?php esc_html_e( 'Redirect the user to a specific page.', 'mailup-for-wc' ); ?></p>
-                <?php MUFWC_admin::go_premium(); ?>
+				<?php MUFWC_admin::go_premium(); ?>
 			</td>
 		</tr>
 

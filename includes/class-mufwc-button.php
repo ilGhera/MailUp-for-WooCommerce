@@ -80,7 +80,7 @@ class MUFWC_Button {
 	 *
 	 * @param int $list          the list.
 	 * @param int $response_text the response text.
-     *
+	 *
 	 * @return mixed the form html
 	 */
 	public function guest_form( $list, $response_text ) {
@@ -241,7 +241,6 @@ class MUFWC_Button {
 			$product_id    = isset( $_POST['product_id'] ) ? sanitize_text_field( wp_unslash( $_POST['product_id'] ) ) : '';
 			$response_text = isset( $_POST['response-text'] ) ? sanitize_text_field( wp_unslash( $_POST['response-text'] ) ) : '';
 			$error_message = __( 'Sorry but something went wrong, please try again later.', 'mailup-for-wc' );
-
 
 			/*Check if the user is already subscribed*/
 			$check  = sprintf( '%s/frontend/Xmlchksubscriber.aspx?list=%d&email=%s', $host, $list, $mail );

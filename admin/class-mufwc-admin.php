@@ -39,15 +39,14 @@ class MUFWC_Admin {
 
 		$pages[] = 'toplevel_page_mailup-for-wc';
 
-        wp_enqueue_style( 'mufwc-admin-style', MUFWC_URI . 'css/mufwc-admin.css', array(), filemtime( MUFWC_DIR . 'css/mufwc-admin.css' ) );
+		wp_enqueue_style( 'mufwc-admin-style', MUFWC_URI . 'css/mufwc-admin.css', array(), filemtime( MUFWC_DIR . 'css/mufwc-admin.css' ) );
 
 		if ( isset( $admin_page->id ) && in_array( $admin_page->id, $pages, true ) || 'product' === $admin_page->id ) {
 
 			/*css*/
 			wp_enqueue_style( 'chosen-style', MUFWC_URI . 'vendor/harvesthq/chosen/chosen.min.css', array(), filemtime( MUFWC_DIR . 'vendor/harvesthq/chosen/chosen.min.css' ) );
 			wp_enqueue_style( 'tzcheckbox-style', MUFWC_URI . 'js/tzCheckbox/jquery.tzCheckbox/jquery.tzCheckbox.css', array(), filemtime( MUFWC_DIR . 'js/tzCheckbox/jquery.tzCheckbox/jquery.tzCheckbox.css' ) );
-            wp_enqueue_style( 'bootstrap-iso', MUFWC_URI . 'css/bootstrap-iso.css' );
-
+			wp_enqueue_style( 'bootstrap-iso', MUFWC_URI . 'css/bootstrap-iso.css' );
 
 			/*js*/
 			wp_enqueue_script( 'mufwc-admin-js', MUFWC_URI . 'js/mufwc-admin.js', array( 'jquery' ), filemtime( MUFWC_DIR . 'js/mufwc-admin.js' ), true );
@@ -59,19 +58,19 @@ class MUFWC_Admin {
 	}
 
 
-    /**
+	/**
 	 * Button premium call to action
-     *
-	 * @return string
+	 *
+	 * @return void
 	 */
 	public static function go_premium() {
 
 		echo '<div class="bootstrap-iso">';
-            echo '<span class="label label-warning premium">';
-                echo '<a href="https://www.ilghera.com/product/mailup-for-woocommerce-premium" target="_blank" ';
-                    echo 'title="' . esc_html__( 'This is a premium functionality, click here for details', 'mailup-for-wc' ) . '"';
-                echo '>Premium</a>';
-            echo '</span>';
+			echo '<span class="label label-warning premium">';
+				echo '<a href="https://www.ilghera.com/product/mailup-for-woocommerce-premium" target="_blank" ';
+					echo 'title="' . esc_html__( 'This is a premium functionality, click here for details', 'mailup-for-wc' ) . '"';
+				echo '>Premium</a>';
+			echo '</span>';
 		echo '</div>';
 
 	}
@@ -146,7 +145,7 @@ class MUFWC_Admin {
 				echo '</div>';
 
 			echo '</div>';
-                echo '<div class="wrap-right"></div>';
+				echo '<div class="wrap-right"></div>';
 		echo '</div>';
 
 	}

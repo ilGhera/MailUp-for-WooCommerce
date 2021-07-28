@@ -20,13 +20,13 @@ Prepare the workflows needed to follow your customer before and after the purcha
 * Choose which list and MailUp group to add your users to
 * Send the MailUp confirmation email for registration to the newsletter
 * Add MailUp subscription buttons and forms to the WordPress post-types of your interest
-* Choose whether to show visitors the WordPress login/registration form or simply request their name and email
 * Place the sign up button and form before or after the page content or wherever you prefer using a shortcode
-* Select the page with the Privacy Policy to show to the user
-* Add a text description before the MailUp subscription form/button
 * Choose the text of the MailUp subscription button
 * Choose the text thanking the user for subscribing to MailUp
-* Choose a page on your site to be redirected after registering with MailUp
+* (Premium) Choose whether to show visitors the WordPress login/registration form or simply request their name and email
+* (Premium) Select the page with the Privacy Policy to show to the user
+* (Premium) Add a text description before the MailUp subscription form/button
+* (Premium) Choose a page on your site to be redirected after registering with MailUp
 * (Premium) Select a MailUp list and group for each WooCommerce product
 
 https://youtu.be/mnJqEjajRKE

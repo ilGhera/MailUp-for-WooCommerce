@@ -7,8 +7,8 @@
  * @since 0.9.0
  */
 
-$types        = get_option( 'mufwc-post-types' );
-$position     = get_option( 'mufwc-button-position' );
+$types    = get_option( 'mufwc-post-types' );
+$position = get_option( 'mufwc-button-position' );
 ?>
 
 <form name="mufwc-subscription-options" id="mufwc-subscription-options" method="post" action="">
@@ -46,7 +46,7 @@ $position     = get_option( 'mufwc-button-position' );
 					<option value="email"><?php esc_html_e( 'Email only', 'mailup-for-wc' ); ?></option>
 				</select>
 				<p class="description"><?php esc_html_e( 'Ask to access to not logged-in users or just the email for newsletter subscription.', 'mailup-for-wc' ); ?></p>
-                <?php MUFWC_admin::go_premium(); ?>
+				<?php MUFWC_admin::go_premium(); ?>
 			</td>
 		</tr>
 		<tr>
@@ -79,7 +79,7 @@ $position     = get_option( 'mufwc-button-position' );
 					?>
 				</select>
 				<p class="description"><?php esc_html_e( 'Select the page with the privacy conditions', 'mailup-for-wc' ); ?></p>
-                <?php MUFWC_admin::go_premium(); ?>
+				<?php MUFWC_admin::go_premium(); ?>
 			</td>
 		</tr>
 
