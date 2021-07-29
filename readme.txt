@@ -1,9 +1,11 @@
-=== MailUp for WooCommerce === 
+=== ilGhera MailUp for WooCommerce === 
 Contributors: ghera74
-Tags: Woocommerce, ecommerce, support, ticket, thread, shop, orders, products
+Tags: MailUp, WooCommerce, newsletter, subscription, follow up, pre-sell, marketing  
 Version: 0.9.0
 Requires at least: 4.0
 Tested up to: 5.7
+Stable tag: 0.9.0
+License: GPLv3
 
 Lead marketing and clients follow-up for WooCommerce with MailUp lists, groups and workflows
 
