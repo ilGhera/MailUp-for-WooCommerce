@@ -3,7 +3,7 @@ Contributors: ghera74
 Tags: MailUp, WooCommerce, newsletter, subscription, follow up, pre-sell, marketing  
 Version: 0.9.0
 Requires at least: 4.0
-Tested up to: 5.7
+Tested up to: 5.8
 Stable tag: 0.9.0
 License: GPLv3
 

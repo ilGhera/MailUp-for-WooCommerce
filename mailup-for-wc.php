@@ -7,8 +7,8 @@
  * Version: 0.9.0
  * Author URI: https://ilghera.com
  * Requires at least: 4.0
- * Tested up to: 5
- * WP tested up to: 3
+ * Tested up to: 5.8
+ * WC tested up to: 5
  * Text Domain: mailup-for-wc
  */
 

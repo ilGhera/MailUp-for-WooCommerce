@@ -151,6 +151,31 @@ class MUFWC_Admin {
 	}
 
 
+    /**
+	 * Sanitize every single array element
+	 *
+	 * @param  array $array the array to sanitize.
+	 * @return array        the sanitized array.
+	 */
+	public function sanitize_array( $array ) {
+
+		$output = array();
+
+		if ( is_array( $array ) && ! empty( $array ) ) {
+
+			foreach ( $array as $key => $value ) {
+
+				$output[ $key ] = sanitize_text_field( wp_unslash( $value ) );
+
+			}
+
+		}
+
+		return $output;
+
+	}
+
+
 	/**
 	 * Save the options in the db
 	 */
@@ -180,7 +205,7 @@ class MUFWC_Admin {
 
 		if ( isset( $_POST['mufwc-settings-subscription-nonce'] ) && wp_verify_nonce( wp_unslash( $_POST['mufwc-settings-subscription-nonce'] ), 'mufwc-settings-subscription' ) ) {
 
-			$post_types   = isset( $_POST['mufwc-post-types'] ) ? $_POST['mufwc-post-types'] : array();
+			$post_types   = isset( $_POST['mufwc-post-types'] ) ? $this->sanitize_array( $_POST['mufwc-post-types'] ) : array();
 			$guest_form   = isset( $_POST['mufwc-guest-form'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-guest-form'] ) ) : '';
 			$position     = isset( $_POST['mufwc-button-position'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-button-position'] ) ) : '';
 			$privacy_page = isset( $_POST['mufwc-privacy-page'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-privacy-page'] ) ) : '';
