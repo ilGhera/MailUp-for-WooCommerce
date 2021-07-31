@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: ilGhera MailUp for WooCommerce
+ * Plugin Name: MailUp for WooCommerce
  * Plugin URI: https://www.ilghera.com/product/mailup-for-woocommerce-premium
  * Description: Lead marketing and clients follow-up for WooCommerce with MailUp lists, groups and workflows
  * Author: ilGhera

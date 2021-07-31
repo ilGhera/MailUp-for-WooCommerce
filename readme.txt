@@ -1,4 +1,4 @@
-=== ilGhera MailUp for WooCommerce === 
+=== MailUp for WooCommerce === 
 Contributors: ghera74
 Tags: MailUp, WooCommerce, newsletter, subscription, follow up, pre-sell, marketing  
 Version: 0.9.0
