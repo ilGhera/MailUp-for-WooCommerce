@@ -4,7 +4,7 @@
  *
  * @author ilGhera
  * @package mailup-for-wc/admin
- * @since 0.9.0
+ * @since 0.9.1
  */
 class MUFWC_Admin {
 
