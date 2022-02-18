@@ -93,27 +93,7 @@ class MUFWC_Admin {
 			echo '<div class="wrap-left">';
 
 				/*Header*/
-				echo '<h1 class="mufwc main">' . esc_html( __( 'MailUp for WooCommerce - Premium', 'mailup-for-wc' ) ) . '</h1>';
-
-				/*Plugin premium key*/
-				$key = sanitize_text_field( get_option( 'mufwc-premium-key' ) );
-
-		if ( isset( $_POST['mufwc-premium-key'], $_POST['mufwc-premium-key-nonce'] ) && wp_verify_nonce( wp_unslash( $_POST['mufwc-premium-key-nonce'] ), 'mufwc-premium-key' ) ) { // temp.
-
-			$key = sanitize_text_field( wp_unslash( $_POST['mufwc-premium-key'] ) );
-
-			update_option( 'mufwc-premium-key', $key );
-
-		}
-
-				/*Premium Key Form*/
-				echo '<form id="mufwc-premium-key" method="post" action="">';
-					echo '<label>' . esc_html( __( 'Premium Key', 'mailup-for-wc' ) ) . '</label>';
-					echo '<input type="text" class="regular-text code" name="mufwc-premium-key" id="mufwc-premium-key" placeholder="' . esc_html( __( 'Add your Premium Key', 'mailup-for-wc' ) ) . '" value="' . esc_attr( $key ) . '" />';
-					echo '<p class="description">' . esc_html( __( 'Add your Premium Key and keep update your copy of MailUp for WooCommerce - Premium.', 'mailup-for-wc' ) ) . '</p>';
-					wp_nonce_field( 'mufwc-premium-key', 'mufwc-premium-key-nonce' );
-					echo '<input type="submit" class="button button-primary" value="' . esc_html( __( 'Save settings', 'mailup-for-wc' ) ) . '" />';
-				echo '</form>';
+				echo '<h1 class="mufwc main">' . esc_html( __( 'MailUp for WooCommerce', 'mailup-for-wc' ) ) . '</h1>';
 
 				/*Plugin options menu*/
 				echo '<div class="icon32 icon32-wordpress-settings" id="icon-wordpress"><br /></div>';
