@@ -125,7 +125,9 @@ class MUFWC_Admin {
 				echo '</div>';
 
 			echo '</div>';
-				echo '<div class="wrap-right"></div>';
+            echo '<div class="wrap-right" style="float:left; width:30%; text-align:center; padding-top:3rem;">';
+                echo '<iframe width="300" height="800" scrolling="no" src="https://www.ilghera.com/images/mufwc-iframe.html"></iframe>';
+            echo '</div>';
 		echo '</div>';
 
 	}
