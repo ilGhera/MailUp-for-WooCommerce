@@ -33,7 +33,7 @@ class MUFWC_Post_Order {
 	private function is_user_subscried( $list, $mail ) {
 
 		$output      = false;
-		$mufwc_check = sprintf( '%s/frontend/Xmlchksubscriber.aspx?list=2&email=%s', $this->host, $mail );
+		$mufwc_check = sprintf( '%s/frontend/Xmlchksubscriber.aspx?list=%d&email=%s', $this->host, $list, $mail );
 
 		$result = wp_remote_post( $mufwc_check );
 
