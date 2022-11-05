@@ -12,7 +12,9 @@
  */
 require MUFWC_DIR . 'plugin-update-checker/plugin-update-checker.php';
 
-$mufwc_update_checker = Puc_v4_Factory::buildUpdateChecker(
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$mufwc_update_checker = PucFactory::buildUpdateChecker(
 	'https://www.ilghera.com/wp-update-server-2/?action=get_metadata&slug=mailup-for-wc-premium',
 	MUFWC_FILE,
 	'mailup-for-wc-premium'
