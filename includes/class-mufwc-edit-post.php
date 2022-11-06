@@ -4,7 +4,7 @@
  *
  * @author ilGhera
  * @package mailup-for-wc/includes
- * @since 0.9.0
+ * @since 0.9.2
  */
 class MUFWC_Edit_Post {
 
@@ -35,13 +35,13 @@ class MUFWC_Edit_Post {
 
 			if ( 'product' === $admin_page->id ) {
 
-				add_meta_box( 'mufwc-box', __( 'MailUp for WooCommerce', 'mailup-for-wc' ), array( $this, 'mufwc_add_meta_box_product_callback' ) );
+				add_meta_box( 'mufwc-box', __( 'MailUp for WooCommerce', 'wc-mailup' ), array( $this, 'mufwc_add_meta_box_product_callback' ) );
 
 			} elseif ( is_array( $post_types ) ) {
 
 				if ( in_array( $admin_page->id, $post_types, true ) ) {
 
-					add_meta_box( 'mufwc-box', __( 'MailUp for WooCommerce', 'mailup-for-wc' ), array( $this, 'mufwc_add_meta_box_callback' ) );
+					add_meta_box( 'mufwc-box', __( 'MailUp for WooCommerce', 'wc-mailup' ), array( $this, 'mufwc_add_meta_box_callback' ) );
 
 				}
 			}

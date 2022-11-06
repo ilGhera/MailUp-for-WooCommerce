@@ -4,7 +4,7 @@
  *
  * @author ilGhera
  * @package mailup-for-wc/admin
- * @since 0.9.1
+ * @since 0.9.2
  */
 class MUFWC_Admin {
 
@@ -24,7 +24,7 @@ class MUFWC_Admin {
 	 */
 	public function register_admin_menu() {
 
-		add_menu_page( __( 'MailUp for WooCommerce', 'mailup-for-wc' ), __( 'MailUp for WC', 'mailup-for-wc' ), 'manage_options', 'mailup-for-wc', array( $this, 'mufwc_options' ), 'dashicons-email', 52 );
+		add_menu_page( __( 'MailUp for WooCommerce', 'wc-mailup' ), __( 'MailUp for WC', 'wc-mailup' ), 'manage_options', 'mailup-for-wc', array( $this, 'mufwc_options' ), 'dashicons-email', 52 );
 
 	}
 
@@ -68,7 +68,7 @@ class MUFWC_Admin {
 		echo '<div class="bootstrap-iso">';
 			echo '<span class="label label-warning premium">';
 				echo '<a href="https://www.ilghera.com/product/mailup-for-woocommerce-premium" target="_blank" ';
-					echo 'title="' . esc_html__( 'This is a premium functionality, click here for details', 'mailup-for-wc' ) . '"';
+					echo 'title="' . esc_html__( 'This is a premium functionality, click here for details', 'wc-mailup' ) . '"';
 				echo '>Premium</a>';
 			echo '</span>';
 		echo '</div>';
@@ -84,7 +84,7 @@ class MUFWC_Admin {
 		/*Right of access*/
 		if ( ! current_user_can( 'manage_options' ) ) {
 
-			wp_die( esc_html( __( 'It seems like you don\'t have permission to see this page', 'mailup-for-wc' ) ) );
+			wp_die( esc_html( __( 'It seems like you don\'t have permission to see this page', 'wc-mailup' ) ) );
 
 		}
 
@@ -93,14 +93,14 @@ class MUFWC_Admin {
 			echo '<div class="wrap-left">';
 
 				/*Header*/
-				echo '<h1 class="mufwc main">' . esc_html( __( 'MailUp for WooCommerce', 'mailup-for-wc' ) ) . '</h1>';
+				echo '<h1 class="mufwc main">' . esc_html( __( 'MailUp for WooCommerce', 'wc-mailup' ) ) . '</h1>';
 
 				/*Plugin options menu*/
 				echo '<div class="icon32 icon32-wordpress-settings" id="icon-wordpress"><br /></div>';
 					echo '<h2 id="mufwc-admin-menu" class="nav-tab-wrapper woo-nav-tab-wrapper">';
-					echo '<a href="#" data-link="mufwc-general" class="nav-tab nav-tab-active" onclick="return false;">' . esc_html( __( 'General', 'mailup-for-wc' ) ) . '</a>';
-					echo '<a href="#" data-link="mufwc-registration" class="nav-tab" onclick="return false;">' . esc_html( __( 'Site Registration', 'mailup-for-wc' ) ) . '</a>';
-					echo '<a href="#" data-link="mufwc-subscription" class="nav-tab" onclick="return false;">' . esc_html( __( 'Subscription Button', 'mailup-for-wc' ) ) . '</a>';
+					echo '<a href="#" data-link="mufwc-general" class="nav-tab nav-tab-active" onclick="return false;">' . esc_html( __( 'General', 'wc-mailup' ) ) . '</a>';
+					echo '<a href="#" data-link="mufwc-registration" class="nav-tab" onclick="return false;">' . esc_html( __( 'Site Registration', 'wc-mailup' ) ) . '</a>';
+					echo '<a href="#" data-link="mufwc-subscription" class="nav-tab" onclick="return false;">' . esc_html( __( 'Subscription Button', 'wc-mailup' ) ) . '</a>';
 				echo '</h2>';
 
 				/*General options*/

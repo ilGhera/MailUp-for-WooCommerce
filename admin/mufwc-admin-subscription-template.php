@@ -4,7 +4,7 @@
  *
  * @author ilGhera
  * @package mailup-for-wc/admin
- * @since 0.9.0
+ * @since 0.9.2
  */
 
 $types    = get_option( 'mufwc-post-types' );
@@ -16,7 +16,7 @@ $position = get_option( 'mufwc-button-position' );
 	<table class="form-table">
 
 		<tr>
-			<th scope="row"><?php esc_html_e( 'Post types', 'mailup-for-wc' ); ?></th>
+			<th scope="row"><?php esc_html_e( 'Post types', 'wc-mailup' ); ?></th>
 			<td>
 				<select name="mufwc-post-types[]" class="mufwc-select regular-text" multiple>
 					<?php
@@ -39,32 +39,32 @@ $position = get_option( 'mufwc-button-position' );
 				</select>
 			</td>
 		<tr>
-			<th scope="row"><?php esc_html_e( 'Guest form', 'mailup-for-wc' ); ?></th>
+			<th scope="row"><?php esc_html_e( 'Guest form', 'wc-mailup' ); ?></th>
 			<td>
 				<select name="mufwc-guest-form" id="mufwc-guest-form" class="mufwc-select">
-					<option value="login-form" selected="selected"><?php esc_html_e( 'Login/ Register', 'mailup-for-wc' ); ?></option>
-					<option value="email"><?php esc_html_e( 'Email only', 'mailup-for-wc' ); ?></option>
+					<option value="login-form" selected="selected"><?php esc_html_e( 'Login/ Register', 'wc-mailup' ); ?></option>
+					<option value="email"><?php esc_html_e( 'Email only', 'wc-mailup' ); ?></option>
 				</select>
-				<p class="description"><?php esc_html_e( 'Ask to access to not logged-in users or just the email for newsletter subscription.', 'mailup-for-wc' ); ?></p>
+				<p class="description"><?php esc_html_e( 'Ask to access to not logged-in users or just the email for newsletter subscription.', 'wc-mailup' ); ?></p>
 				<?php MUFWC_admin::go_premium(); ?>
 			</td>
 		</tr>
 		<tr>
-			<th scope="row"><?php esc_html_e( 'Button position', 'mailup-for-wc' ); ?></th>
+			<th scope="row"><?php esc_html_e( 'Button position', 'wc-mailup' ); ?></th>
 			<td>
 				<select name="mufwc-button-position" class="mufwc-select">
-					<option value="before"<?php echo 'before' === $position ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Before the content', 'mailup-for-wc' ); ?></option>
-					<option value="after"<?php echo 'after' === $position ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'After the content', 'mailup-for-wc' ); ?></option>
-					<option value="custom"<?php echo 'custom' === $position ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Custom', 'mailup-for-wc' ); ?></option>
+					<option value="before"<?php echo 'before' === $position ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Before the content', 'wc-mailup' ); ?></option>
+					<option value="after"<?php echo 'after' === $position ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'After the content', 'wc-mailup' ); ?></option>
+					<option value="custom"<?php echo 'custom' === $position ? ' selected="selected"' : ''; ?>><?php esc_html_e( 'Custom', 'wc-mailup' ); ?></option>
 				</select>
-				<p class="description"><?php esc_html_e( 'Custom position requires use of shortcode [mailup-subscribe] provided by the plugin.', 'mailup-for-wc' ); ?></p>
+				<p class="description"><?php esc_html_e( 'Custom position requires use of shortcode [mailup-subscribe] provided by the plugin.', 'wc-mailup' ); ?></p>
 			</td>
 		</tr>
 		<tr class="privacy-field">
-			<th scope="row"><?php esc_html_e( 'Privacy', 'mailup-for-wc' ); ?></th>
+			<th scope="row"><?php esc_html_e( 'Privacy', 'wc-mailup' ); ?></th>
 			<td>
 				<select name="mufwc-privacy-page" class="mufwc-select" disabled>
-					<option value=""><?php esc_html_e( 'Select a page', 'mailup-for-wc' ); ?></option>
+					<option value=""><?php esc_html_e( 'Select a page', 'wc-mailup' ); ?></option>
 					<?php
 					$p_pages = get_pages();
 
@@ -78,7 +78,7 @@ $position = get_option( 'mufwc-button-position' );
 					}
 					?>
 				</select>
-				<p class="description"><?php esc_html_e( 'Select the page with the privacy conditions', 'mailup-for-wc' ); ?></p>
+				<p class="description"><?php esc_html_e( 'Select the page with the privacy conditions', 'wc-mailup' ); ?></p>
 				<?php MUFWC_admin::go_premium(); ?>
 			</td>
 		</tr>
@@ -89,7 +89,7 @@ $position = get_option( 'mufwc-button-position' );
 
 	<p class="submit">
 		<input type="hidden" name="mufwc-sent" id="mufwc-sent" value="true">
-		<input class="button button-primary" type="submit" value="<?php esc_html_e( 'Save changes', 'mailup-for-wc' ); ?>">
+		<input class="button button-primary" type="submit" value="<?php esc_html_e( 'Save changes', 'wc-mailup' ); ?>">
 	</p>
 
 </form>

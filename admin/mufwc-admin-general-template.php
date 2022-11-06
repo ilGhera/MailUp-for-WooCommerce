@@ -4,7 +4,7 @@
  *
  * @author ilGhera
  * @package mailup-for-wc/admin
- * @since 0.9.0
+ * @since 0.9.2
  */
 
 $host    = get_option( 'mufwc-host' );
@@ -18,12 +18,12 @@ $confirm = get_option( 'mufwc-confirm' );
 	<table class="form-table">
 
 		<tr>
-			<th scope="row"><?php esc_html_e( 'Endpoint/ Console url', 'mailup-for-wc' ); ?></th>
+			<th scope="row"><?php esc_html_e( 'Endpoint/ Console url', 'wc-mailup' ); ?></th>
 			<td>
 				<input type="text" name="mufwc-host" id="mufwc-host" class="regular-text" value="<?php echo esc_attr( $host ); ?>">
 				<p class="description">
-					<?php esc_html_e( 'Do you need help? Click ', 'mailup-for-wc' ); ?>			
-					<?php echo sprintf( '<a href="%s" target="_blank">' . esc_html__( 'here', 'mailup-for-wc' ) . '</a>', esc_url( 'http://help.mailup.com/display/mailupapi/MailUp+API+Credentials ' ) ); ?>			
+					<?php esc_html_e( 'Do you need help? Click ', 'wc-mailup' ); ?>			
+					<?php echo sprintf( '<a href="%s" target="_blank">' . esc_html__( 'here', 'wc-mailup' ) . '</a>', esc_url( 'http://help.mailup.com/display/mailupapi/MailUp+API+Credentials ' ) ); ?>			
 				</p>
 			</td>
 		</tr>
@@ -34,7 +34,7 @@ $confirm = get_option( 'mufwc-confirm' );
 
 	<p class="submit">
 		<input type="hidden" name="mufwc-sent" id="mufwc-sent" value="true">
-		<input class="button button-primary" type="submit" value="<?php esc_html_e( 'Save changes', 'mailup-for-wc' ); ?>">
+		<input class="button button-primary" type="submit" value="<?php esc_html_e( 'Save changes', 'wc-mailup' ); ?>">
 	</p>
 
 </form>

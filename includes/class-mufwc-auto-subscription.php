@@ -1,6 +1,10 @@
 <?php
 /**
  * Auto subscription to MailUp on WC registration
+ *
+ * @author ilGhera
+ * @package mailup-for-wc/includes
+ * @since 0.9.2
  */
 class MUFWC_Auto_Subscription {
 
@@ -29,7 +33,7 @@ class MUFWC_Auto_Subscription {
 			echo '<p style="margin-bottom:10px;">';
 				echo '<label style="text-align: left;">';
 					echo '<input style="margin-top: 0;" type="checkbox" name="user-newsletter" id="user-newsletter" value="1" checked="checked"/>';
-					echo esc_html__( 'Newsletter subscriptions', 'mailup-for-wc' );
+					echo esc_html__( 'Newsletter subscriptions', 'wc-mailup' );
 				echo '</label>';
 			echo '</p>';
 

@@ -4,7 +4,7 @@
  *
  * @author ilGhera
  * @package mailup-for-wc/includes
- * @since 0.9.0
+ * @since 0.9.2
  */
 class MUFWC_Button {
 
@@ -87,11 +87,11 @@ class MUFWC_Button {
 
 		echo '<form id="mufwc-subscription-form" method="post" action="">';
 			echo '<div class="form-group">';
-				echo '<label for="mufwc-name">' . esc_html__( 'Your name', 'mailup-for-wc' ) . '</label>';
+				echo '<label for="mufwc-name">' . esc_html__( 'Your name', 'wc-mailup' ) . '</label>';
 				echo '<input type="text" class="form-control" name="mufwc-name" id="mufwc-name" required="required">';
 			echo '</div>';
 			echo '<div class="form-group">';
-				echo '<label for="mufwc-mail">' . esc_html__( 'Your email', 'mailup-for-wc' ) . '</label>';
+				echo '<label for="mufwc-mail">' . esc_html__( 'Your email', 'wc-mailup' ) . '</label>';
 				echo '<input type="email" class="form-control" name="mufwc-mail" id="mufwc-mail" required="required">';
 			echo '</div>';
 
@@ -103,13 +103,13 @@ class MUFWC_Button {
 				printf(
 					wp_kses_post(
 						/* Translators: the Privacy Policy URL */
-						__( 'I consent to the processing of personal data according to the new general data protection regulation of the European Union (GDPR) and subsequent amendments and according to the <a href="%s" target="_blank">Privacy Policy</a> of the site.', 'mailup-for-wc' )
+						__( 'I consent to the processing of personal data according to the new general data protection regulation of the European Union (GDPR) and subsequent amendments and according to the <a href="%s" target="_blank">Privacy Policy</a> of the site.', 'wc-mailup' )
 					),
 					esc_url( get_permalink( $url ) )
 				);
 				echo '<p>';
 					echo '<input type="checkbox" name="privacy" checked value="1" required>';
-					esc_html_e( ' Accept', 'mailup-for-wc' );
+					esc_html_e( ' Accept', 'wc-mailup' );
 				echo '</p>';
 			echo '</div>';
 
@@ -120,7 +120,7 @@ class MUFWC_Button {
 			echo '<input type="hidden" name="mufwc-subscription-request" id="mufwc-subscription-request" value="1">';
 			echo '<input type="hidden" name="mufwc-list" id="mufwc-list" value="' . esc_attr( $list ) . '">';
 			echo '<input type="hidden" name="response-text" id="response-text" value="' . esc_attr( $response_text ) . '">';
-			echo '<input type="submit" class="newsletter-form-button" value="' . esc_html__( 'Subscribe', 'mailup-for-wc' ) . '">';
+			echo '<input type="submit" class="newsletter-form-button" value="' . esc_html__( 'Subscribe', 'wc-mailup' ) . '">';
 		echo '</form>';
 
 	}
@@ -164,11 +164,11 @@ class MUFWC_Button {
 					echo '<div class="mufwc-access">';
 
 						echo '<div class="mufwc-buttons">';
-							echo '<div class="mufwc-login active">' . esc_html__( 'Login', 'mailup-for-wc' ) . '</div>';
+							echo '<div class="mufwc-login active">' . esc_html__( 'Login', 'wc-mailup' ) . '</div>';
 
 				if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) {
 
-					echo '<div class="mufwc-register">' . esc_html__( 'Register', 'mailup-for-wc' ) . '</div>';
+					echo '<div class="mufwc-register">' . esc_html__( 'Register', 'wc-mailup' ) . '</div>';
 
 				}
 
@@ -240,7 +240,7 @@ class MUFWC_Button {
 			$list          = isset( $_POST['list'] ) ? sanitize_text_field( wp_unslash( $_POST['list'] ) ) : '';
 			$product_id    = isset( $_POST['product_id'] ) ? sanitize_text_field( wp_unslash( $_POST['product_id'] ) ) : '';
 			$response_text = isset( $_POST['response-text'] ) ? sanitize_text_field( wp_unslash( $_POST['response-text'] ) ) : '';
-			$error_message = __( 'Sorry but something went wrong, please try again later.', 'mailup-for-wc' );
+			$error_message = __( 'Sorry but something went wrong, please try again later.', 'wc-mailup' );
 
 			/*Check if the user is already subscribed*/
 			$check  = sprintf( '%s/frontend/Xmlchksubscriber.aspx?list=%d&email=%s', $host, $list, $mail );
@@ -319,7 +319,7 @@ class MUFWC_Button {
 			$mail          = isset( $_POST['mail'] ) ? sanitize_text_field( wp_unslash( $_POST['mail'] ) ) : '';
 			$list          = isset( $_POST['list'] ) ? sanitize_text_field( wp_unslash( $_POST['list'] ) ) : get_option( 'mufwc-list' );
 			$response_text = isset( $_POST['response-text'] ) ? sanitize_text_field( wp_unslash( $_POST['response-text'] ) ) : '';
-			$error_message = __( 'Something did\'t work, please try again later.', 'mailup-for-wc' );
+			$error_message = __( 'Something did\'t work, please try again later.', 'wc-mailup' );
 			$product_id    = null;
 
 			/*Check if the user is already subscribed*/
