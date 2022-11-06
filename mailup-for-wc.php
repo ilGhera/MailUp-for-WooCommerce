@@ -4,11 +4,11 @@
  * Plugin URI: https://www.ilghera.com/product/mailup-for-woocommerce-premium
  * Description: Lead marketing and clients follow-up for WooCommerce with MailUp lists, groups and workflows
  * Author: ilGhera
- * Version: 0.9.1
+ * Version: 0.9.2
  * Author URI: https://ilghera.com
  * Requires at least: 4.0
- * Tested up to: 5
- * WP tested up to: 3
+ * Tested up to: 6.1
+ * WC tested up to: 7
  * Text Domain: mailup-for-wc
  */
 

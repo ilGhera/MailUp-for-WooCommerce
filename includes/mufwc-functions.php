@@ -4,7 +4,7 @@
  *
  * @author ilGhera
  * @package mailup-for-wc/includes
- * @since 0.9.0
+ * @since 0.9.2
  */
 
 /**

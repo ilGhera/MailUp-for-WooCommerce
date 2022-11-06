@@ -1,9 +1,9 @@
 === MailUp for WooCommerce - Premium === 
 Contributors: ghera74
 Tags: Woocommerce, ecommerce, support, ticket, thread, shop, orders, products
-Version: 0.9.1
+Version: 0.9.2
 Requires at least: 4.0
-Tested up to: 5.7
+Tested up to: 6.1
 
 Lead marketing and clients follow-up for WooCommerce with MailUp lists, groups and workflows
 
@@ -57,6 +57,13 @@ This plugin sends data to an external service, useful links below.
 
 
 == Changelog ==
+
+= 0.9.2 =
+Release Date: 6 November, 2022
+
+* Update: Plugin Update Checker
+* Bug fix: list number hardcoded in is_user_subscribed() method
+
 
 = 0.9.1 =
 Release Date: 21 August, 2021
