@@ -100,7 +100,6 @@ class MUFWC_Admin {
 				echo '<div class="icon32 icon32-wordpress-settings" id="icon-wordpress"><br /></div>';
 					echo '<h2 id="mufwc-admin-menu" class="nav-tab-wrapper woo-nav-tab-wrapper">';
 					echo '<a href="#" data-link="mufwc-general" class="nav-tab nav-tab-active" onclick="return false;">' . esc_html( __( 'General', 'mailup-for-wc' ) ) . '</a>';
-					echo '<a href="#" data-link="mufwc-registration" class="nav-tab" onclick="return false;">' . esc_html( __( 'Site Registration', 'mailup-for-wc' ) ) . '</a>';
 					echo '<a href="#" data-link="mufwc-subscription" class="nav-tab" onclick="return false;">' . esc_html( __( 'Subscription Button', 'mailup-for-wc' ) ) . '</a>';
 				echo '</h2>';
 
@@ -108,13 +107,6 @@ class MUFWC_Admin {
 				echo '<div id="mufwc-general" class="mufwc-admin" style="display: block;">';
 
 					include MUFWC_ADMIN . 'mufwc-admin-general-template.php';
-
-				echo '</div>';
-
-				/*Site registration options*/
-				echo '<div id="mufwc-registration" class="mufwc-admin">';
-
-					include MUFWC_ADMIN . 'mufwc-admin-registration-template.php';
 
 				echo '</div>';
 
