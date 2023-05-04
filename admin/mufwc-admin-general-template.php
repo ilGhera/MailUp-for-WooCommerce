@@ -12,6 +12,7 @@ $list       = get_option( 'mufwc-list' );
 $group      = get_option( 'mufwc-group' );
 $confirm    = get_option( 'mufwc-confirm' );
 $newsletter = get_option( 'mufwc-newsletter' );
+$checkout   = get_option( 'mufwc-checkout' );
 ?>
 
 <form name="mufwc-general-options" id="mufwc-general-options" class="one-of" method="post" action="">
@@ -48,6 +49,13 @@ $newsletter = get_option( 'mufwc-newsletter' );
 			<td>
 				<input type="checkbox" name="mufwc-newsletter" id="mufwc-newsletter" class="mufwc" value="true"<?php echo true == $newsletter ? ' checked="checked"' : ''; ?>>
 				<p class="description"><?php esc_html_e( 'Newsletter option in the registration form.', 'mailup-for-wc' ); ?></p>
+			</td>
+		</tr>
+		<tr class="mufwc-newsletter-field">
+			<th scope="row"><?php esc_html_e( 'Checkout form', 'mailup-for-wc' ); ?></th>
+			<td>
+				<input type="checkbox" name="mufwc-checkout" id="mufwc-checkout" class="mufwc" value="true"<?php echo true == $checkout ? ' checked="checked"' : ''; ?>>
+				<p class="description"><?php esc_html_e( 'Newsletter option in the checkout form.', 'mailup-for-wc' ); ?></p>
 			</td>
 		</tr>
 		<tr class="mufwc-newsletter-option">
