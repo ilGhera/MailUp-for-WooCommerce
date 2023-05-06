@@ -142,11 +142,13 @@ class MUFWC_Admin {
 		if ( isset( $_POST['mufwc-settings-registration-nonce'] ) && wp_verify_nonce( wp_unslash( $_POST['mufwc-settings-registration-nonce'] ), 'mufwc-settings-registration' ) ) {
 
 			$newsletter = isset( $_POST['mufwc-newsletter'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-newsletter'] ) ) : '';
+			$checkout   = isset( $_POST['mufwc-checkout'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-checkout'] ) ) : '';
 			$confirm    = isset( $_POST['mufwc-confirm'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-confirm'] ) ) : '';
 			$list       = isset( $_POST['mufwc-list'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-list'] ) ) : '';
 			$group      = isset( $_POST['mufwc-group'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-group'] ) ) : '';
 
 			update_option( 'mufwc-newsletter', $newsletter );
+			update_option( 'mufwc-checkout', $checkout );
 			update_option( 'mufwc-confirm', $confirm );
 			update_option( 'mufwc-list', $list );
 			update_option( 'mufwc-group', $group );

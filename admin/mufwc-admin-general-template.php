@@ -51,7 +51,7 @@ $checkout   = get_option( 'mufwc-checkout' );
 				<p class="description"><?php esc_html_e( 'Newsletter option in the registration form.', 'mailup-for-wc' ); ?></p>
 			</td>
 		</tr>
-		<tr class="mufwc-newsletter-field">
+		<tr class="mufwc-checkout-field">
 			<th scope="row"><?php esc_html_e( 'Checkout form', 'mailup-for-wc' ); ?></th>
 			<td>
 				<input type="checkbox" name="mufwc-checkout" id="mufwc-checkout" class="mufwc" value="true"<?php echo true == $checkout ? ' checked="checked"' : ''; ?>>
