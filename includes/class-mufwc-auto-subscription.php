@@ -1,6 +1,10 @@
 <?php
 /**
  * Auto subscription to MailUp on WC registration
+ *
+ * @author ilGhera
+ * @package mailup-for-wc/includes
+ * @since 0.9.0
  */
 class MUFWC_Auto_Subscription {
 
@@ -11,15 +15,11 @@ class MUFWC_Auto_Subscription {
 	public function __construct() {
 
 		$this->user_newsletter = get_option( 'mufwc-newsletter' );
-		$this->user_checkout   = get_option( 'mufwc-checkout' );
 
         /* Actions */
 		add_action( 'register_form', array( $this, 'add_check_field' ) );
 		add_action( 'woocommerce_register_form', array( $this, 'add_check_field' ) );
 		add_action( 'user_register', array( $this, 'mailup_registration' ) );
-
-        /* Filters */
-        add_filter( 'woocommerce_checkout_fields', array( $this, 'set_checkout_field' ) );
 
 	}
 
@@ -81,34 +81,6 @@ class MUFWC_Auto_Subscription {
 		}
 
 	}
-
-    /**
-	 * Add the custom field to the WC checkout form
-	 *
-	 * @param array $fields the current fields.
-	 *
-	 * @return array the fields updated
-	 */
-    public function set_checkout_field( $fields ) {
-
-        if ( $this->user_checkout ) {
-
-            $fields['order']['user-newsletter-checkout'] = array(
-                'type'        => 'checkbox',
-                'class'       => array(
-                    /* 'field-school-class form-row-first', */
-                    'mufwc-checkout',
-                ),
-                'label'       => __( 'Iscriviti alla newsletter', 'mailup-for-wc' ),
-                /* 'placeholder' => __( 'Classe scolastica', MS_DOMAIN ), */
-                'required'    => false, 
-            );
-
-        }
-
-        return $fields;
-
-    }
 
 }
 
