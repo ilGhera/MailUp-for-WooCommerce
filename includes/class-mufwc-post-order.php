@@ -51,16 +51,17 @@ class MUFWC_Post_Order {
 	/**
 	 * Get customer info
 	 *
-	 * @param object $order the WC order.
+	 * @param object $order   the WC order.
+	 * @param boll   $wp_user get the WP user data with true.
 	 *
 	 * @return array
 	 */
-	public function get_customer_info( $order ) {
+	public function get_customer_info( $order, $wp_user = false ) {
 
 		$order_id    = $order->get_id();
 		$customer_id = get_post_meta( $order_id, '_customer_user', true );
 
-		if ( $customer_id ) {
+		if ( $wp_user && $customer_id ) {
 
 			$user_info = get_userdata( $customer_id );
 			$mail      = $user_info->user_email;
@@ -127,7 +128,7 @@ class MUFWC_Post_Order {
 
 				}
 
-				wp_remote_post( $url );
+				$response = wp_remote_post( $url );
 
 			}
 		}

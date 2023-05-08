@@ -49,6 +49,7 @@ function load_mailup_for_wc_premium() {
 	require MUFWC_ADMIN . 'class-mufwc-admin.php';
 	require MUFWC_ADMIN . 'ilghera-notice/class-ilghera-notice.php';
 	require MUFWC_INCLUDES . 'class-mufwc-auto-subscription.php';
+	require MUFWC_INCLUDES . 'class-mufwc-checkout-subscription.php';
 	require MUFWC_INCLUDES . 'class-mufwc-button.php';
 	require MUFWC_INCLUDES . 'class-mufwc-edit-post.php';
 	require MUFWC_INCLUDES . 'class-mufwc-post-order.php';
