@@ -47,22 +47,22 @@ $checkout   = get_option( 'mufwc-checkout' );
 		<tr class="mufwc-newsletter-field">
 			<th scope="row"><?php esc_html_e( 'Registration form', 'mailup-for-wc' ); ?></th>
 			<td>
-				<input type="checkbox" name="mufwc-newsletter" id="mufwc-newsletter" class="mufwc" value="true"<?php echo true == $newsletter ? ' checked="checked"' : ''; ?>>
+				<input type="checkbox" name="mufwc-newsletter" id="mufwc-newsletter" class="mufwc" value=1<?php echo 1 === intval( $newsletter ) ? ' checked="checked"' : ''; ?>>
 				<p class="description"><?php esc_html_e( 'Newsletter option in the registration form.', 'mailup-for-wc' ); ?></p>
 			</td>
 		</tr>
 		<tr class="mufwc-checkout-field">
 			<th scope="row"><?php esc_html_e( 'Checkout form', 'mailup-for-wc' ); ?></th>
 			<td>
-				<input type="checkbox" name="mufwc-checkout" id="mufwc-checkout" class="mufwc" value="true"<?php echo true == $checkout ? ' checked="checked"' : ''; ?>>
+				<input type="checkbox" name="mufwc-checkout" id="mufwc-checkout" class="mufwc" value=1<?php echo 1 === intval( $checkout ) ? ' checked="checked"' : ''; ?>>
 				<p class="description"><?php esc_html_e( 'Newsletter option in the checkout form.', 'mailup-for-wc' ); ?></p>
 			</td>
 		</tr>
 		<tr class="mufwc-newsletter-option">
 			<th scope="row"><?php esc_html_e( 'Confirm', 'mailup-for-wc' ); ?></th>
 				<td>
-					<input type="checkbox" name="mufwc-confirm" id="mufwc-confirm" class="mufwc" value="true"<?php echo true == $confirm ? ' checked="checked"' : ''; ?>>
-					<p class="description"><?php esc_html_e( 'Send MailUp register confirmation', 'mailup-for-wc' ); ?></p>
+					<input type="checkbox" name="mufwc-confirm" id="mufwc-confirm" class="mufwc" value=1<?php echo 1 === intval( $confirm ) ? ' checked="checked"' : ''; ?>>
+					<p class="description"><?php esc_html_e( 'Send MailUp register confirmation.', 'mailup-for-wc' ); ?></p>
 				</td>
 		</tr>
 		<tr class="mufwc-newsletter-option">
