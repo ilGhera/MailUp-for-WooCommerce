@@ -41,7 +41,7 @@ class MUFWC_Checkout_Subscription {
                 'class'    => array(
                     'mufwc-checkout',
                 ),
-                'label'    => __( 'Iscriviti alla newsletter', 'mailup-for-wc' ),
+                'label'    => __( 'Subscribe to the newsletter', 'mailup-for-wc' ),
                 'required' => false, 
             );
 
