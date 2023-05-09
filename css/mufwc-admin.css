@@ -3,7 +3,7 @@
  *
  * @author ilGhera
  * @package mailup-for-wc/css
- * @version 0.9.0
+ * @version 1.0.0
  */
 
 #mufwc-admin-menu {
@@ -102,3 +102,6 @@ form#mufwc-premium-key input.button {
   color: #0073aa;
 }
 
+#mufwc-registration-options {
+    padding-top: 3rem;
+}

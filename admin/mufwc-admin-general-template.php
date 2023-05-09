@@ -4,16 +4,18 @@
  *
  * @author ilGhera
  * @package mailup-for-wc/admin
- * @since 0.9.2
+ * @since 1.0.0
  */
 
-$host    = get_option( 'mufwc-host' );
-$list    = get_option( 'mufwc-list' );
-$group   = get_option( 'mufwc-group' );
-$confirm = get_option( 'mufwc-confirm' );
+$host       = get_option( 'mufwc-host' );
+$list       = get_option( 'mufwc-list' );
+$group      = get_option( 'mufwc-group' );
+$confirm    = get_option( 'mufwc-confirm' );
+$newsletter = get_option( 'mufwc-newsletter' );
+$checkout   = get_option( 'mufwc-checkout' );
 ?>
 
-<form name="mufwc-general-options" id="mufwc-general-options" method="post" action="">
+<form name="mufwc-general-options" id="mufwc-general-options" class="one-of" method="post" action="">
 
 	<table class="form-table">
 
@@ -29,6 +31,60 @@ $confirm = get_option( 'mufwc-confirm' );
 		</tr>
 
 		<?php wp_nonce_field( 'mufwc-settings-general', 'mufwc-settings-general-nonce' ); ?>
+
+	</table>
+
+	<p class="submit">
+		<input type="hidden" name="mufwc-sent" id="mufwc-sent" value="true">
+		<input class="button button-primary" type="submit" value="<?php esc_html_e( 'Save changes', 'wc-mailup' ); ?>">
+	</p>
+
+</form>
+<form name="mufwc-registration-options" id="mufwc-registration-options" method="post" action="">
+
+	<table class="form-table">
+
+		<tr class="mufwc-newsletter-field">
+			<th scope="row"><?php esc_html_e( 'Registration form', 'wc-mailup' ); ?></th>
+			<td>
+				<input type="checkbox" name="mufwc-newsletter" id="mufwc-newsletter" class="mufwc" value=1<?php echo 1 === intval( $newsletter ) ? ' checked="checked"' : ''; ?>>
+				<p class="description"><?php esc_html_e( 'Newsletter option in the registration form.', 'wc-mailup' ); ?></p>
+			</td>
+		</tr>
+		<tr class="mufwc-checkout-field">
+			<th scope="row"><?php esc_html_e( 'Checkout form', 'wc-mailup' ); ?></th>
+			<td>
+				<input type="checkbox" name="mufwc-checkout" id="mufwc-checkout" class="mufwc" value=1<?php echo 1 === intval( $checkout ) ? ' checked="checked"' : ''; ?>>
+				<p class="description"><?php esc_html_e( 'Newsletter option in the checkout form.', 'wc-mailup' ); ?></p>
+			</td>
+		</tr>
+		<tr class="mufwc-newsletter-option">
+			<th scope="row"><?php esc_html_e( 'Confirm', 'wc-mailup' ); ?></th>
+				<td>
+					<input type="checkbox" name="mufwc-confirm" id="mufwc-confirm" class="mufwc" value=1<?php echo 1 === intval( $confirm ) ? ' checked="checked"' : ''; ?>>
+					<p class="description"><?php esc_html_e( 'Send MailUp register confirmation.', 'wc-mailup' ); ?></p>
+				</td>
+		</tr>
+		<tr class="mufwc-newsletter-option">
+			<th scope="row"><?php esc_html_e( 'MailUp List ID', 'wc-mailup' ); ?></th>
+			<td>
+				<input type="text" name="mufwc-list" id="mufwc-list" value="<?php echo esc_attr( $list ); ?>">
+				<p class="description">
+					<?php esc_html_e( 'Enter the ID of the list which you want to register your users.', 'wc-mailup' ); ?></strong>
+				</p>
+			</td>
+		</tr>
+		<tr class="mufwc-newsletter-option">	
+			<th scope="row"><?php esc_html_e( 'MailUp Group ID', 'wc-mailup' ); ?></th>
+			<td>
+				<input type="text" name="mufwc-group" id="mufwc-group" value="<?php echo esc_attr( $group ); ?>">
+				<p class="description">
+					<?php esc_html_e( 'If you want to add users to a specific MailUp group, enter here the correct ID.', 'wc-mailup' ); ?></strong>
+				</p>
+			</td>
+		</tr>
+
+		<?php wp_nonce_field( 'mufwc-settings-registration', 'mufwc-settings-registration-nonce' ); ?>
 
 	</table>
 

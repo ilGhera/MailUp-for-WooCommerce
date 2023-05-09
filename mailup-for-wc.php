@@ -4,10 +4,10 @@
  * Plugin URI: https://www.ilghera.com/product/mailup-for-woocommerce-premium
  * Description: Lead marketing and clients follow-up for WooCommerce with MailUp lists, groups and workflows
  * Author: ilGhera
- * Version: 0.9.2
+ * Version: 1.0.0
  * Author URI: https://ilghera.com
- * Requires at least: 4.6
- * Tested up to: 6.1
+ * Requires at least: 4.0
+ * Tested up to: 6.2
  * WC tested up to: 7
  * Text Domain: wc-mailup
  * Domain Path: /languages
@@ -44,7 +44,9 @@ function load_mailup_for_wc() {
 
 	/*Files required*/
 	require MUFWC_ADMIN . 'class-mufwc-admin.php';
+	require MUFWC_ADMIN . 'ilghera-notice/class-ilghera-notice.php';
 	require MUFWC_INCLUDES . 'class-mufwc-auto-subscription.php';
+	require MUFWC_INCLUDES . 'class-mufwc-checkout-subscription.php';
 	require MUFWC_INCLUDES . 'class-mufwc-button.php';
 	require MUFWC_INCLUDES . 'class-mufwc-edit-post.php';
 

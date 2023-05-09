@@ -16,6 +16,7 @@ class MUFWC_Auto_Subscription {
 
 		$this->user_newsletter = get_option( 'mufwc-newsletter' );
 
+        /* Actions */
 		add_action( 'register_form', array( $this, 'add_check_field' ) );
 		add_action( 'woocommerce_register_form', array( $this, 'add_check_field' ) );
 		add_action( 'user_register', array( $this, 'mailup_registration' ) );

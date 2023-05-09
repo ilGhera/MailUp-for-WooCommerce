@@ -4,7 +4,7 @@
  *
  * @author ilGhera
  * @package mailup-for-wc/admin
- * @since 0.9.2
+ * @since 1.0.0
  */
 class MUFWC_Admin {
 
@@ -99,7 +99,6 @@ class MUFWC_Admin {
 				echo '<div class="icon32 icon32-wordpress-settings" id="icon-wordpress"><br /></div>';
 					echo '<h2 id="mufwc-admin-menu" class="nav-tab-wrapper woo-nav-tab-wrapper">';
 					echo '<a href="#" data-link="mufwc-general" class="nav-tab nav-tab-active" onclick="return false;">' . esc_html( __( 'General', 'wc-mailup' ) ) . '</a>';
-					echo '<a href="#" data-link="mufwc-registration" class="nav-tab" onclick="return false;">' . esc_html( __( 'Site Registration', 'wc-mailup' ) ) . '</a>';
 					echo '<a href="#" data-link="mufwc-subscription" class="nav-tab" onclick="return false;">' . esc_html( __( 'Subscription Button', 'wc-mailup' ) ) . '</a>';
 				echo '</h2>';
 
@@ -107,13 +106,6 @@ class MUFWC_Admin {
 				echo '<div id="mufwc-general" class="mufwc-admin" style="display: block;">';
 
 					include MUFWC_ADMIN . 'mufwc-admin-general-template.php';
-
-				echo '</div>';
-
-				/*Site registration options*/
-				echo '<div id="mufwc-registration" class="mufwc-admin">';
-
-					include MUFWC_ADMIN . 'mufwc-admin-registration-template.php';
 
 				echo '</div>';
 
@@ -174,11 +166,13 @@ class MUFWC_Admin {
 		if ( isset( $_POST['mufwc-settings-registration-nonce'] ) && wp_verify_nonce( wp_unslash( $_POST['mufwc-settings-registration-nonce'] ), 'mufwc-settings-registration' ) ) {
 
 			$newsletter = isset( $_POST['mufwc-newsletter'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-newsletter'] ) ) : '';
+			$checkout   = isset( $_POST['mufwc-checkout'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-checkout'] ) ) : '';
 			$confirm    = isset( $_POST['mufwc-confirm'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-confirm'] ) ) : '';
 			$list       = isset( $_POST['mufwc-list'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-list'] ) ) : '';
 			$group      = isset( $_POST['mufwc-group'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-group'] ) ) : '';
 
 			update_option( 'mufwc-newsletter', $newsletter );
+			update_option( 'mufwc-checkout', $checkout );
 			update_option( 'mufwc-confirm', $confirm );
 			update_option( 'mufwc-list', $list );
 			update_option( 'mufwc-group', $group );

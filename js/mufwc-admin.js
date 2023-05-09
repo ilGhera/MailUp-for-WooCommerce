@@ -119,21 +119,22 @@ var mufwcAdminController = function() {
 
 		jQuery(function($){
 
-            var button = $('.mufwc-newsletter-field .tzCheckBox');
+            var button1 = $('.mufwc-newsletter-field .tzCheckBox');
+            var button2 = $('.mufwc-checkout-field .tzCheckBox');
 
-            if ( $(button).hasClass('checked') ) {
+            if ( $(button1).hasClass('checked') || $(button2).hasClass('checked') ) {
 
                 $('.mufwc-newsletter-option').show('slow');
 
             }
 
-            $(button).on('click', function() {
+            $(button1).on('click', function() {
 
                 if ( $(this).hasClass('checked') ) {
 
                     $('.mufwc-newsletter-option').show('slow');
 
-                } else {
+                } else if ( ! $(button2).hasClass('checked') ) {
 
                     $('.mufwc-newsletter-option').hide();
 
@@ -141,6 +142,19 @@ var mufwcAdminController = function() {
 
             })
 
+            $(button2).on('click', function() {
+
+                if ( $(this).hasClass('checked') ) {
+
+                    $('.mufwc-newsletter-option').show('slow');
+
+                } else if ( ! $(button1).hasClass('checked') ) {
+
+                    $('.mufwc-newsletter-option').hide();
+
+                }
+
+            })
 
         })
 
