@@ -6,6 +6,10 @@
  * @package mailup-for-wc/admin
  * @since 1.0.0
  */
+
+/**
+ * MUFWC_Admin
+ */
 class MUFWC_Admin {
 
 	/**

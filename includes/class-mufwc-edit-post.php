@@ -4,7 +4,11 @@
  *
  * @author ilGhera
  * @package mailup-for-wc/includes
- * @since 0.9.2
+ * @since 1.0.0
+ */
+
+/**
+ * MUFWC_Edit_Post
  */
 class MUFWC_Edit_Post {
 
@@ -82,7 +86,7 @@ class MUFWC_Edit_Post {
 	 */
 	public function mufwc_save_post_metas( $post_id ) {
 
-		if ( isset( $_POST['mufwc-post-list'], $_POST['mufwc-post-metas-nonce'] ) && wp_verify_nonce( wp_unslash( $_POST['mufwc-post-metas-nonce'] ), 'mufwc-post-metas' ) ) {
+		if ( isset( $_POST['mufwc-post-list'], $_POST['mufwc-post-metas-nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['mufwc-post-metas-nonce'] ) ), 'mufwc-post-metas' ) ) {
 
 			$activate      = isset( $_POST['mufwc-post-activate'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-post-activate'] ) ) : 0;
 			$list          = isset( $_POST['mufwc-post-list'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-post-list'] ) ) : '';
@@ -101,7 +105,7 @@ class MUFWC_Edit_Post {
 			update_post_meta( $post_id, 'mufwc-response-text', $response_text );
 			update_post_meta( $post_id, 'mufwc-redirect', $redirect );
 
-		} elseif ( isset( $_POST['mufwc-product-list'], $_POST['mufwc-product-metas-nonce'] ) && wp_verify_nonce( wp_unslash( $_POST['mufwc-product-metas-nonce'] ), 'mufwc-product-metas' ) ) {
+		} elseif ( isset( $_POST['mufwc-product-list'], $_POST['mufwc-product-metas-nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['mufwc-product-metas-nonce'] ) ), 'mufwc-product-metas' ) ) {
 
 			$list  = isset( $_POST['mufwc-product-list'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-product-list'] ) ) : '';
 			$group = isset( $_POST['mufwc-product-group'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-product-group'] ) ) : '';

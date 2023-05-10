@@ -11,6 +11,8 @@
  * WC tested up to: 7
  * Text Domain: wc-mailup
  * Domain Path: /languages
+ *
+ * @package mailup-for-wc
  */
 
 /**
