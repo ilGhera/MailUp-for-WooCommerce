@@ -10,6 +10,8 @@
  * Tested up to: 6.2
  * WC tested up to: 7
  * Text Domain: mailup-for-wc
+ *
+ * @package mailup-for-wc
  */
 
 /**
@@ -28,7 +30,7 @@ function load_mailup_for_wc_premium() {
 	if ( is_plugin_active( 'mailup-auto-subscription/mailup-auto-subscription.php' ) || function_exists( 'mas_load_textdomain' ) ) {
 		deactivate_plugins( 'mailup-auto-subscription/mailup-auto-subscription.php' );
 		remove_action( 'plugins_loaded', 'mas_load_textdomain' );
-		wp_redirect( admin_url( 'plugins.php?plugin_status=all&paged=1&s' ) );
+		wp_safe_redirect( admin_url( 'plugins.php?plugin_status=all&paged=1&s' ) );
 	}
 
 	/*Constants declaration*/

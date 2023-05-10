@@ -6,6 +6,10 @@
  * @package mailup-for-wc/includes
  * @since 0.9.0
  */
+
+/**
+ * MUFWC_Auto_Subscription
+ */
 class MUFWC_Auto_Subscription {
 
 
@@ -16,7 +20,7 @@ class MUFWC_Auto_Subscription {
 
 		$this->user_newsletter = get_option( 'mufwc-newsletter' );
 
-        /* Actions */
+		/* Actions */
 		add_action( 'register_form', array( $this, 'add_check_field' ) );
 		add_action( 'woocommerce_register_form', array( $this, 'add_check_field' ) );
 		add_action( 'user_register', array( $this, 'mailup_registration' ) );
@@ -37,6 +41,8 @@ class MUFWC_Auto_Subscription {
 					echo esc_html__( 'Newsletter subscriptions', 'mailup-for-wc' );
 				echo '</label>';
 			echo '</p>';
+
+			wp_nonce_field( 'newsletter-sub', 'newsletter-sub-nonce' );
 
 		}
 
@@ -61,22 +67,25 @@ class MUFWC_Auto_Subscription {
 
 		if ( $this->user_newsletter ) {
 
-			$user_newsletter = ( isset( $_POST['user-newsletter'] ) && 1 === intval( $_POST['user-newsletter'] ) ) ? 1 : 0;
+			if ( isset( $_POST['user-newsletter'], $_POST['newsletter-sub-nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['newsletter-sub-nonce'] ) ), 'newsletter-sub' ) ) {
 
-			if ( $user_newsletter ) {
+				$user_newsletter = sanitize_text_field( wp_unslash( $_POST['user-newsletter'] ) );
 
-				$url = sprintf(
-					'%s/frontend/xmlSubscribe.aspx?list=%d&group=%d&email=%s&confirm=%d&csvFldNames=campo1&csvFldValues=%s',
-					$host,
-					$list,
-					$group,
-					$mail,
-					$confirm,
-					$username
-				);
+				if ( $user_newsletter ) {
 
-				$response = wp_remote_post( $url );
+					$url = sprintf(
+						'%s/frontend/xmlSubscribe.aspx?list=%d&group=%d&email=%s&confirm=%d&csvFldNames=campo1&csvFldValues=%s',
+						$host,
+						$list,
+						$group,
+						$mail,
+						$confirm,
+						$username
+					);
 
+					$response = wp_remote_post( $url );
+
+				}
 			}
 		}
 

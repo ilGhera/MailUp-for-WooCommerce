@@ -6,6 +6,10 @@
  * @package mailup-for-wc/admin
  * @since 1.0.0
  */
+
+/**
+ * MUFWC_Admin
+ */
 class MUFWC_Admin {
 
 	/**
@@ -39,7 +43,7 @@ class MUFWC_Admin {
 
 		$pages[] = 'toplevel_page_mailup-for-wc';
 
-        wp_enqueue_style( 'mufwc-admin-style', MUFWC_URI . 'css/mufwc-admin.css', array(), filemtime( MUFWC_DIR . 'css/mufwc-admin.css' ) );
+		wp_enqueue_style( 'mufwc-admin-style', MUFWC_URI . 'css/mufwc-admin.css', array(), filemtime( MUFWC_DIR . 'css/mufwc-admin.css' ) );
 
 		if ( isset( $admin_page->id ) && in_array( $admin_page->id, $pages, true ) ) {
 
@@ -118,9 +122,9 @@ class MUFWC_Admin {
 				echo '</div>';
 
 			echo '</div>';
-                echo '<div class="wrap-right">';
-                    echo '<iframe width="300" height="900" scrolling="no" src="https://www.ilghera.com/images/mufwc-premium-iframe.html"></iframe>';
-                echo '</div>';
+				echo '<div class="wrap-right">';
+					echo '<iframe width="300" height="900" scrolling="no" src="https://www.ilghera.com/images/mufwc-premium-iframe.html"></iframe>';
+				echo '</div>';
 		echo '</div>';
 
 	}
