@@ -72,10 +72,10 @@ This plugin sends data to an external service, useful links below.
 = 1.0.0 =
 Release Date: 9 May, 2023
 
-* Enhancement: Newsletter subscription in checkout page 
-* Enhancement: License key notification for admin
+* Enhancement: (Premium) Newsletter subscription in checkout page 
+* Enhancement: (Premium) License key notification for admin
 * Enhancement: Support WordPress 6.2 
-* Update: Plugin Update Checker
+* Update: (Premium) Plugin Update Checker
 * Update: Translations 
 * Bug fix: MailUp subscription confirmation not sent 
 
