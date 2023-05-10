@@ -70,7 +70,7 @@ This plugin sends data to an external service, useful links below.
 == Changelog ==
 
 = 1.0.0 =
-Release Date: 9 May, 2023
+Release Date: 10 May, 2023
 
 * Enhancement: (Premium) Newsletter subscription in checkout page 
 * Enhancement: (Premium) License key notification for admin
