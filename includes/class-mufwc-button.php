@@ -4,7 +4,11 @@
  *
  * @author ilGhera
  * @package mailup-for-wc/includes
- * @since 0.9.0
+ * @since 1.0.0
+ */
+
+/**
+ * MUFWC_Button
  */
 class MUFWC_Button {
 
@@ -246,7 +250,7 @@ class MUFWC_Button {
 	 */
 	public function add_to_callback() {
 
-		if ( isset( $_POST['mail'], $_POST['mufwc-subscribe-noce'] ) && wp_verify_nonce( wp_unslash( $_POST['mufwc-subscribe-noce'] ), 'mufwc-subscribe' ) ) {
+		if ( isset( $_POST['mail'], $_POST['mufwc-subscribe-noce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['mufwc-subscribe-noce'] ) ), 'mufwc-subscribe' ) ) {
 
 			$host          = get_option( 'mufwc-host' );
 			$username      = isset( $_POST['username'] ) ? sanitize_text_field( wp_unslash( $_POST['username'] ) ) : '';
@@ -350,7 +354,7 @@ class MUFWC_Button {
 	 */
 	public function subscription_form_response() {
 
-		if ( isset( $_POST['mufwc-guest-form-nonce'] ) && wp_verify_nonce( wp_unslash( $_POST['mufwc-guest-form-nonce'] ), 'mufwc-guest-form' ) ) {
+		if ( isset( $_POST['mufwc-guest-form-nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['mufwc-guest-form-nonce'] ) ), 'mufwc-guest-form' ) ) {
 			$host          = get_option( 'mufwc-host' );
 			$name          = isset( $_POST['name'] ) ? sanitize_text_field( wp_unslash( $_POST['name'] ) ) : '';
 			$mail          = isset( $_POST['mail'] ) ? sanitize_text_field( wp_unslash( $_POST['mail'] ) ) : '';

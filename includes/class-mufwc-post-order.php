@@ -6,6 +6,10 @@
  * @package mailup-for-wc/includes
  * @since 1.0.0
  */
+
+/**
+ * MUFWC_Post_Order
+ */
 class MUFWC_Post_Order {
 
 	/**
