@@ -41,6 +41,7 @@ function load_mailup_for_wc_premium() {
 	define( 'MUFWC_INCLUDES', MUFWC_DIR . 'includes/' );
 	define( 'MUFWC_ADMIN', MUFWC_DIR . 'admin/' );
 	define( 'MUFWC_SETTINGS', admin_url( 'admin.php?page=mailup-for-wc' ) );
+    define( 'MUFWC_VERSION', '1.0.0' );
 
 	/*Internationalization*/
 	$locale = apply_filters( 'plugin_locale', get_locale(), 'wp-restaurant-booking' );
