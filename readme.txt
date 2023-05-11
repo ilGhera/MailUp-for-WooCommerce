@@ -59,7 +59,7 @@ This plugin sends data to an external service, useful links below.
 == Changelog ==
 
 = 1.0.0 =
-Release Date: 9 May, 2023
+Release Date: 11 May, 2023
 
 * Enhancement: Newsletter subscription in checkout page 
 * Enhancement: License key notification for admin
