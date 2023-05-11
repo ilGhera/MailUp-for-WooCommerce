@@ -159,7 +159,7 @@ class MUFWC_Admin {
 	 */
 	public function save_options() {
 
-		if ( isset( $_POST['mufwc-settings-general-nonce'] ) && wp_verify_nonce( wp_unslash( $_POST['mufwc-settings-general-nonce'] ), 'mufwc-settings-general' ) ) {
+		if ( isset( $_POST['mufwc-settings-general-nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['mufwc-settings-general-nonce'] ) ), 'mufwc-settings-general' ) ) {
 
 			$host = isset( $_POST['mufwc-host'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-host'] ) ) : '';
 
@@ -167,7 +167,7 @@ class MUFWC_Admin {
 
 		}
 
-		if ( isset( $_POST['mufwc-settings-registration-nonce'] ) && wp_verify_nonce( wp_unslash( $_POST['mufwc-settings-registration-nonce'] ), 'mufwc-settings-registration' ) ) {
+		if ( isset( $_POST['mufwc-settings-registration-nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['mufwc-settings-registration-nonce'] ) ), 'mufwc-settings-registration' ) ) {
 
 			$newsletter = isset( $_POST['mufwc-newsletter'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-newsletter'] ) ) : '';
 			$confirm    = isset( $_POST['mufwc-confirm'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-confirm'] ) ) : '';
@@ -181,7 +181,7 @@ class MUFWC_Admin {
 
 		}
 
-		if ( isset( $_POST['mufwc-settings-subscription-nonce'] ) && wp_verify_nonce( wp_unslash( $_POST['mufwc-settings-subscription-nonce'] ), 'mufwc-settings-subscription' ) ) {
+		if ( isset( $_POST['mufwc-settings-subscription-nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['mufwc-settings-subscription-nonce'] ) ), 'mufwc-settings-subscription' ) ) {
 
 			$post_types   = isset( $_POST['mufwc-post-types'] ) ? $this->sanitize_array( $_POST['mufwc-post-types'] ) : array();
 			$guest_form   = isset( $_POST['mufwc-guest-form'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-guest-form'] ) ) : '';
