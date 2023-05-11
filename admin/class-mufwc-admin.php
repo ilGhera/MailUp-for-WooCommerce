@@ -133,7 +133,7 @@ class MUFWC_Admin {
 	 * Sanitize every single array element
 	 *
 	 * @param  array $array the array to sanitize.
-	 * @return array        the sanitized array.
+	 * @return array
 	 */
 	public function sanitize_array( $array ) {
 
