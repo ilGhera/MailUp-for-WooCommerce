@@ -41,10 +41,10 @@ class MUFWC_Button {
 	public function mufwc_scripts() {
 
 		/*css*/
-		wp_enqueue_style( 'mufwc-style', MUFWC_URI . 'css/mufwc.css', array(), filemtime( MUFWC_DIR . 'css/mufwc.css' ) );
+		wp_enqueue_style( 'mufwc-style', MUFWC_URI . 'css/mufwc.css', array(), MUFWC_VERSION );
 
 		/*js*/
-		wp_enqueue_script( 'mufwc-js', MUFWC_URI . 'js/mufwc.js', array( 'jquery' ), '0.9.0', true );
+		wp_enqueue_script( 'mufwc-js', MUFWC_URI . 'js/mufwc.js', array( 'jquery' ), MUFWC_VERSION, true );
 
 			$product_id = get_the_ID(); // temp.
 			$user_id    = get_current_user_id();

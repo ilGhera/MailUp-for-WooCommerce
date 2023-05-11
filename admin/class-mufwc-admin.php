@@ -43,19 +43,19 @@ class MUFWC_Admin {
 
 		$pages[] = 'toplevel_page_mailup-for-wc';
 
-		wp_enqueue_style( 'mufwc-admin-style', MUFWC_URI . 'css/mufwc-admin.css', array(), filemtime( MUFWC_DIR . 'css/mufwc-admin.css' ) );
+		wp_enqueue_style( 'mufwc-admin-style', MUFWC_URI . 'css/mufwc-admin.css', array(), MUFWC_VERSION );
 
 		if ( isset( $admin_page->id ) && in_array( $admin_page->id, $pages, true ) || 'product' === $admin_page->id ) {
 
 			/*css*/
-			wp_enqueue_style( 'chosen-style', MUFWC_URI . 'vendor/harvesthq/chosen/chosen.min.css', array(), filemtime( MUFWC_DIR . 'vendor/harvesthq/chosen/chosen.min.css' ) );
-			wp_enqueue_style( 'tzcheckbox-style', MUFWC_URI . 'js/tzCheckbox/jquery.tzCheckbox/jquery.tzCheckbox.css', array(), filemtime( MUFWC_DIR . 'js/tzCheckbox/jquery.tzCheckbox/jquery.tzCheckbox.css' ) );
+			wp_enqueue_style( 'chosen-style', MUFWC_URI . 'vendor/harvesthq/chosen/chosen.min.css', array(), MUFWC_VERSION );
+			wp_enqueue_style( 'tzcheckbox-style', MUFWC_URI . 'js/tzCheckbox/jquery.tzCheckbox/jquery.tzCheckbox.css', array(), MUFWC_VERSION );
 			wp_enqueue_style( 'bootstrap-iso', MUFWC_URI . 'css/bootstrap-iso.css' );
 
 			/*js*/
-			wp_enqueue_script( 'mufwc-admin-js', MUFWC_URI . 'js/mufwc-admin.js', array( 'jquery' ), filemtime( MUFWC_DIR . 'js/mufwc-admin.js' ), true );
-			wp_enqueue_script( 'chosen', MUFWC_URI . 'vendor/harvesthq/chosen/chosen.jquery.min.js', array(), filemtime( MUFWC_DIR . 'vendor/harvesthq/chosen/chosen.jquery.min.js' ), false );
-			wp_enqueue_script( 'tzcheckbox', MUFWC_URI . 'js/tzCheckbox/jquery.tzCheckbox/jquery.tzCheckbox.js', array( 'jquery' ), filemtime( MUFWC_DIR . 'js/tzCheckbox/jquery.tzCheckbox/jquery.tzCheckbox.js' ), false );
+			wp_enqueue_script( 'mufwc-admin-js', MUFWC_URI . 'js/mufwc-admin.js', array( 'jquery' ), MUFWC_VERSION, true );
+			wp_enqueue_script( 'chosen', MUFWC_URI . 'vendor/harvesthq/chosen/chosen.jquery.min.js', array(), MUFWC_VERSION, false );
+			wp_enqueue_script( 'tzcheckbox', MUFWC_URI . 'js/tzCheckbox/jquery.tzCheckbox/jquery.tzCheckbox.js', array( 'jquery' ), MUFWC_VERSION, false );
 
 		}
 

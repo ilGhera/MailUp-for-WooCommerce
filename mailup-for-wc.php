@@ -43,6 +43,7 @@ function load_mailup_for_wc() {
 	define( 'MUFWC_INCLUDES', MUFWC_DIR . 'includes/' );
 	define( 'MUFWC_ADMIN', MUFWC_DIR . 'admin/' );
 	define( 'MUFWC_SETTINGS', admin_url( 'admin.php?page=mailup-for-wc' ) );
+    define( 'MUFWC_VERSION', '1.0.0' );
 
 	/*Files required*/
 	require MUFWC_ADMIN . 'class-mufwc-admin.php';
