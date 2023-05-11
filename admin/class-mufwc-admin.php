@@ -83,7 +83,7 @@ class MUFWC_Admin {
 				/*Plugin premium key*/
 				$key = sanitize_text_field( get_option( 'mufwc-premium-key' ) );
 
-		if ( isset( $_POST['mufwc-premium-key'], $_POST['mufwc-premium-key-nonce'] ) && wp_verify_nonce( wp_unslash( $_POST['mufwc-premium-key-nonce'] ), 'mufwc-premium-key' ) ) { // temp.
+		if ( isset( $_POST['mufwc-premium-key'], $_POST['mufwc-premium-key-nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['mufwc-premium-key-nonce'] ) ), 'mufwc-premium-key' ) ) { // temp.
 
 			$key = sanitize_text_field( wp_unslash( $_POST['mufwc-premium-key'] ) );
 
@@ -135,7 +135,7 @@ class MUFWC_Admin {
 	 */
 	public function save_options() {
 
-		if ( isset( $_POST['mufwc-settings-general-nonce'] ) && wp_verify_nonce( wp_unslash( $_POST['mufwc-settings-general-nonce'] ), 'mufwc-settings-general' ) ) {
+		if ( isset( $_POST['mufwc-settings-general-nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['mufwc-settings-general-nonce'] ) ), 'mufwc-settings-general' ) ) {
 
 			$host = isset( $_POST['mufwc-host'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-host'] ) ) : '';
 
@@ -143,7 +143,7 @@ class MUFWC_Admin {
 
 		}
 
-		if ( isset( $_POST['mufwc-settings-registration-nonce'] ) && wp_verify_nonce( wp_unslash( $_POST['mufwc-settings-registration-nonce'] ), 'mufwc-settings-registration' ) ) {
+		if ( isset( $_POST['mufwc-settings-registration-nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['mufwc-settings-registration-nonce'] ) ), 'mufwc-settings-registration' ) ) {
 
 			$newsletter = isset( $_POST['mufwc-newsletter'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-newsletter'] ) ) : '';
 			$checkout   = isset( $_POST['mufwc-checkout'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-checkout'] ) ) : '';
@@ -159,7 +159,7 @@ class MUFWC_Admin {
 
 		}
 
-		if ( isset( $_POST['mufwc-settings-subscription-nonce'] ) && wp_verify_nonce( wp_unslash( $_POST['mufwc-settings-subscription-nonce'] ), 'mufwc-settings-subscription' ) ) {
+		if ( isset( $_POST['mufwc-settings-subscription-nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['mufwc-settings-subscription-nonce'] ) ), 'mufwc-settings-subscription' ) ) {
 
 			$post_types   = isset( $_POST['mufwc-post-types'] ) ? $_POST['mufwc-post-types'] : array();
 			$guest_form   = isset( $_POST['mufwc-guest-form'] ) ? sanitize_text_field( wp_unslash( $_POST['mufwc-guest-form'] ) ) : '';
