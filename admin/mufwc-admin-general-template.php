@@ -4,7 +4,7 @@
  *
  * @author ilGhera
  * @package mailup-for-wc/admin
- * @since 1.0.0
+ * @since 1.0.1
  */
 
 $host       = get_option( 'mufwc-host' );
@@ -24,7 +24,7 @@ $newsletter = get_option( 'mufwc-newsletter' );
 				<input type="text" name="mufwc-host" id="mufwc-host" class="regular-text" value="<?php echo esc_attr( $host ); ?>">
 				<p class="description">
 					<?php esc_html_e( 'Do you need help? Click ', 'wc-mailup' ); ?>			
-					<?php echo sprintf( '<a href="%s" target="_blank">' . esc_html__( 'here', 'wc-mailup' ) . '</a>', esc_url( 'http://help.mailup.com/display/mailupapi/MailUp+API+Credentials ' ) ); ?>			
+					<?php echo sprintf( '<a href="%s" target="_blank">' . esc_html__( 'here', 'wc-mailup' ) . '</a>', esc_url( 'http://help.mailup.com/display/mailupapi/MailUp+API+Credentials' ) ); ?>
 				</p>
 			</td>
 		</tr>
