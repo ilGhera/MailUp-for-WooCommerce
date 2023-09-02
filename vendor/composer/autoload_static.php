@@ -6,9 +6,14 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitdb398f672d150ae9941387678bcbb56d
 {
+    public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->classMap = ComposerStaticInitdb398f672d150ae9941387678bcbb56d::$classMap;
 
         }, null, ClassLoader::class);
     }
