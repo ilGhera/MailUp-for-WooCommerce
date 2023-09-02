@@ -61,7 +61,7 @@ This plugin sends data to an external service, useful links below.
 = 1.0.1 =
 Release Date: 2 September, 2023
 
-* Enhancement: 
+* Enhancement: Support WordPress 6.3.1
 * Update: Plugin Update Checker
 * Bug fix: Link broken in admin page 
 
