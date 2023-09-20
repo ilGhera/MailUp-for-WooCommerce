@@ -61,43 +61,43 @@ This plugin sends data to an external service, useful links below.
 = 1.0.2 =
 Release Date: 20 September, 2023
 
-* Enhancement: Option to set checkout subscription enabled by default
+    * Enhancement: Option to set checkout subscription enabled by default
 
 
 = 1.0.1 =
 Release Date: 2 September, 2023
 
-* Enhancement: Support WordPress 6.3.1
-* Update: Plugin Update Checker
-* Bug fix: Link broken in admin page 
+    * Enhancement: Support WordPress 6.3.1
+    * Update: Plugin Update Checker
+    * Bug fix: Link broken in admin page 
 
 
 = 1.0.0 =
 Release Date: 11 May, 2023
 
-* Enhancement: Newsletter subscription in checkout page 
-* Enhancement: License key notification for admin
-* Enhancement: Support WordPress 6.2 
-* Update: Plugin Update Checker
-* Update: Translations 
-* Bug fix: MailUp subscription confirmation not sent 
+    * Enhancement: Newsletter subscription in checkout page 
+    * Enhancement: License key notification for admin
+    * Enhancement: Support WordPress 6.2 
+    * Update: Plugin Update Checker
+    * Update: Translations 
+    * Bug fix: MailUp subscription confirmation not sent 
 
 
 = 0.9.2 =
 Release Date: 6 November, 2022
 
-* Update: Plugin Update Checker
-* Bug fix: list number hardcoded in is_user_subscribed() method
+    * Update: Plugin Update Checker
+    * Bug fix: list number hardcoded in is_user_subscribed() method
 
 
 = 0.9.1 =
 Release Date: 21 August, 2021
 
-* Bug fix: fields missed in single product page.
+    * Bug fix: fields missed in single product page.
 
 
 = 0.9.0 =
 Release Date: 16 July, 2021
 
-* First release.
+    * First release.
 
