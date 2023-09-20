@@ -1,13 +1,8 @@
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MailUp for WP\n"
-<<<<<<< HEAD:languages/wc-mailup.pot
-"POT-Creation-Date: 2023-05-10 08:59+0200\n"
-=======
 "POT-Creation-Date: 2023-09-20 14:17+0200\n"
->>>>>>> master:languages/mailup-for-wc.pot
-"PO-Revision-Date: 2020-01-11 18:05+0100\n"
+"PO-Revision-Date: 2023-09-20 14:19+0200\n"
 "Last-Translator: \n"
 "Language-Team: ilGhera\n"
 "Language: it_IT\n"
@@ -17,41 +12,25 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.2.2\n"
 "X-Poedit-Basepath: ..\n"
-"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_attr_e\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_attr_e;esc_html__\n"
 "X-Poedit-SearchPath-0: .\n"
 
-<<<<<<< HEAD:languages/wc-mailup.pot
-#: admin/class-mufwc-admin.php:27 admin/class-mufwc-admin.php:96
-#: includes/class-mufwc-edit-post.php:38 includes/class-mufwc-edit-post.php:44
-=======
 #: admin/class-mufwc-admin.php:32 includes/class-mufwc-edit-post.php:42
 #: includes/class-mufwc-edit-post.php:48
->>>>>>> master:languages/mailup-for-wc.pot
 msgid "MailUp for WooCommerce"
-msgstr ""
+msgstr "MailUp per WooCommerce"
 
 #: admin/class-mufwc-admin.php:32
 msgid "MailUp for WC"
-msgstr ""
+msgstr "MailUp per WC"
 
-<<<<<<< HEAD:languages/wc-mailup.pot
-#: admin/class-mufwc-admin.php:87
-msgid "It seems like you don't have permission to see this page"
-msgstr ""
-
-#: admin/class-mufwc-admin.php:101
-msgid "General"
-msgstr ""
-
-#: admin/class-mufwc-admin.php:102
-=======
 #: admin/class-mufwc-admin.php:73
 msgid "It seems like you don't have permission to see this page"
-msgstr ""
+msgstr "Sembra che tu non abbia i permessi per accedere a questa pagina"
 
 #: admin/class-mufwc-admin.php:82
 msgid "MailUp for WooCommerce - Premium"
-msgstr ""
+msgstr "MailUp per WooCommerce - Premium"
 
 #: admin/class-mufwc-admin.php:97
 msgid "Premium Key"
@@ -59,48 +38,53 @@ msgstr ""
 
 #: admin/class-mufwc-admin.php:98
 msgid "Add your Premium Key"
-msgstr ""
+msgstr "Aggiungi la tua Premium Key"
 
 #: admin/class-mufwc-admin.php:99
 msgid ""
 "Add your Premium Key and keep update your copy of MailUp for WooCommerce - "
 "Premium."
 msgstr ""
+"Aggiungi la tua Premium Key e mantieni aggiornato MailUp for WooCommerce - "
+"Premium."
 
 #: admin/class-mufwc-admin.php:101
 msgid "Save settings"
-msgstr ""
+msgstr "Salva impostazioni"
 
 #: admin/class-mufwc-admin.php:107
 msgid "General"
-msgstr ""
+msgstr "Generali"
 
 #: admin/class-mufwc-admin.php:108
->>>>>>> master:languages/mailup-for-wc.pot
 msgid "Subscription Button"
-msgstr ""
+msgstr "Pulsante iscrizione"
 
 #: admin/ilghera-notice/class-ilghera-notice.php:66
 msgid "Renew now"
-msgstr ""
+msgstr "Aggiorna ora"
 
 #: admin/ilghera-notice/class-ilghera-notice.php:66
 msgid "Get a license"
-msgstr ""
+msgstr "Ottieni una licenza"
 
 #: admin/ilghera-notice/class-ilghera-notice.php:107
 msgid "Your license is <u>expired</u> and you're unable to receive updates."
 msgstr ""
+"La tua licenza è <u>scaduta</u> e non sei in grado di ricevere aggiornamenti."
 
 #: admin/ilghera-notice/class-ilghera-notice.php:123
 msgid ""
 "It seems like your license is <u>not valid</u> and you're unable to receive "
 "updates."
 msgstr ""
+"Sembra che la tua licenza non sia <u>valida</u> e non sei in grado di "
+"ricevere aggiornamenti."
 
 #: admin/ilghera-notice/class-ilghera-notice.php:139
 msgid "You have not set up a license key and you cannot receive updates."
 msgstr ""
+"Non hai impostato una licenza e non sei in grado di ricevere aggiornamenti."
 
 #: admin/mufwc-admin-general-template.php:25
 msgid "Endpoint/ Console url"
@@ -108,146 +92,141 @@ msgstr ""
 
 #: admin/mufwc-admin-general-template.php:29
 msgid "Do you need help? Click "
-msgstr ""
+msgstr "Serve aiuto? Clicca "
+
+#: admin/mufwc-admin-general-template.php:30
+msgid "here"
+msgstr "qui"
 
 #: admin/mufwc-admin-general-template.php:41
 #: admin/mufwc-admin-general-template.php:99
 #: admin/mufwc-admin-subscription-template.php:92
 msgid "Save changes"
-msgstr ""
+msgstr "Salva impostazioni"
 
 #: admin/mufwc-admin-general-template.php:50
 msgid "Registration form"
-msgstr ""
+msgstr "Form di registrazione"
 
 #: admin/mufwc-admin-general-template.php:53
 msgid "Newsletter option in the registration form."
-msgstr ""
+msgstr "Opzione Newsletter nel form di registrazione al sito."
 
 #: admin/mufwc-admin-general-template.php:57
 msgid "Checkout form"
-msgstr ""
+msgstr "Form di checkout"
 
 #: admin/mufwc-admin-general-template.php:60
 msgid "Newsletter option in the checkout form."
-msgstr ""
+msgstr "Opzione Newsletter nel form di checkout."
 
 #: admin/mufwc-admin-general-template.php:63
 msgid "Make the option enabled by default."
-msgstr ""
+msgstr "Rendi l'opzione attiva di default."
 
 #: admin/mufwc-admin-general-template.php:68
 msgid "Confirm"
-msgstr ""
+msgstr "Conferma"
 
 #: admin/mufwc-admin-general-template.php:71
 msgid "Send MailUp register confirmation."
-msgstr ""
+msgstr "Invia la conferma di registrazione di MailUp."
 
-<<<<<<< HEAD:languages/wc-mailup.pot
-#: admin/mufwc-admin-general-template.php:69
-#: includes/mufwc-meta-box-product-template.php:16
-#: includes/mufwc-meta-box-template.php:26
-msgid "MailUp List ID"
-msgstr ""
-
-#: admin/mufwc-admin-general-template.php:73
-#: includes/mufwc-meta-box-product-template.php:20
-#: includes/mufwc-meta-box-template.php:30
-msgid "Enter the ID of the list which you want to register your users."
-msgstr ""
-
-#: admin/mufwc-admin-general-template.php:78
-#: includes/mufwc-meta-box-product-template.php:26
-#: includes/mufwc-meta-box-template.php:35
-=======
 #: admin/mufwc-admin-general-template.php:75
 #: includes/mufwc-meta-box-product-template.php:18
 #: includes/mufwc-meta-box-template.php:29
 msgid "MailUp List ID"
-msgstr ""
+msgstr "ID Lista MailUp"
 
 #: admin/mufwc-admin-general-template.php:79
 #: includes/mufwc-meta-box-product-template.php:22
 #: includes/mufwc-meta-box-template.php:33
 msgid "Enter the ID of the list which you want to register your users."
-msgstr ""
+msgstr "Inserisci l'ID della lista MailUp a cui registrare gli utenti."
 
 #: admin/mufwc-admin-general-template.php:84
 #: includes/mufwc-meta-box-product-template.php:27
 #: includes/mufwc-meta-box-template.php:38
->>>>>>> master:languages/mailup-for-wc.pot
 msgid "MailUp Group ID"
-msgstr ""
+msgstr "ID Gruppo MailUp"
 
 #: admin/mufwc-admin-general-template.php:88
 msgid ""
 "If you want to add users to a specific MailUp group, enter here the correct "
 "ID."
-msgstr ""
+msgstr "Inserisci l'ID della gruppo MailUp in cui aggiungere gli utenti."
 
-#: admin/mufwc-admin-subscription-template.php:19
+#: admin/mufwc-admin-subscription-template.php:21
 msgid "Post types"
-msgstr ""
+msgstr "Post type"
 
-#: admin/mufwc-admin-subscription-template.php:42
+#: admin/mufwc-admin-subscription-template.php:44
 msgid "Guest form"
-msgstr ""
+msgstr "Form visitatori"
 
-#: admin/mufwc-admin-subscription-template.php:45
+#: admin/mufwc-admin-subscription-template.php:47
 msgid "Login/ Register"
-msgstr ""
-
-#: admin/mufwc-admin-subscription-template.php:46
-msgid "Email only"
-msgstr ""
+msgstr "Login/ Registrazione"
 
 #: admin/mufwc-admin-subscription-template.php:48
+msgid "Email only"
+msgstr "Nome e Email"
+
+#: admin/mufwc-admin-subscription-template.php:50
 msgid ""
 "Ask to access to not logged-in users or just the email for newsletter "
 "subscription."
-msgstr ""
+msgstr "Chiedi di accedere agli utenti non loggati o solo nome e email."
 
-#: admin/mufwc-admin-subscription-template.php:53
+#: admin/mufwc-admin-subscription-template.php:54
 msgid "Button position"
-msgstr ""
-
-#: admin/mufwc-admin-subscription-template.php:56
-msgid "Before the content"
-msgstr ""
+msgstr "Posizione pulsante"
 
 #: admin/mufwc-admin-subscription-template.php:57
-msgid "After the content"
-msgstr ""
+msgid "Before the content"
+msgstr "Prima del contenuto"
 
 #: admin/mufwc-admin-subscription-template.php:58
+msgid "After the content"
+msgstr "Dopo il contenuto"
+
+#: admin/mufwc-admin-subscription-template.php:59
 msgid "Custom"
 msgstr ""
 
-#: admin/mufwc-admin-subscription-template.php:60
+#: admin/mufwc-admin-subscription-template.php:61
 msgid ""
 "Custom position requires use of shortcode [mailup-subscribe] provided by the "
 "plugin."
 msgstr ""
+"L'opzione Custom richiede l'utilizzo dello shortcode [mailup-subscribe]."
 
-#: admin/mufwc-admin-subscription-template.php:64
+#: admin/mufwc-admin-subscription-template.php:65
 msgid "Privacy"
 msgstr ""
 
-#: admin/mufwc-admin-subscription-template.php:67
-#: includes/mufwc-meta-box-template.php:70
+#: admin/mufwc-admin-subscription-template.php:68
+#: includes/mufwc-meta-box-template.php:71
 msgid "Select a page"
-msgstr ""
+msgstr "Seleziona una pagina"
 
-#: admin/mufwc-admin-subscription-template.php:81
+#: admin/mufwc-admin-subscription-template.php:82
 msgid "Select the page with the privacy conditions"
-msgstr ""
+msgstr "Seleziona la pagina con le condizioni sulla privacy"
 
-<<<<<<< HEAD:languages/wc-mailup.pot
-#: includes/class-mufwc-button.php:106
-=======
+#: includes/class-mufwc-auto-subscription.php:41
+msgid "Newsletter subscriptions"
+msgstr "Iscrizione newsletter"
+
+#: includes/class-mufwc-button.php:95
+msgid "Your name"
+msgstr "Il tuo nome"
+
+#: includes/class-mufwc-button.php:99
+msgid "Your email"
+msgstr "La tua mail"
+
 #: includes/class-mufwc-button.php:111
->>>>>>> master:languages/mailup-for-wc.pot
 #, php-format
 msgid ""
 "I consent to the processing of personal data according to the new general "
@@ -255,100 +234,102 @@ msgid ""
 "amendments and according to the <a href=\"%s\" target=\"_blank\">Privacy "
 "Policy</a> of the site."
 msgstr ""
+"Acconsento al trattamento dei dati personali secondo il nuovo regolamento "
+"generale della protezione dei dati dell’Unione Europea (GDPR) e delle "
+"successive modifiche e secondo la <a href=\"%s\" target=\"_blank\">Privacy "
+"Policy</a> presente nel sito."
 
-<<<<<<< HEAD:languages/wc-mailup.pot
-#: includes/class-mufwc-button.php:112
-msgid " Accept"
-msgstr ""
-
-#: includes/class-mufwc-button.php:243
-msgid "Sorry but something went wrong, please try again later."
-msgstr ""
-
-#: includes/class-mufwc-button.php:322
-=======
 #: includes/class-mufwc-button.php:117
 msgid " Accept"
-msgstr ""
+msgstr " Accetto"
+
+#: includes/class-mufwc-button.php:130 includes/mufwc-meta-box-template.php:56
+msgid "Subscribe"
+msgstr "Iscriviti"
+
+#: includes/class-mufwc-button.php:185
+msgid "Login"
+msgstr "Accedi"
+
+#: includes/class-mufwc-button.php:189
+msgid "Register"
+msgstr "Registrati"
 
 #: includes/class-mufwc-button.php:263
 msgid "Sorry but something went wrong, please try again later."
-msgstr ""
+msgstr "Qualcosa non ha funzionato, si prega di riprovare più tardi."
 
 #: includes/class-mufwc-button.php:365
->>>>>>> master:languages/mailup-for-wc.pot
 msgid "Something did't work, please try again later."
-msgstr ""
+msgstr "Qualcosa non ha funzionato, si prega di riprovare più tardi."
 
 #: includes/class-mufwc-checkout-subscription.php:49
 msgid "Subscribe to the newsletter"
-msgstr ""
+msgstr "Iscriviti alla newsletter"
 
-#: includes/mufwc-meta-box-product-template.php:13
+#: includes/mufwc-meta-box-product-template.php:15
 msgid ""
 "Users who purchase this product will be added to this MailUp list and group."
 msgstr ""
+"Gli utenti che acquisteranno questo prodotto verranno aggiunti a questa "
+"lista e gruppo MailUp."
 
-#: includes/mufwc-meta-box-product-template.php:30
-#: includes/mufwc-meta-box-template.php:39
+#: includes/mufwc-meta-box-product-template.php:31
+#: includes/mufwc-meta-box-template.php:42
 msgid "Add users to a specific MailUp group."
-msgstr ""
-
-#: includes/mufwc-meta-box-template.php:19
-msgid "Activate"
-msgstr ""
+msgstr "Aggiungi gli utenti ad uno specifico gruppo MailUp."
 
 #: includes/mufwc-meta-box-template.php:22
-msgid "Add a MailUp subscription button."
-msgstr ""
+msgid "Activate"
+msgstr "Attiva"
 
-#: includes/mufwc-meta-box-template.php:45
-msgid "Description text"
-msgstr ""
+#: includes/mufwc-meta-box-template.php:25
+msgid "Add a MailUp subscription button."
+msgstr "Aggiungi un pulsante di iscrizione a MailUp."
 
 #: includes/mufwc-meta-box-template.php:47
+msgid "Description text"
+msgstr "Testo descrittivo"
+
+#: includes/mufwc-meta-box-template.php:49
 msgid "Click on the button below to receive the first chapter for free!"
-msgstr ""
+msgstr "Clicca sul pulsante qui sotto per ricevere gratis il primo capitolo!"
 
-#: includes/mufwc-meta-box-template.php:48
+#: includes/mufwc-meta-box-template.php:50
 msgid "Add a description text before the button."
-msgstr ""
+msgstr "Aggiungi un testo descrittivo prima del pulsante."
 
-#: includes/mufwc-meta-box-template.php:53
+#: includes/mufwc-meta-box-template.php:54
 msgid "Button text *"
-msgstr ""
+msgstr "Testo pulsante *"
 
-#: includes/mufwc-meta-box-template.php:55
-msgid "Subscribe"
-msgstr ""
-
-#: includes/mufwc-meta-box-template.php:56
+#: includes/mufwc-meta-box-template.php:57
 msgid "Add the button text."
-msgstr ""
+msgstr "Aggiungi il testo del pulsante."
 
-#: includes/mufwc-meta-box-template.php:60
+#: includes/mufwc-meta-box-template.php:61
 msgid "Response text *"
-msgstr ""
-
-#: includes/mufwc-meta-box-template.php:62
-msgid "Thanks for subscribing"
-msgstr ""
+msgstr "Testo risposta *"
 
 #: includes/mufwc-meta-box-template.php:63
-msgid "Add the button response text."
-msgstr ""
+msgid "Thanks for subscribing"
+msgstr "Grazie per esserti registrato"
 
-#: includes/mufwc-meta-box-template.php:67
+#: includes/mufwc-meta-box-template.php:64
+msgid "Add the button response text."
+msgstr "Aggiungi il testo di risposta del pulsante."
+
+#: includes/mufwc-meta-box-template.php:68
 msgid "Redirect"
 msgstr ""
 
-#: includes/mufwc-meta-box-template.php:84
+#: includes/mufwc-meta-box-template.php:85
 msgid "Redirect the user to a specific page."
-msgstr ""
+msgstr "Reindirizza l'utente ad una pagina specifica."
 
 #: plugin-update-checker/Puc/v5p2/Plugin/Ui.php:56
 msgid "View details"
-msgstr ""
+msgstr "Vedi dettagli"
 
 #: plugin-update-checker/Puc/v5p2/Plugin/Ui.php:79
 #, php-format
@@ -357,7 +338,7 @@ msgstr ""
 
 #: plugin-update-checker/Puc/v5p2/Plugin/Ui.php:130
 msgid "Check for updates"
-msgstr ""
+msgstr "Verifica aggiornamenti"
 
 #: plugin-update-checker/Puc/v5p2/Plugin/Ui.php:227
 #, php-format
@@ -367,3 +348,9 @@ msgstr ""
 #: plugin-update-checker/Puc/v5p2/Vcs/PluginUpdateChecker.php:113
 msgid "There is no changelog available."
 msgstr ""
+
+#~ msgid "Site Registration"
+#~ msgstr "Registrazione sito"
+
+#~ msgid "MailUp for WordPress"
+#~ msgstr "MailUp per WordPress"
