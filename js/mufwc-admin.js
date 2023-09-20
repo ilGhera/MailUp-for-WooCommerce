@@ -18,6 +18,7 @@ var mufwcAdminController = function() {
 		self.autoRegistrationActivation();
 		self.postFieldsActivation();
 		self.privacyFieldActivation();
+        self.checkoutDefaultTrue();
 
 	}
 
@@ -36,7 +37,10 @@ var mufwcAdminController = function() {
 
 	/**
 	 * Fires Chosen
+     *
 	 * @param  {bool} destroy method distroy
+     *
+     * @return void
 	 */
 	self.chosen = function(destroy = false) {
 
@@ -66,6 +70,8 @@ var mufwcAdminController = function() {
 
 	/**
 	 * Tab navigation
+     *
+     * @return void
 	 */
 	self.mufwcPagination = function() {
 
@@ -114,6 +120,8 @@ var mufwcAdminController = function() {
 
     /**
      * Display auto-activation options
+     *
+     * @return void
      */
     self.autoRegistrationActivation = function() {
 
@@ -163,6 +171,8 @@ var mufwcAdminController = function() {
 
 	/**
 	 * Display fields only if activates
+     *
+     * @return void
 	 */
 	self.postFieldsActivation = function() {
 
@@ -210,6 +220,11 @@ var mufwcAdminController = function() {
 	}
 
 
+	/**
+	 * Display privacy field rules
+     *
+     * @return void
+	 */
 	self.privacyFieldActivation = function() {
 
 		jQuery(function($){
@@ -245,6 +260,44 @@ var mufwcAdminController = function() {
 		})
 
 	} 
+
+
+	/**
+	 * Display default true option only if checkout subscription is activated
+     *
+     * @return void
+	 */
+	self.checkoutDefaultTrue = function() {
+
+		jQuery(function($){
+
+            var checkout       = $('#mufwc-checkout');
+            var checkoutButton = $('.mufwc-checkout-field .tzCheckBox:first'); 
+            var defaultTrue    = $('.mufwc-checkout-true-container');
+
+            if ( 'checked' == $(checkout).attr('checked') ) {
+
+                $(defaultTrue).show();
+
+            }
+
+			$(checkoutButton).on('click', function(){
+
+                if ( 'checked' == $(checkout).attr('checked') ) {
+
+                    $(defaultTrue).show('slow');
+
+                } else {
+
+                    $(defaultTrue).hide();
+
+                }
+
+			})
+
+        })
+
+    }
 
 }
 

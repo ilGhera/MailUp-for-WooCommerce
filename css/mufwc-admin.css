@@ -90,3 +90,8 @@ form#mufwc-premium-key input.button {
 #mufwc-registration-options {
     padding-top: 3rem;
 }
+
+.mufwc-checkout-true-container {
+    display: none;
+    margin-top: 1rem;
+}
