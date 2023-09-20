@@ -4,7 +4,8 @@
  *
  * @author ilGhera
  * @package mailup-for-wc/admin
- * @since 1.0.0
+ *
+ * @since 1.0.2
  */
 
 /**

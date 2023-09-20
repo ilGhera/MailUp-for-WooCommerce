@@ -1,7 +1,7 @@
 === MailUp for WooCommerce - Premium === 
 Contributors: ghera74
 Tags: Woocommerce, ecommerce, support, ticket, thread, shop, orders, products
-Version: 1.0.1
+Version: 1.0.2
 Requires at least: 4.0
 Tested up to: 6.3
 
@@ -57,6 +57,12 @@ This plugin sends data to an external service, useful links below.
 
 
 == Changelog ==
+
+= 1.0.2 =
+Release Date: 20 September, 2023
+
+* Enhancement: Option to set checkout subscription enabled by default
+
 
 = 1.0.1 =
 Release Date: 2 September, 2023

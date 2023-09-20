@@ -4,7 +4,7 @@
  * Plugin URI: https://www.ilghera.com/product/mailup-for-woocommerce-premium
  * Description: Lead marketing and clients follow-up for WooCommerce with MailUp lists, groups and workflows
  * Author: ilGhera
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author URI: https://ilghera.com
  * Requires at least: 4.0
  * Tested up to: 6.3
@@ -41,7 +41,7 @@ function load_mailup_for_wc_premium() {
 	define( 'MUFWC_INCLUDES', MUFWC_DIR . 'includes/' );
 	define( 'MUFWC_ADMIN', MUFWC_DIR . 'admin/' );
 	define( 'MUFWC_SETTINGS', admin_url( 'admin.php?page=mailup-for-wc' ) );
-    define( 'MUFWC_VERSION', '1.0.0' );
+    define( 'MUFWC_VERSION', '1.0.2' );
 
 	/*Internationalization*/
 	$locale = apply_filters( 'plugin_locale', get_locale(), 'wp-restaurant-booking' );

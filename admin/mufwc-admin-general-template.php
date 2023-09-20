@@ -5,7 +5,7 @@
  * @author ilGhera
  * @package mailup-for-wc/admin
  *
- * @since 1.0.1
+ * @since 1.0.2
  */
 
 $host          = get_option( 'mufwc-host' );
@@ -60,7 +60,7 @@ $checkout_true = get_option( 'mufwc-checkout-true' );
 				<p class="description"><?php esc_html_e( 'Newsletter option in the checkout form.', 'mailup-for-wc' ); ?></p>
                 <div class="mufwc-checkout-true-container">
                     <input type="checkbox" name="mufwc-checkout-true" id="mufwc-checkout-true" class="mufwc" value=1<?php echo 1 === intval( $checkout_true ) ? ' checked="checked"' : ''; ?>>
-                    <p class="description"><?php esc_html_e( 'Make option activated by default.', 'mailup-for-wc' ); ?></p>
+                    <p class="description"><?php esc_html_e( 'Make the option enabled by default.', 'mailup-for-wc' ); ?></p>
                 </div>
 			</td>
 		</tr>
