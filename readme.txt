@@ -3,7 +3,7 @@ Contributors: ghera74
 Tags: MailUp, WooCommerce, newsletter, subscription, follow up, pre-sell, marketing  
 Version: 1.0.2
 Requires at least: 4.0
-Tested up to: 6.3
+Tested up to: 6.4
 License: GPLv3
 
 Lead marketing and clients follow-up for WooCommerce with MailUp lists, groups and workflows
