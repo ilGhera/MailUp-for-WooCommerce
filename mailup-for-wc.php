@@ -44,7 +44,7 @@ function load_mailup_for_wc_premium() {
     define( 'MUFWC_VERSION', '1.0.2' );
 
 	/*Internationalization*/
-	$locale = apply_filters( 'plugin_locale', get_locale(), 'wp-restaurant-booking' );
+	$locale = apply_filters( 'plugin_locale', get_locale(), 'mailup-for-wc' );
 	load_plugin_textdomain( 'mailup-for-wc', false, basename( dirname( __FILE__ ) ) . '/languages' );
 	load_textdomain( 'mailup-for-wc', trailingslashit( WP_LANG_DIR ) . basename( MUFWC_DIR ) . '/mailup-for-wc-' . $locale . '.mo' );
 
