@@ -16,6 +16,13 @@
 class MUFWC_Edit_Post {
 
 	/**
+	 * The main list
+	 *
+	 * @var int
+	 */
+	public $main_list;
+
+	/**
 	 * The constructor
 	 */
 	public function __construct() {

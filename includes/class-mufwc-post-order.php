@@ -16,6 +16,13 @@
 class MUFWC_Post_Order {
 
 	/**
+	 * The MailUp host
+	 *
+	 * @var string
+	 */
+	private $host;
+
+	/**
 	 * The connstructor
 	 *
 	 * @return void

@@ -14,6 +14,13 @@
 class MUFWC_Checkout_Subscription {
 
 	/**
+	 * User checkout
+	 *
+	 * @var bool
+	 */
+	public $user_checkout;
+
+	/**
 	 * The constructor
 	 *
 	 * @return void
@@ -50,14 +57,13 @@ class MUFWC_Checkout_Subscription {
 				'required' => false,
 			);
 
-            $default_true = get_option( 'mufwc-checkout-true' );
+			$default_true = get_option( 'mufwc-checkout-true' );
 
-            if ( $default_true ) {
+			if ( $default_true ) {
 
-                $fields['order']['user-newsletter-checkout']['default'] = true; 
+				$fields['order']['user-newsletter-checkout']['default'] = true;
 
-            }
-
+			}
 		}
 
 		return $fields;

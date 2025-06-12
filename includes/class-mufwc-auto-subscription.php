@@ -16,6 +16,13 @@
 class MUFWC_Auto_Subscription {
 
 	/**
+	 * The newsletter flag
+	 *
+	 * @var bool $user_newsletter
+	 */
+	private $user_newsletter;
+
+	/**
 	 * The constructor
 	 */
 	public function __construct() {
