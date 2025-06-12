@@ -1,6 +1,6 @@
 === MailUp for WooCommerce === 
 Contributors: ghera74
-Tags: MailUp, WooCommerce, newsletter, subscription, follow up, pre-sell
+Tags: MailUp, WooCommerce, newsletter, follow up, pre-sell
 Version: 1.0.3
 Requires at least: 4.0
 Tested up to: 6.8
