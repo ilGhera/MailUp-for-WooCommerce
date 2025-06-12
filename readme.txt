@@ -66,6 +66,7 @@ Release Date: 12 June, 2025
     * Enhancement: Support WooCommerce 9.9.3
     * Enhancement: WP Coding Standards 
     * Update: Plugin Update Checker
+    * Bug fix: Creation of dynamic property deprecated
 
 
 = 1.0.2 =
