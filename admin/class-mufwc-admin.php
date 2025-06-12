@@ -10,6 +10,8 @@
 
 /**
  * MUFWC_Admin
+ *
+ * @since 1.0.2
  */
 class MUFWC_Admin {
 
@@ -32,7 +34,6 @@ class MUFWC_Admin {
 		add_menu_page( __( 'MailUp for WooCommerce', 'wc-mailup' ), __( 'MailUp for WC', 'wc-mailup' ), 'manage_options', 'mailup-for-wc', array( $this, 'mufwc_options' ), 'dashicons-email', 52 );
 
 	}
-
 
 	/**
 	 * Add js and css files
@@ -61,7 +62,6 @@ class MUFWC_Admin {
 		}
 
 	}
-
 
 	/**
 	 * Button premium call to action
@@ -129,7 +129,6 @@ class MUFWC_Admin {
 
 	}
 
-
 	/**
 	 * Sanitize every single array element
 	 *
@@ -152,7 +151,6 @@ class MUFWC_Admin {
 		return $output;
 
 	}
-
 
 	/**
 	 * Save the options in the db
