@@ -4,11 +4,14 @@
  *
  * @author ilGhera
  * @package mailup-for-wc/includes
+ *
  * @since 1.0.0
  */
 
 /**
  * MUFWC_Button
+ *
+ * @since 1.0.0
  */
 class MUFWC_Button {
 
@@ -31,7 +34,6 @@ class MUFWC_Button {
 		add_filter( 'the_content', array( $this, 'place_button' ) );
 
 	}
-
 
 	/**
 	 * Add css and js files
@@ -77,7 +79,6 @@ class MUFWC_Button {
 			);
 
 	}
-
 
 	/**
 	 * Guest form for not logged-in users
@@ -131,7 +132,6 @@ class MUFWC_Button {
 		echo '</form>';
 
 	}
-
 
 	/**
 	 * The subscription button displayed to logged-in users
@@ -215,7 +215,6 @@ class MUFWC_Button {
 
 	}
 
-
 	/**
 	 * The position of the button based on the admin set
 	 *
@@ -243,7 +242,6 @@ class MUFWC_Button {
 		return $output;
 
 	}
-
 
 	/**
 	 * Shortcode action callback
@@ -318,7 +316,6 @@ class MUFWC_Button {
 
 	}
 
-
 	/**
 	 * The anchor button
 	 *
@@ -345,7 +342,6 @@ class MUFWC_Button {
 		return $output;
 
 	}
-
 
 	/**
 	 * Guest form response
@@ -424,3 +420,4 @@ class MUFWC_Button {
 }
 
 new MUFWC_Button();
+

@@ -4,11 +4,14 @@
  *
  * @author ilGhera
  * @package mailup-for-wc/includes
+ *
  * @since 1.0.0
  */
 
 /**
  * MUFWC_Post_Order
+ *
+ * @since 1.0.0
  */
 class MUFWC_Post_Order {
 
@@ -24,7 +27,6 @@ class MUFWC_Post_Order {
 		add_action( 'woocommerce_order_status_completed', array( $this, 'order_completed' ), 10, 1 );
 
 	}
-
 
 	/**
 	 * Check if the customer is already subscribed to MailUp
@@ -50,7 +52,6 @@ class MUFWC_Post_Order {
 		return $output;
 
 	}
-
 
 	/**
 	 * Get customer info
@@ -99,7 +100,6 @@ class MUFWC_Post_Order {
 		);
 
 	}
-
 
 	/**
 	 * Add order items to the MailUp groups set

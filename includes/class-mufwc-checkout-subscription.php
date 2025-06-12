@@ -64,7 +64,6 @@ class MUFWC_Checkout_Subscription {
 
 	}
 
-
 	/**
 	 * Add user to MailUp if the field was checked
 	 *
@@ -95,7 +94,6 @@ class MUFWC_Checkout_Subscription {
 
 	}
 
-
 	/**
 	 * Save custom field
 	 *
@@ -122,5 +120,6 @@ class MUFWC_Checkout_Subscription {
 	}
 
 }
+
 new MUFWC_Checkout_Subscription();
 

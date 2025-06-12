@@ -4,14 +4,16 @@
  *
  * @author ilGhera
  * @package mailup-for-wc/includes
+ *
  * @since 1.0.0
  */
 
 /**
  * MUFWC_Auto_Subscription
+ *
+ * @since 1.0.0
  */
 class MUFWC_Auto_Subscription {
-
 
 	/**
 	 * The constructor
@@ -26,7 +28,6 @@ class MUFWC_Auto_Subscription {
 		add_action( 'user_register', array( $this, 'mailup_registration' ) );
 
 	}
-
 
 	/**
 	 * Add the newsletter check field to the WC registration form
@@ -47,7 +48,6 @@ class MUFWC_Auto_Subscription {
 		}
 
 	}
-
 
 	/**
 	 * Add user to MailUp if the field was checked

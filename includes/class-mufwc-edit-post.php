@@ -4,11 +4,14 @@
  *
  * @author ilGhera
  * @package mailup-for-wc/includes
+ *
  * @since 1.0.0
  */
 
 /**
  * MUFWC_Edit_Post
+ *
+ * @since 1.0.0
  */
 class MUFWC_Edit_Post {
 
@@ -23,7 +26,6 @@ class MUFWC_Edit_Post {
 		$this->main_list = get_option( 'mufwc-list' );
 
 	}
-
 
 	/**
 	 * Add meta box
@@ -53,7 +55,6 @@ class MUFWC_Edit_Post {
 
 	}
 
-
 	/**
 	 * The product meta box
 	 *
@@ -65,7 +66,6 @@ class MUFWC_Edit_Post {
 
 	}
 
-
 	/**
 	 * The post meta box conten
 	 *
@@ -76,7 +76,6 @@ class MUFWC_Edit_Post {
 		include MUFWC_INCLUDES . 'mufwc-meta-box-template.php';
 
 	}
-
 
 	/**
 	 * Save the post metas
@@ -119,3 +118,4 @@ class MUFWC_Edit_Post {
 }
 
 new MUFWC_Edit_Post();
+
