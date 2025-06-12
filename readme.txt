@@ -62,6 +62,7 @@ This plugin sends data to an external service, useful links below.
 = 1.0.3 =
 Release Date: 12 June, 2025
 
+    * Enhancement: HPOS compatibility
     * Enhancement: Support WordPress 6.8.1
     * Enhancement: Support WooCommerce 9.9.3
     * Enhancement: WP Coding Standards 
