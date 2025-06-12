@@ -80,7 +80,6 @@ class MUFWC_Admin {
 
 	}
 
-
 	/**
 	 * Plugin options page
 	 */
