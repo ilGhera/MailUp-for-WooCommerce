@@ -1,8 +1,8 @@
 === MailUp for WooCommerce === 
 Contributors: ghera74
 Tags: MailUp, WooCommerce, newsletter, follow up, pre-sell
-Version: 1.0.4
-Stable tag: 1.0.4
+Version: 1.0.5
+Stable tag: 1.0.5
 Requires at least: 4.0
 Tested up to: 7.1
 License: GPLv3
@@ -69,6 +69,12 @@ This plugin sends data to an external service, useful links below.
 
 
 == Changelog ==
+
+
+= 1.0.5 =
+Release Date: 20 August, 2026
+
+    * Compatibility: WordPress 7.1
 
 
 = 1.0.4 =
