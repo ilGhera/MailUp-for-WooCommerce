@@ -8,6 +8,32 @@
  * @since 1.0.2
  */
 
+if ( ! function_exists( 'mufwc_ilghera_url' ) ) {
+
+	/**
+	 * Indirizzo di una pagina prodotto su ilghera.com: lingua dell'utente e tracciamento.
+	 *
+	 * @param string $slug     lo slug del prodotto, uguale nelle due lingue.
+	 * @param string $campaign utm_campaign: settings (upgrade) o license (rinnovo).
+	 *
+	 * @return string
+	 */
+	function mufwc_ilghera_url( $slug, $campaign = 'settings' ) {
+
+		$locale = function_exists( 'get_user_locale' ) ? get_user_locale() : get_locale();
+		$path   = ( 0 === strpos( $locale, 'it' ) ) ? 'it/prodotto' : 'product';
+
+		return add_query_arg(
+			array(
+				'utm_source'   => 'wp-plugin',
+				'utm_medium'   => 'wc-mailup',
+				'utm_campaign' => $campaign,
+			),
+			'https://www.ilghera.com/' . $path . '/' . $slug . '/'
+		);
+	}
+}
+
 /**
  * MUFWC_Admin
  *
@@ -72,7 +98,7 @@ class MUFWC_Admin {
 
 		echo '<div class="bootstrap-iso">';
 			echo '<span class="label label-warning premium">';
-				echo '<a href="https://www.ilghera.com/product/mailup-for-woocommerce-premium" target="_blank" ';
+				echo '<a href="' . esc_url( mufwc_ilghera_url( 'mailup-for-woocommerce-premium', 'settings' ) ) . '" target="_blank" ';
 					echo 'title="' . esc_html__( 'This is a premium functionality, click here for details', 'wc-mailup' ) . '"';
 				echo '>Premium</a>';
 			echo '</span>';
